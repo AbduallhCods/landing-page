@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كهرباء مباني | خدمات كهرباء احترافية</title>
+  <meta name="description" content="صفحة هبوط احترافية لخدمات كهرباء المباني للمنازل والمحلات: صيانة، تركيب، تمديدات، كشف أعطال، ولوحات كهربائية بأسعار منافسة." />
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --bg2:#eef2f8;
+      --surface:#ffffff;
+      --surface-2:#f9fbff;
+      --text:#122033;
+      --muted:#66758a;
+      --line:#dfe7f1;
+      --primary:#0f172a;
+      --accent:#f59e0b;
+      --accent-2:#ffcf70;
+      --success:#16a34a;
+      --shadow:0 20px 60px rgba(15,23,42,.10);
+      --shadow-soft:0 10px 30px rgba(15,23,42,.06);
+      --radius:24px;
+      --maxw:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Tahoma","Arial",sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(245,158,11,.08), transparent 22%),
+        radial-gradient(circle at left center, rgba(15,23,42,.05), transparent 28%),
+        linear-gradient(180deg,var(--bg),var(--bg2));
+      color:var(--text);
+      line-height:1.8;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{width:min(92%,var(--maxw));margin:auto}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,255,255,.82);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(15,23,42,.06);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      font-size:1.08rem;
+      color:var(--primary);
+    }
+
+    .brand-mark{
+      width:52px;
+      height:52px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;
+      font-size:1.4rem;
+      box-shadow:0 14px 34px rgba(245,158,11,.22);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .brand-mark::after{
+      content:"";
+      position:absolute;
+      inset:auto -8px -16px auto;
+      width:30px;
+      height:30px;
+      background:rgba(255,255,255,.22);
+      border-radius:50%;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .nav-links a:hover{color:var(--primary)}
+
+    .hero{
+      padding:48px 0 30px;
+    }
+
+    .hero-shell{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:stretch;
+    }
+
+    .hero-content{
+      background:linear-gradient(135deg,#ffffff,#f9fbff);
+      border:1px solid rgba(15,23,42,.06);
+      border-radius:32px;
+      padding:42px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-content::before{
+      content:"";
+      position:absolute;
+      top:-80px;
+      left:-70px;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(245,158,11,.12), transparent 70%);
+      pointer-events:none;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#fff7e6;
+      color:#b97400;
+      font-weight:700;
+      font-size:.9rem;
+      margin-bottom:18px;
+      border:1px solid #ffe3ab;
+    }
+
+    h1{
+      margin:0 0 16px;
+      font-size:clamp(2rem,4vw,4rem);
+      line-height:1.18;
+      letter-spacing:-.02em;
+      color:var(--primary);
+    }
+
+    .highlight{
+      color:var(--accent);
+    }
+
+    .hero p{
+      margin:0 0 26px;
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width:700px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:800;
+      transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      box-shadow:0 16px 34px rgba(15,23,42,.16);
+    }
+
+    .btn-primary:hover{transform:translateY(-3px)}
+
+    .btn-accent{
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      color:#fff;
+      box-shadow:0 16px 34px rgba(245,158,11,.24);
+    }
+
+    .btn-accent:hover{transform:translateY(-3px)}
+
+    .btn-light{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--primary);
+    }
+
+    .btn-light:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+
+    .hero-metrics{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .metric{
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px;
+    }
+
+    .metric strong{
+      display:block;
+      font-size:1.08rem;
+      margin-bottom:4px;
+      color:var(--primary);
+    }
+
+    .metric span{
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .hero-visual{
+      background:linear-gradient(180deg,#162133,#0f172a);
+      border-radius:32px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      color:#fff;
+    }
+
+    .hero-visual::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(15,23,42,.25), rgba(15,23,42,.58)),
+        url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      opacity:.32;
+    }
+
+    .visual-top,
+    .visual-bottom{position:relative;z-index:2}
+
+    .slider-section{
+      padding:12px 0 36px;
+    }
+
+    .slider-wrap{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .slider-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      padding:22px 24px 0;
+      flex-wrap:wrap;
+    }
+
+    .slider-head h2{
+      margin:0;
+      color:var(--primary);
+      font-size:1.5rem;
+    }
+
+    .slider-head p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .slider{
+      position:relative;
+      height:420px;
+      margin:22px;
+      border-radius:24px;
+      overflow:hidden;
+      cursor:grab;
+      user-select:none;
+      touch-action:pan-y;
+    }
+
+    .slider:active{cursor:grabbing}
+
+    .slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transform:scale(1.06);
+      transition:opacity .9s ease, transform 6s ease;
+      background-size:cover;
+      background-position:center;
+    }
+
+    .slide::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(15,23,42,.14), rgba(15,23,42,.64));
+    }
+
+    .slide::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg, rgba(255,255,255,.04), transparent 35%, transparent 65%, rgba(255,255,255,.03));
+      opacity:.55;
+      pointer-events:none;
+    }
+
+    .slide.active{
+      opacity:1;
+      transform:scale(1);
+    }
+
+    .slide-caption{
+      position:absolute;
+      right:24px;
+      bottom:24px;
+      z-index:2;
+      color:#fff;
+      background:rgba(255,255,255,.10);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:20px;
+      padding:16px 18px;
+      max-width:420px;
+      transition:transform .35s ease, background .35s ease, border-color .35s ease;
+    }
+
+    .slide:hover .slide-caption{
+      transform:translateY(-4px);
+      background:rgba(255,255,255,.14);
+      border-color:rgba(255,255,255,.24);
+    }
+
+    .slide-caption strong{
+      display:block;
+      font-size:1.08rem;
+      margin-bottom:4px;
+    }
+
+    .slide-caption span{
+      color:rgba(255,255,255,.86);
+      font-size:.94rem;
+    }
+
+    .slider-dots{
+      position:absolute;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      display:flex;
+      gap:8px;
+      z-index:3;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(255,255,255,.34);
+      border:1px solid rgba(255,255,255,.30);
+      transition:.25s ease;
+      cursor:pointer;
+    }
+
+    .dot.active{background:#fff;transform:scale(1.15)}
+
+    .slider-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:4;
+      width:52px;
+      height:52px;
+      border:none;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.12);
+      color:#fff;
+      font-size:1.45rem;
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.16);
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .slider-arrow:hover{
+      background:rgba(255,255,255,.18);
+      transform:translateY(-50%) scale(1.05);
+    }
+
+    .slider-arrow.prev{right:18px}
+    .slider-arrow.next{left:18px}
+
+    .slider-progress{
+      position:absolute;
+      top:0;
+      right:0;
+      height:4px;
+      width:100%;
+      background:rgba(255,255,255,.12);
+      z-index:4;
+      overflow:hidden;
+    }
+
+    .slider-progress span{
+      display:block;
+      height:100%;
+      width:0%;
+      background:linear-gradient(90deg,var(--accent),#fff0c7);
+      animation:progressFill 3.5s linear infinite;
+      transform-origin:right center;
+    }
+
+    @keyframes progressFill{
+      from{width:0%}
+      to{width:100%}
+    }
+
+    .glass-card{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:24px;
+      padding:20px;
+      backdrop-filter:blur(10px);
+    }
+
+    .visual-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      margin-bottom:18px;
+      font-size:.9rem;
+    }
+
+    .visual-title{
+      font-size:1.9rem;
+      line-height:1.3;
+      font-weight:900;
+      margin:0 0 12px;
+    }
+
+    .visual-text{
+      color:rgba(255,255,255,.82);
+      margin:0;
+      font-size:.98rem;
+    }
+
+    .feature-mini{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .feature-mini div{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:rgba(255,255,255,.92);
+      font-size:.95rem;
+    }
+
+    .feature-mini div::before{
+      content:"⚡";
+      color:#ffd166;
+      flex:0 0 auto;
+    }
+
+    section{padding:36px 0}
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:16px;
+      margin-bottom:24px;
+      flex-wrap:wrap;
+    }
+
+    .section-head h2{
+      margin:0;
+      font-size:clamp(1.5rem,2vw,2.3rem);
+      color:var(--primary);
+    }
+
+    .section-head p{
+      margin:0;
+      max-width:680px;
+      color:var(--muted);
+    }
+
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .service-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+      transition:.25s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .service-card::before{
+      content:"";
+      position:absolute;
+      inset:0 auto auto 0;
+      width:100%;
+      height:4px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      transform:scaleX(0);
+      transform-origin:right;
+      transition:.25s ease;
+    }
+
+    .service-card:hover{
+      transform:translateY(-7px);
+      box-shadow:var(--shadow);
+    }
+
+    .service-card:hover::before{transform:scaleX(1)}
+
+    .service-icon{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:#fff7e8;
+      color:#b97300;
+      font-size:1.45rem;
+      margin-bottom:16px;
+      border:1px solid #ffe3ab;
+    }
+
+    .service-card h3{
+      margin:0 0 8px;
+      font-size:1.12rem;
+      color:var(--primary);
+    }
+
+    .service-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.96rem;
+    }
+
+    .why-wrap{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .panel{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .check-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:12px;
+    }
+
+    .check-list li{
+      display:flex;
+      gap:12px;
+      color:var(--muted);
+      align-items:flex-start;
+    }
+
+    .check-list li::before{
+      content:"✔";
+      width:24px;
+      height:24px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:#ecfdf3;
+      color:var(--success);
+      font-size:.8rem;
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .step{
+      position:relative;
+      background:linear-gradient(180deg,#ffffff,#fbfcff);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .step-number{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:var(--primary);
+      color:#fff;
+      font-weight:900;
+      margin-bottom:16px;
+    }
+
+    .step h3{margin:0 0 8px;color:var(--primary)}
+    .step p{margin:0;color:var(--muted)}
+
+    .cta{
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+      color:#fff;
+      border-radius:32px;
+      padding:34px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .cta::before{
+      content:"";
+      position:absolute;
+      top:-80px;
+      left:-80px;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(245,158,11,.24), transparent 70%);
+    }
+
+    .cta-wrap{
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cta h2{margin:0 0 10px;font-size:clamp(1.5rem,2.5vw,2.2rem)}
+    .cta p{margin:0;color:rgba(255,255,255,.78);max-width:720px}
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:20px;
+    }
+
+    .contact-card,
+    .form-card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .contact-item{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      padding:16px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .contact-item:last-child{border-bottom:0}
+
+    .contact-icon{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:#fff7e8;
+      color:#b97300;
+      border:1px solid #ffe3ab;
+      font-size:1.15rem;
+      flex:0 0 auto;
+    }
+
+    .contact-label{font-size:.9rem;color:var(--muted);margin-bottom:2px}
+    .contact-value{font-weight:800;color:var(--primary)}
+
+    form{display:grid;gap:14px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+    input,textarea{
+      width:100%;
+      border:1px solid var(--line);
+      background:#fbfcff;
+      border-radius:16px;
+      padding:14px 16px;
+      color:var(--primary);
+      font:inherit;
+      outline:none;
+      transition:.2s ease;
+    }
+
+    input:focus,textarea:focus{
+      border-color:#f3c05d;
+      box-shadow:0 0 0 4px rgba(245,158,11,.10);
+      background:#fff;
+    }
+
+    textarea{min-height:130px;resize:vertical}
+    ::placeholder{color:#91a0b5}
+
+    footer{
+      padding:28px 0 40px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .made-by{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:10px;
+      color:var(--primary);
+      font-weight:700;
+    }
+
+    .heart{color:#ef4444;font-size:1.05rem}
+
+    @media (max-width:980px){
+      .hero-shell,
+      .services-grid,
+      .why-wrap,
+      .steps,
+      .contact-grid,
+      .row,
+      .hero-metrics{grid-template-columns:1fr}
+
+      .nav{flex-direction:column;align-items:stretch}
+      .nav-links{justify-content:center}
+      .hero-content,.hero-visual,.panel,.contact-card,.form-card,.cta{padding:24px}
+    }
+  
+    /* ===== ticker ===== */
+    .ticker{overflow:hidden;position:relative}
+    .ticker-track{
+      display:flex;gap:40px;padding:16px 0;
+      animation:tickerMove 18s linear infinite;
+      white-space:nowrap;font-weight:700;color:var(--primary)
+    }
+    .ticker-track span{opacity:.85}
+    @keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    /* ===== portfolio ===== */
+    .portfolio-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px
+    }
+    .portfolio-item{
+      height:220px;border-radius:22px;background-size:cover;background-position:center;
+      position:relative;overflow:hidden;transition:.3s
+    }
+    .portfolio-item::after{
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,.2);opacity:0;transition:.3s
+    }
+    .portfolio-item:hover{transform:scale(1.03)}
+    .portfolio-item:hover::after{opacity:1}
+
+    /* ===== testimonials ===== */
+    .testimonials{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px
+    }
+    .testimonial{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:20px;
+      box-shadow:var(--shadow-soft);
+      transition:.25s
+    }
+    .testimonial:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .testimonial p{margin:0 0 10px;color:var(--muted)}
+    .testimonial strong{color:var(--primary)}
+
+    @media (max-width:980px){
+      .portfolio-grid,.testimonials{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark">⚡</div>
+        <div>كهرباء مباني</div>
+      </div>
+      <div class="nav-links">
+        <a href="#services">الخدمات</a>
+        <a href="#why">لماذا نحن</a>
+        <a href="#steps">آلية العمل</a>
+        <a href="#contact">التواصل</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-shell">
+      <div class="hero-content">
+        <div class="eyebrow">خدمة احترافية للمنازل والمحلات</div>
+        <h1>حلول <span class="highlight">كهرباء</span> متكاملة<br> بجودة عالية وسعر مناسب</h1>
+        <p>
+          نقدم جميع أعمال الكهرباء للمباني السكنية والتجارية، من الصيانة السريعة وكشف الأعطال إلى التركيب والتمديدات وتركيب اللوحات والإنارة ومستلزمات الكهرباء، بتنفيذ مرتب وموثوق.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/966500000000" target="_blank" rel="noopener">تواصل عبر واتساب</a>
+          <a class="btn btn-accent" href="tel:+966500000000">اتصل الآن</a>
+          <a class="btn btn-light" href="#services">شاهد الخدمات</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric">
+            <strong>تنفيذ احترافي</strong>
+            <span>شغل منظم ودقة في التفاصيل</span>
+          </div>
+          <div class="metric">
+            <strong>سرعة استجابة</strong>
+            <span>خدمة مناسبة للطلبات العاجلة</span>
+          </div>
+          <div class="metric">
+            <strong>سعر منافس</strong>
+            <span>أفضل قيمة مقابل الجودة</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-top">
+          <div class="visual-badge">⚙️ كهرباء مباني • خدمة موثوقة</div>
+          <div class="glass-card">
+            <h2 class="visual-title">كل ما تحتاجه في أعمال الكهرباء بمكان واحد</h2>
+            <p class="visual-text">صيانة، تركيب، تمديدات، لوحات كهربائية، مفاتيح وأفياش، إنارة داخلية وخارجية، وكشف أعطال للمنازل والمحلات.</p>
+          </div>
+        </div>
+
+        <div class="visual-bottom">
+          <div class="glass-card">
+            <div class="feature-mini">
+              <div>تركيب جميع مستلزمات الكهرباء</div>
+              <div>كشف الأعطال ومعالجة الخلل بسرعة</div>
+              <div>خدمة للمنازل والمحلات والمكاتب</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="slider-section">
+    <div class="container">
+      <div class="slider-wrap">
+        <div class="slider-head">
+          <div>
+            <h2>صور من أعمال الكهرباء</h2>
+            <p>سلايدر متحرك بصور تعبر عن نشاط الكهرباء والصيانة والتركيب.</p>
+          </div>
+        </div>
+
+        <div class="slider" id="electricSlider">
+          <div class="slider-progress"><span id="sliderProgressBar"></span></div>
+          <button class="slider-arrow prev" id="prevSlide" aria-label="السابق">❯</button>
+          <button class="slider-arrow next" id="nextSlide" aria-label="التالي">❮</button>
+          <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1600&q=80');">
+            <div class="slide-caption">
+              <strong>صيانة وتمديدات كهربائية</strong>
+              <span>حلول عملية للمنازل والمحلات بجودة عالية.</span>
+            </div>
+          </div>
+          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1600&q=80');">
+            <div class="slide-caption">
+              <strong>تركيب لوحات ومستلزمات</strong>
+              <span>تنفيذ احترافي وتشطيب مرتب وآمن.</span>
+            </div>
+          </div>
+          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80');">
+            <div class="slide-caption">
+              <strong>كشف الأعطال بسرعة</strong>
+              <span>استجابة سريعة وخدمة موثوقة للمباني.</span>
+            </div>
+          </div>
+          <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?auto=format&fit=crop&w=1600&q=80');">
+            <div class="slide-caption">
+              <strong>أدوات وخبرة في التنفيذ</strong>
+              <span>تركيب وصيانة لجميع أعمال الكهرباء.</span>
+            </div>
+          </div>
+
+          <div class="slider-dots" id="sliderDots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>خدماتنا</h2>
+        </div>
+        <p>نقدم باقة متكاملة من خدمات الكهرباء التي تناسب احتياجات المنازل والمحلات والأعمال التجارية الصغيرة.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>صيانة الأعطال</h3>
+          <p>كشف الأعطال الكهربائية وإصلاحها بسرعة مع التأكد من سلامة التوصيلات وتشغيل الخدمة بالشكل الصحيح.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💡</div>
+          <h3>تركيب الإنارة</h3>
+          <p>تركيب اللمبات والثريات والسبوت لايت والإنارة الخارجية بطريقة أنيقة وآمنة تناسب المكان.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>كهرباء المنازل</h3>
+          <p>تنفيذ وصيانة وتمديد جميع أعمال الكهرباء للشقق والفلل والملاحق بجودة عالية.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏪</div>
+          <h3>كهرباء المحلات</h3>
+          <p>تجهيز وصيانة المحلات التجارية والمكاتب بما يناسب طبيعة النشاط والتشغيل اليومي.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔌</div>
+          <h3>مفاتيح وأفياش</h3>
+          <p>تركيب وتبديل المفاتيح والأفياش والملحقات الكهربائية بأدوات مناسبة وتشطيب مرتب.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>لوحات وتمديدات</h3>
+          <p>تركيب اللوحات الكهربائية وتنظيم الأحمال وتمديد خطوط جديدة أو إعادة تأهيل التمديدات القديمة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>ليش تختارنا؟</h2>
+        </div>
+        <p>لأننا نركز على الجودة، الالتزام، والأمان في كل عملية صيانة أو تركيب أو تمديد.</p>
+      </div>
+
+      <div class="why-wrap">
+        <div class="panel">
+          <ul class="check-list">
+            <li>التزام بالمواعيد وسرعة في تنفيذ الطلب.</li>
+            <li>جودة عمل مناسبة للمنازل والمحلات.</li>
+            <li>حلول عملية لتقليل الأعطال المتكررة.</li>
+            <li>أسعار منافسة وواضحة.</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <ul class="check-list">
+            <li>خبرة في تركيب جميع مستلزمات الكهرباء.</li>
+            <li>عناية بالتشطيب النهائي وترتيب الشغل.</li>
+            <li>خدمة مناسبة للصيانة والتركيب والتجديد.</li>
+            <li>تواصل سريع عبر الواتساب والاتصال المباشر.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>آلية العمل</h2>
+        </div>
+        <p>خطوات واضحة من أول تواصل وحتى تنفيذ الخدمة بالشكل المطلوب.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>تواصل معنا</h3>
+          <p>أرسل تفاصيل الطلب أو العطل عبر الواتساب أو اتصل مباشرة.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>تحديد الخدمة</h3>
+          <p>نحدد المطلوب بشكل واضح ونوضّح الحل المناسب والتكلفة المتوقعة.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>تنفيذ الخدمة</h3>
+          <p>يتم التنفيذ بسرعة واحترافية مع التأكد من سلامة التشغيل ورضا العميل.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <div class="cta-wrap">
+          <div>
+            <h2>تبي كهربائي ثقة للمنازل أو المحلات؟</h2>
+            <p>تواصل الآن واحصل على خدمة كهرباء احترافية تشمل الصيانة والتركيب وكشف الأعطال وتركيب جميع المستلزمات بأسعار مناسبة.</p>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a class="btn btn-accent" href="https://wa.me/966500000000" target="_blank" rel="noopener">اطلب الخدمة الآن</a>
+            <a class="btn btn-light" href="tel:+966500000000">اتصال مباشر</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== شريط خدمات متحرك ====== -->
+  <section>
+    <div class="container">
+      <div style="overflow:hidden;border-radius:26px;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow-soft)">
+        <div class="ticker" id="serviceTicker">
+          <div class="ticker-track">
+            <span>⚡ صيانة أعطال</span>
+            <span>💡 تركيب إنارة</span>
+            <span>🏠 كهرباء منازل</span>
+            <span>🏪 كهرباء محلات</span>
+            <span>🔌 مفاتيح وأفياش</span>
+            <span>⚙️ لوحات كهربائية</span>
+            <span>🧰 تمديدات جديدة</span>
+            <span>🛠️ صيانة دورية</span>
+            <span>⚡ صيانة أعطال</span>
+            <span>💡 تركيب إنارة</span>
+            <span>🏠 كهرباء منازل</span>
+            <span>🏪 كهرباء محلات</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== أعمال سابقة ====== -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head">
+        <h2>أعمالنا السابقة</h2>
+        <p>نماذج من أعمالنا في الصيانة والتركيب والتمديدات الكهربائية.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" style="background-image:url('https://images.unsplash.com/photo-1581091870627-3b5c0d8e0e5b?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="portfolio-item" style="background-image:url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="portfolio-item" style="background-image:url('https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="portfolio-item" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="portfolio-item" style="background-image:url('https://images.unsplash.com/photo-1581091012184-7cbb4b84b0b3?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="portfolio-item" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e8a9e4f9c9c?auto=format&fit=crop&w=1200&q=80')"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== آراء العملاء ====== -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <h2>آراء العملاء</h2>
+        <p>بعض تقييمات العملاء على خدماتنا الكهربائية.</p>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>شغلهم ممتاز وسريع، حلوا مشكلة الكهرباء عندي بنفس اليوم 👍</p>
+          <strong>— أبو محمد</strong>
+        </div>
+        <div class="testimonial">
+          <p>تعامل راقي وأسعار مناسبة جدًا، أنصح فيهم 👌</p>
+          <strong>— خالد</strong>
+        </div>
+        <div class="testimonial">
+          <p>ركبوا الإنارة عندي بشكل احترافي، شغل نظيف ومرتب 🔥</p>
+          <strong>— عبدالله</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>التواصل</h2>
+        </div>
+        <p>يسعدنا استقبال طلباتكم واستفساراتكم في أي وقت.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">رقم التواصل</div>
+              <div class="contact-value">+966 50 000 0000</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">💬</div>
+            <div>
+              <div class="contact-label">واتساب</div>
+              <div class="contact-value"><a href="https://wa.me/966500000000" target="_blank" rel="noopener">الواتساب الأصلي</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">منطقة الخدمة</div>
+              <div class="contact-value">أضف المدينة أو المنطقة هنا</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🕒</div>
+            <div>
+              <div class="contact-label">أوقات العمل</div>
+              <div class="contact-value">يوميًا حسب المواعيد المتاحة</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form>
+            <div class="row">
+              <input type="text" placeholder="الاسم" />
+              <input type="tel" placeholder="رقم الجوال" />
+            </div>
+            <input type="text" placeholder="نوع الخدمة المطلوبة" />
+            <textarea placeholder="اكتب تفاصيل الطلب أو المشكلة الكهربائية"></textarea>
+            <button type="button" class="btn btn-primary">إرسال الطلب</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © كهرباء مباني<br>
+    <span class="made-by">صنع بحب من عبدالله <span class="heart">❤</span></span>
+  </footer>
+  <script>
+    const slider = document.getElementById('electricSlider');
+    const slides = document.querySelectorAll('#electricSlider .slide');
+    const dots = document.querySelectorAll('#sliderDots .dot');
+    const prevBtn = document.getElementById('prevSlide');
+    const nextBtn = document.getElementById('nextSlide');
+    const progressBar = document.getElementById('sliderProgressBar');
+    let currentSlide = 0;
+    let autoPlay;
+    let startX = 0;
+    let endX = 0;
+
+    function resetProgress() {
+      progressBar.style.animation = 'none';
+      progressBar.offsetHeight;
+      progressBar.style.animation = 'progressFill 3.5s linear infinite';
+    }
+
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentSlide);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+      resetProgress();
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function startAutoPlay() {
+      clearInterval(autoPlay);
+      autoPlay = setInterval(nextSlide, 3500);
+      resetProgress();
+    }
+
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      startAutoPlay();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        startAutoPlay();
+      });
+    });
+
+    slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
+    slider.addEventListener('mouseleave', startAutoPlay);
+
+    slider.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slider.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      if (startX - endX > 40) {
+        nextSlide();
+        startAutoPlay();
+      } else if (endX - startX > 40) {
+        prevSlide();
+        startAutoPlay();
+      }
+    }, { passive: true });
+
+    showSlide(0);
+    startAutoPlay();
+  </script>
+</body>
+</html>
