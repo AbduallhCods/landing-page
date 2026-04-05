@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ودك مصور؟ أفضل جودة وأقل سعر</title>
+  <meta name="description" content="ودك مصور يعطيك أفضل جودة وأقل سعر؟ تواصل معنا الآن واسأل عن العروض لخدمات التصوير الاحترافية في الشرقية والدمام." />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #121b2e;
+      --card: rgba(255, 255, 255, 0.08);
+      --text: #f7f9fc;
+      --muted: #c8d2e2;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #d4af37;
+      --accent-2: #f5d87a;
+      --success: #25D366;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Tajawal', 'Segoe UI', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.22), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.08), transparent 25%),
+        linear-gradient(135deg, #08101d 0%, #0f1728 50%, #0b1220 100%);
+      line-height: 1.8;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #1b1607;
+      box-shadow: 0 10px 25px rgba(212,175,55,.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(212,175,55,.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.06);
+      border-color: var(--line);
+      color: var(--text);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,.1);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 40px 0 70px;
+      position: relative;
+      overflow: hidden;
+      background: #0b1220;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(5,10,20,.35), rgba(5,10,20,.55)),
+        url('https://images.unsplash.com/photo-1502920917128-1aa500764b69?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      transform: scale(1.03);
+      z-index: 0;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+      opacity: .42;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 70% 25%, rgba(212,175,55,.22), transparent 35%),
+        linear-gradient(rgba(5,10,20,.68), rgba(5,10,20,.88));
+      z-index: 2;
+    }
+
+    
+
+    .hero::before {
+      width: 320px;
+      height: 320px;
+      background: rgba(212,175,55,.18);
+      top: 10%;
+      right: -80px;
+    }
+
+    .hero::after {
+      width: 280px;
+      height: 280px;
+      background: rgba(37,211,102,.10);
+      bottom: 5%;
+      left: -80px;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: rgba(212,175,55,.12);
+      border: 1px solid rgba(212,175,55,.25);
+      color: var(--accent-2);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Omr', 'Tajawal', sans-serif;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 4vw, 4.2rem);
+      line-height: 1.2;
+      letter-spacing: -.5px;
+    }
+
+    .hero p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 720px;
+    }
+
+    .highlight {
+      color: var(--accent-2);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 26px 0 20px;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      padding: 18px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.3rem;
+      color: var(--accent-2);
+      margin-bottom: 4px;
+    }
+
+    .visual {
+      position: relative;
+    }
+
+    .card-hero {
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .camera-box {
+      min-height: 520px;
+      border-radius: 26px;
+      background:
+        linear-gradient(rgba(5, 10, 20, .35), rgba(5, 10, 20, .55)),
+        url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80') center/cover;
+      display: flex;
+      align-items: end;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .camera-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 20%, rgba(0,0,0,.7) 100%);
+    }
+
+    .camera-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .camera-text h3 {
+      margin: 0 0 10px;
+      font-size: 1.6rem;
+    }
+
+    .camera-text p {
+      margin: 0;
+      color: #eef2f8;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 3vw, 2.8rem);
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      transition: .25s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,.35);
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(212,175,55,.14);
+      color: var(--accent-2);
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .feature h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      padding: 14px;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 18px;
+      width: max-content;
+      animation: autoSlide 28s linear infinite;
+    }
+
+    .gallery-wrap:hover .gallery-track {
+      animation-play-state: paused;
+    }
+
+    .gallery-card {
+      position: relative;
+      width: 290px;
+      height: 360px;
+      flex: 0 0 auto;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 40px rgba(0,0,0,.28);
+      background: rgba(255,255,255,.05);
+      transform: translateY(0) scale(1);
+      transition: transform .45s ease, box-shadow .45s ease, border-color .45s ease, filter .45s ease;
+      filter: saturate(.95);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.01);
+      transition: transform .7s ease, filter .5s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-10px) scale(1.03) rotate(-.4deg);
+      box-shadow: 0 28px 55px rgba(0,0,0,.38);
+      border-color: rgba(212,175,55,.42);
+      filter: saturate(1.08);
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.04);
+    }
+
+    .gallery-card::before {
+      content: "";
+      position: absolute;
+      inset: -120% auto auto -40%;
+      width: 55%;
+      height: 300%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+      transform: rotate(18deg);
+      opacity: 0;
+      transition: opacity .35s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .gallery-card:hover::before {
+      opacity: 1;
+      animation: shine 1.1s ease;
+    }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.05) 15%, rgba(0,0,0,.72) 100%);
+    }
+
+    .gallery-label {
+      position: absolute;
+      right: 18px;
+      left: 18px;
+      bottom: 16px;
+      z-index: 2;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      transform: translateY(0);
+      transition: transform .35s ease, opacity .35s ease;
+    }
+
+    .gallery-card:hover .gallery-label {
+      transform: translateY(-4px);
+    }
+
+    .gallery-fade {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 90px;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .gallery-fade.left {
+      left: 0;
+      background: linear-gradient(90deg, rgba(11,18,32,1) 0%, rgba(11,18,32,0) 100%);
+    }
+
+    .gallery-fade.right {
+      right: 0;
+      background: linear-gradient(270deg, rgba(11,18,32,1) 0%, rgba(11,18,32,0) 100%);
+    }
+
+    @keyframes autoSlide {
+      from { transform: translateX(0); }
+      to { transform: translateX(50%); }
+    }
+
+    @keyframes shine {
+      0% { transform: translateX(-140%) rotate(18deg); }
+      100% { transform: translateX(320%) rotate(18deg); }
+    }
+
+    .service-item {
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 40px 24px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(212,175,55,.10), rgba(255,255,255,.05));
+      border: 1px solid rgba(212,175,55,.2);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      margin-top: 0;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 24px;
+    }
+
+    .hashtags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+      text-align: center;
+      color: #b7c2d5;
+      font-size: .95rem;
+    }
+
+    .made-with-love {
+      margin-top: 10px;
+      color: #f7d7dd;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .made-with-love .heart {
+      color: #ff4d6d;
+      font-size: 1.1rem;
+      vertical-align: middle;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--success);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      box-shadow: 0 18px 35px rgba(37,211,102,.35);
+      z-index: 99;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .features,
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card {
+        width: 250px;
+        height: 320px;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .camera-box {
+        min-height: 380px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 20px;
+      }
+
+      .container {
+        width: min(calc(100% - 22px), var(--max));
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .cta-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1502920917128-1aa500764b69?auto=format&fit=crop&w=1600&q=80">
+      <source src="https://cdn.coverr.co/videos/coverr-filmmaker-using-camera-1590/1080p.mp4" type="video/mp4">
+      <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=0d9d9c32d3ca6cb9c0e0a5d6b0f7784af864c69f&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+      متصفحك لا يدعم الفيديو
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container hero-grid" style="position:relative; z-index:3;">
+      <div>
+        <div class="badge">📸 تصوير احترافي في الشرقية والدمام</div>
+        <h1>
+          <span class="highlight">ودك مصور</span><br />
+          يعطيك أفضل جودة وأقل سعر؟
+        </h1>
+        <p>
+          نوفر لك خدمات تصوير احترافية تناسب الأفراد والشركات، بجودة عالية ولمسة إبداعية وسعر منافس.
+          سواء كنت تحتاج تصوير مناسبات، منتجات، إعلانات، فيديو، درون أو تايملابس، حنا جاهزين نخدمك بأفضل مستوى.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/966500000000" target="_blank">تواصل معنا الآن</a>
+          <a class="btn btn-secondary" href="#services">شوف الخدمات</a>
+        </div>
+
+        <div class="mini-stats">
+          <div class="stat">
+            <strong>جودة عالية</strong>
+            تسليم احترافي يليق بعملك ومناسبتك
+          </div>
+          <div class="stat">
+            <strong>أسعار منافسة</strong>
+            عروض مناسبة للأفراد والشركات
+          </div>
+          <div class="stat">
+            <strong>تنوع بالخدمات</strong>
+            تصوير فوتو وفيديو ودرون ومنتجات
+          </div>
+        </div>
+      </div>
+
+      <div class="visual">
+        <div class="card-hero">
+          <div class="camera-box">
+            <div class="camera-text">
+              <h3>لحظاتك تستحق توثيق يليق فيها</h3>
+              <p>احجز الآن واسأل عن العروض الخاصة المتاحة حالياً.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>ليش تختارنا؟</h2>
+        <p>لأننا نجمع بين الجودة، السرعة، والأسعار المناسبة مع خبرة في أنواع تصوير متعددة تخدم الأفراد والجهات التجارية.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">🎥</div>
+          <h3>فريق احترافي</h3>
+          <p>خبرة في تصوير الفيديو والفوتوغرافي والإعلانات والمناسبات باحترافية تبرز التفاصيل بأفضل شكل.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🚁</div>
+          <h3>خيارات تصوير متنوعة</h3>
+          <p>من تصوير الدرون والتايملابس إلى تصوير المنتجات والشركات والحفلات، كل خدمة بتجهيز مناسب ونتيجة قوية.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">💰</div>
+          <h3>أفضل قيمة مقابل السعر</h3>
+          <p>نقدم لك جودة ممتازة بأسعار منافسة مع عروض مستمرة تناسب احتياجك وميزانيتك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>خدماتنا</h2>
+        <p>نغطي أهم مجالات التصوير للأفراد والعلامات التجارية والفعاليات في الشرقية والدمام.</p>
+      </div>
+
+      <div class="services">
+        <div class="service-item">مصور فوتوغرافي</div>
+        <div class="service-item">مصور فيديو</div>
+        <div class="service-item">مصور درون</div>
+        <div class="service-item">مصور تايملابس</div>
+        <div class="service-item">مصور منتجات</div>
+        <div class="service-item">مصور أعراس</div>
+        <div class="service-item">مصور إعلانات</div>
+        <div class="service-item">مصور شركات</div>
+        <div class="service-item">حفلات ومناسبات</div>
+        <div class="service-item">تغطيات خاصة حسب الطلب</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <h2>نماذج من أعمال التصوير</h2>
+        <p>صور توضيحية من الويب تعكس جودة التصوير في مجالات متعددة مثل المناسبات والمنتجات والفيديو والتغطيات الجوية.</p>
+      </div>
+
+      <div class="gallery-wrap">
+        <div class="gallery-fade left"></div>
+        <div class="gallery-fade right"></div>
+        <div class="gallery-track">
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80" alt="تصوير مناسبات احترافي" />
+            <div class="gallery-label">تصوير مناسبات وفعاليات</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="تصوير منتجات احترافي" />
+            <div class="gallery-label">تصوير منتجات وإعلانات</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="تصوير فيديو احترافي" />
+            <div class="gallery-label">تصوير فيديو وإنتاج بصري</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=900&q=80" alt="تصوير درون احترافي" />
+            <div class="gallery-label">تصوير درون ولقطات جوية</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80" alt="تصوير مناسبات احترافي" />
+            <div class="gallery-label">تصوير مناسبات وفعاليات</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="تصوير منتجات احترافي" />
+            <div class="gallery-label">تصوير منتجات وإعلانات</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="تصوير فيديو احترافي" />
+            <div class="gallery-label">تصوير فيديو وإنتاج بصري</div>
+          </div>
+          <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=900&q=80" alt="تصوير درون احترافي" />
+            <div class="gallery-label">تصوير درون ولقطات جوية</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-box">
+        <h2>جاهز تحجز أو تستفسر؟</h2>
+        <p>
+          تواصل معنا الآن وخذ عرضك المناسب. سواء عندك مناسبة خاصة، مشروع تجاري، إعلان، أو تغطية احترافية، بنساعدك تختار الخدمة المناسبة بأفضل جودة وأقل سعر.
+        </p>
+        <div class="cta-row" style="justify-content:center; margin-bottom:0;">
+          <a class="btn btn-primary" href="https://wa.me/966500000000" target="_blank">اسأل عن العروض الآن</a>
+          <a class="btn btn-secondary" href="tel:+966500000000">اتصل بنا</a>
+        </div>
+
+        <div class="hashtags">
+          <span class="tag">#مصور_الشرقية</span>
+          <span class="tag">#مصور_الدمام</span>
+          <span class="tag">#مصور_فوتوغرافي</span>
+          <span class="tag">#مصور_فيديو</span>
+          <span class="tag">#مصور_درون</span>
+          <span class="tag">#مصور_تايملابس</span>
+          <span class="tag">#مصور_منتجات</span>
+          <span class="tag">#مصور_اعراس</span>
+          <span class="tag">#مصور_اعلانات</span>
+          <span class="tag">#مصور_شركات</span>
+          <span class="tag">#حفلات_ومناسبات</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    جميع الحقوق محفوظة © 2026 | تصميم صفحة هبوط لخدمات التصوير الاحترافية
+    <div class="made-with-love">صنع بحب من عبدالله <span class="heart">❤️</span></div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/966500000000" target="_blank" aria-label="واتساب">✆</a>
+  <script>
+    (function () {
+      const video = document.getElementById('heroVideo');
+      if (!video) return;
+
+      const fallbackToImage = () => {
+        video.style.display = 'none';
+      };
+
+      video.addEventListener('error', fallbackToImage);
+      video.addEventListener('stalled', fallbackToImage);
+
+      setTimeout(() => {
+        if (video.readyState < 2) {
+          fallbackToImage();
+        }
+      }, 3500);
+    })();
+  </script>
+</body>
+</html>
