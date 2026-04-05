@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>مؤسسة الأبواب والواجهات الحديثة</title>
+  <meta name="description" content="تصميم وتنفيذ الأبواب والواجهات والشبابيك والنوافذ والشتر والشرائح الوطنية والفوم العازل والزجاج السكريت والألمنيوم الاستركشر بأعلى جودة ولمسة فاخرة." />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- موارد محسنة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://images.unsplash.com" />
+
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    @font-face {
+      font-family: 'Omar';
+      src: url('omar.ttf') format('truetype');
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root{
+      --bg:#f4f6fa;
+      --bg-soft:#ffffff;
+      --bg-muted:#eef2f7;
+      --card:rgba(255,255,255,.88);
+      --card-2:#fbfcfe;
+      --line:rgba(16,24,40,.08);
+      --text:#172033;
+      --muted:#6d7890;
+      --gold:#caa548;
+      --gold-2:#e6d08e;
+      --gold-3:#b88a1f;
+      --accent:#8fa0ba;
+      --green:#25D366;
+      --shadow:0 20px 60px rgba(15,23,42,.08);
+      --shadow-soft:0 10px 30px rgba(15,23,42,.05);
+      --radius:24px;
+      --radius-lg:34px;
+      --transition:all .35s ease;
+      --max:1200px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top right, rgba(230,208,142,.28), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(143,160,186,.10), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafe 45%, #f2f5fa 100%);
+      color:var(--text);
+      font-family:"Tajawal", sans-serif;
+      overflow-x:hidden;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      background:linear-gradient(120deg, rgba(255,255,255,.42), transparent 32%, rgba(255,255,255,.18) 58%, transparent 100%);
+      z-index:-1;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px));margin:auto}
+    .section{padding:92px 0;position:relative}
+
+    h1,h2,h3,h4,.section-title,.plan,.price,.brand,.cta-box h3,.quick-form h3,.slide-caption h3,.hero h1,.stat-number{
+      font-family:"Omar","Cairo","Tajawal",sans-serif;
+    }
+
+    .section-title{
+      font-size:clamp(2rem, 4vw, 3.1rem);
+      font-weight:900;
+      margin:0 0 14px;
+      letter-spacing:.2px;
+      color:#142033;
+    }
+    .section-subtitle{
+      color:var(--muted);
+      max-width:780px;
+      line-height:1.95;
+      font-size:1.06rem;
+      margin:0 auto 22px;
+    }
+    .center{text-align:center}
+
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.85));
+      backdrop-filter: blur(14px);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(16px);
+      background:rgba(255,255,255,.78);
+      border-bottom:1px solid rgba(16,24,40,.06);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      min-height:80px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:900;
+      font-size:1.1rem;
+      color:#132033;
+    }
+    .brand-badge{
+      width:54px;height:54px;border-radius:18px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(230,208,142,.45), rgba(255,255,255,.98));
+      border:1px solid rgba(202,165,72,.22);
+      color:var(--gold-3);
+      box-shadow:0 10px 26px rgba(202,165,72,.14);
+      font-size:1.35rem;
+    }
+    .nav-links{display:flex;gap:22px;flex-wrap:wrap;color:#314056}
+    .nav-links a{transition:var(--transition);font-weight:700}
+    .nav-links a:hover{color:var(--gold-3)}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:none;cursor:pointer;padding:15px 24px;border-radius:18px;
+      font-weight:800;font-family:"Tajawal", sans-serif;font-size:1rem;
+      transition:var(--transition);
+      will-change:transform;
+    }
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg, var(--gold), var(--gold-3));
+      box-shadow:0 12px 30px rgba(202,165,72,.22);
+    }
+    .btn-primary:hover{transform:translateY(-3px) scale(1.01)}
+    .btn-outline{
+      color:#18253a;background:rgba(255,255,255,.84);border:1px solid rgba(16,24,40,.09)
+    }
+    .btn-outline:hover{background:#fff;transform:translateY(-3px)}
+    .btn-whatsapp{
+      background:linear-gradient(135deg, #31e079, var(--green));
+      color:#fff;
+      box-shadow:0 14px 28px rgba(37,211,102,.20);
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        linear-gradient(115deg, rgba(255,255,255,.92), rgba(255,255,255,.64)),
+        url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      transform:scale(1.06);
+      animation:heroZoom 18s ease-in-out infinite alternate;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.58));
+    }
+    @keyframes heroZoom{from{transform:scale(1.04)}to{transform:scale(1.09)}}
+
+    .hero-wrap{position:relative;z-index:1;padding:58px 0 34px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;align-items:center;
+    }
+    .hero-card{
+      border-radius:var(--radius-lg);
+      padding:38px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 24px 60px rgba(15,23,42,.08);
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      width:230px;height:230px;border-radius:50%;
+      background:radial-gradient(circle, rgba(230,208,142,.38), transparent 72%);
+      top:-72px;left:-44px;
+      pointer-events:none;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 16px;border-radius:999px;
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(202,165,72,.16);
+      color:var(--gold-3);
+      font-weight:800;font-size:.95rem;
+      margin-bottom:18px;
+      box-shadow:var(--shadow-soft);
+    }
+    .hero h1{
+      margin:0 0 18px;
+      font-size:clamp(2.3rem, 5vw, 4.8rem);
+      line-height:1.2;
+      font-weight:900;
+      color:#122033;
+    }
+    .hero h1 span{
+      background:linear-gradient(135deg, var(--gold-3), var(--gold-2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+    .hero p{
+      color:#5f6d84;line-height:2;font-size:1.08rem;margin:0 0 26px;max-width:760px;
+    }
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+
+    .hero-bullets{
+      display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:14px;
+      margin-top:8px;
+    }
+    .hero-bullet{
+      padding:16px 18px;border-radius:18px;
+      background:rgba(255,255,255,.78);border:1px solid rgba(16,24,40,.06);
+      color:#223049;font-weight:700;box-shadow:var(--shadow-soft)
+    }
+
+    .quick-form{
+      border-radius:32px;
+      padding:30px;
+      box-shadow:0 24px 60px rgba(15,23,42,.08);
+    }
+    .quick-form h3{margin:0 0 8px;font-size:1.75rem;color:#142033}
+    .quick-form p{margin:0 0 20px;color:var(--muted);line-height:1.9}
+    .form-group{margin-bottom:14px}
+    .input,.textarea,.select{
+      width:100%;padding:16px 18px;border-radius:16px;border:1px solid rgba(16,24,40,.08);
+      background:#fff;color:#18253a;font-family:"Tajawal", sans-serif;font-size:1rem;
+      outline:none;transition:var(--transition);box-shadow:inset 0 1px 0 rgba(255,255,255,.8)
+    }
+    .input:focus,.textarea:focus,.select:focus{border-color:rgba(202,165,72,.7);box-shadow:0 0 0 4px rgba(202,165,72,.12)}
+    .textarea{min-height:110px;resize:vertical}
+    ::placeholder{color:#97a2b6}
+
+    .stats-strip{margin-top:-38px;position:relative;z-index:2}
+    .stats-grid{display:grid;grid-template-columns:repeat(4, 1fr);gap:16px}
+    .stat{padding:28px 20px;border-radius:24px;text-align:center}
+    .stat-number{display:block;font-size:2.1rem;font-weight:900;color:var(--gold-3);margin-bottom:6px}
+    .stat-label{color:#4f5d75;font-weight:700}
+
+    .marquee{
+      border-top:1px solid rgba(16,24,40,.05);
+      border-bottom:1px solid rgba(16,24,40,.05);
+      background:linear-gradient(90deg, rgba(230,208,142,.20), rgba(255,255,255,.85), rgba(143,160,186,.08));
+      overflow:hidden;white-space:nowrap;
+    }
+    .marquee-track{display:flex;gap:22px;width:max-content;padding:18px 0;animation:marquee 26s linear infinite}
+    .marquee-item{
+      display:flex;align-items:center;gap:10px;
+      padding:12px 18px;border-radius:999px;
+      background:rgba(255,255,255,.95);border:1px solid rgba(16,24,40,.06);
+      font-weight:800;color:#243148;box-shadow:var(--shadow-soft)
+    }
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+    .service-card{border-radius:26px;padding:26px;position:relative;overflow:hidden;transition:var(--transition)}
+    .service-card:hover{transform:translateY(-8px)}
+    .service-card::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(160deg, rgba(230,208,142,.18), transparent 45%, rgba(143,160,186,.08));
+      opacity:.95;pointer-events:none
+    }
+    .service-icon{
+      width:62px;height:62px;border-radius:18px;display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(230,208,142,.56), rgba(255,255,255,.98));
+      border:1px solid rgba(202,165,72,.20);font-size:1.55rem;margin-bottom:18px;color:var(--gold-3);box-shadow:var(--shadow-soft)
+    }
+    .service-card h3{margin:0 0 10px;font-size:1.38rem;color:#152236}
+    .service-card p{margin:0;color:var(--muted);line-height:1.95}
+
+    .slider-wrap{margin-top:38px}
+    .slider-shell{position:relative;border-radius:34px;overflow:hidden;box-shadow:0 22px 60px rgba(15,23,42,.10);border:1px solid rgba(16,24,40,.06)}
+    .slides{display:flex;transition:transform .9s ease}
+    .slide{min-width:100%;position:relative;height:540px}
+    .slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+    .slide-overlay{
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(19,32,51,.42));
+      display:flex;align-items:end;padding:36px
+    }
+    .slide-caption{
+      max-width:620px;padding:24px;border-radius:24px;
+      background:rgba(255,255,255,.84);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.48);box-shadow:var(--shadow-soft)
+    }
+    .slide-caption h3{margin:0 0 8px;font-size:1.8rem;color:#152236}
+    .slide-caption p{margin:0;color:#56647b;line-height:1.9}
+    .slider-dots{display:flex;justify-content:center;gap:10px;margin-top:18px}
+    .dot{width:12px;height:12px;border-radius:50%;background:rgba(23,32,51,.18);cursor:pointer;transition:var(--transition);border:none}
+    .dot.active{width:34px;border-radius:999px;background:linear-gradient(135deg, var(--gold), var(--gold-3))}
+
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+    .price-card{padding:30px;border-radius:28px;position:relative;overflow:hidden;transition:var(--transition)}
+    .price-card.popular{transform:translateY(-8px);border:1px solid rgba(202,165,72,.26);box-shadow:0 20px 50px rgba(202,165,72,.10)}
+    .badge{
+      position:absolute;top:18px;left:18px;padding:10px 14px;border-radius:999px;
+      background:linear-gradient(135deg, var(--gold-2), var(--gold));color:#4a3305;font-weight:900;font-size:.9rem
+    }
+    .plan{font-size:1.65rem;font-weight:900;margin:0 0 12px;color:#152236}
+    .price{font-size:2.7rem;font-weight:900;color:var(--gold-3);margin:0 0 12px}
+    .price small{font-size:1rem;color:#5e6b80}
+    .price-desc{color:var(--muted);line-height:1.9;margin-bottom:18px}
+    .features{display:grid;gap:12px;margin:20px 0 26px}
+    .features span{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.88);border:1px solid rgba(16,24,40,.06);font-weight:700;color:#243148;box-shadow:var(--shadow-soft)}
+
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+    .review-card{padding:26px;border-radius:24px;transition:var(--transition)}
+    .review-card:hover{transform:translateY(-6px)}
+    .stars{color:#d4af37;font-size:1.2rem;letter-spacing:2px;margin-bottom:12px}
+    .review-card p{color:#435168;line-height:2;margin:0 0 16px}
+    .review-user{font-weight:800;color:#172033}
+    .review-role{color:var(--muted);font-size:.95rem;margin-top:4px}
+
+    .faq-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+    .faq-item{border-radius:22px;overflow:hidden}
+    .faq-question{
+      width:100%;background:rgba(255,255,255,.92);border:none;color:#172033;padding:22px 24px;
+      display:flex;justify-content:space-between;align-items:center;font-size:1.04rem;font-weight:800;font-family:"Tajawal", sans-serif;cursor:pointer
+    }
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 24px;background:rgba(248,250,254,.96)}
+    .faq-answer p{margin:0;padding:0 0 22px;color:#5c6a7f;line-height:1.95}
+    .faq-item.active .faq-answer{max-height:220px}
+    .faq-item.active .faq-question{color:var(--gold-3)}
+
+    .cta-box{
+      padding:36px;border-radius:34px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-top:40px;
+      background:linear-gradient(135deg, rgba(255,255,255,.96), rgba(250,252,255,.92));
+    }
+    .cta-box h3{font-size:2rem;margin:0 0 10px;color:#152236}
+    .cta-box p{margin:0;color:var(--muted);line-height:1.9;max-width:760px}
+
+    .footer{padding:34px 0 24px;border-top:1px solid rgba(16,24,40,.06);margin-top:40px}
+    .footer-inner{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;color:#4f5c73}
+    .made{font-weight:800;color:#172033}
+    .made span{color:#ff5c7a}
+
+    .floating-whatsapp{
+      position:fixed;left:22px;bottom:22px;z-index:1000;
+      width:62px;height:62px;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg, #31e079, var(--green));
+      color:#fff;font-size:1.55rem;box-shadow:0 18px 35px rgba(37,211,102,.24);animation:pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(37,211,102,.35)}
+      70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+    }
+
+    .reveal{opacity:0;transform:translateY(26px);transition:.8s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    .hero-card,.quick-form,.stat,.service-card,.price-card,.review-card,.faq-item,.cta-box,.slider-shell{content-visibility:auto;contain-intrinsic-size:1px 800px}
+
+    @media (max-width:1100px){
+      .hero-grid,.faq-wrap{grid-template-columns:1fr}
+      .stats-grid,.services-grid,.pricing-grid,.reviews-grid{grid-template-columns:repeat(2,1fr)}
+      .slide{height:470px}
+    }
+    @media (max-width:768px){
+      .nav{padding:12px 0}
+      .nav-links{display:none}
+      .hero{min-height:auto;padding:24px 0 44px}
+      .hero-card,.quick-form{padding:24px}
+      .hero-bullets,.stats-grid,.services-grid,.pricing-grid,.reviews-grid{grid-template-columns:1fr}
+      .slide{height:390px}
+      .slide-overlay{padding:18px}
+      .slide-caption{padding:18px}
+      .cta-box{padding:24px}
+      .section{padding:74px 0}
+      .stats-strip{margin-top:0;padding-top:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge">▣</div>
+        <div>
+          <div>مؤسسة الأبواب والواجهات الحديثة</div>
+          <small style="color:#7b879b;font-weight:600">تصميم راقٍ • تنفيذ متقن • جودة تدوم</small>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#services">الخدمات</a>
+        <a href="#gallery">الأعمال</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="#reviews">آراء العملاء</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+        <a href="#contact">اطلب الآن</a>
+      </div>
+
+      <a class="btn btn-whatsapp" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20بطلب%20تصميم%20وتنفيذ%20أبواب%20وواجهات%20وشبابيك%20ونوافذ%20وشتر%20ومعرفة%20الأسعار" target="_blank" rel="noopener">واتساب الآن</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container hero-wrap">
+      <div class="hero-grid">
+        <div class="hero-card glass reveal">
+          <div class="eyebrow">حلول هندسية أنيقة • جودة عالية • تنفيذ يليق بمشروعك</div>
+          <h1>واجهات وأبواب وشبابيك <span>بمستوى يرفع قيمة مشروعك</span></h1>
+          <p>
+            نمنح منزلك أو مشروعك التجاري لمسة أكثر فخامة من خلال تنفيذ احترافي للأبواب والواجهات والشبابيك والنوافذ والشتر والشرائح الوطنية والفوم العازل والزجاج السكريت وأعمال الألمنيوم الاستركشر، مع عناية دقيقة بالتفاصيل وجودة تظهر من أول نظرة وتدوم لسنوات.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">اطلب عرض سعر الآن</a>
+            <a href="#gallery" class="btn btn-outline">شاهد نماذج الأعمال</a>
+          </div>
+
+          <div class="hero-bullets">
+            <div class="hero-bullet">✅ تصميم وتنفيذ حسب المقاس والطلب</div>
+            <div class="hero-bullet">✅ خامات عالية الجودة ومظهر فاخر</div>
+            <div class="hero-bullet">✅ حلول عزل ترفع الراحة والخصوصية</div>
+            <div class="hero-bullet">✅ مناسب للفلل والمنازل والمحلات والمشاريع</div>
+          </div>
+        </div>
+
+        <div class="quick-form glass reveal" id="contact">
+          <h3>اطلب عرضك الآن</h3>
+          <p>شاركنا تفاصيل الطلب وسنجهز لك عرضًا مناسبًا بسرعة، مع متابعة واضحة من أول تواصل حتى التنفيذ.</p>
+
+          <div class="form-group">
+            <input class="input" type="text" id="name" placeholder="الاسم" />
+          </div>
+          <div class="form-group">
+            <input class="input" type="tel" id="phone" placeholder="رقم الجوال" />
+          </div>
+          <div class="form-group">
+            <select class="select" id="service">
+              <option value="">اختر الخدمة المطلوبة</option>
+              <option>أبواب ألمنيوم</option>
+              <option>واجهات زجاج وألمنيوم</option>
+              <option>شبابيك ونوافذ</option>
+              <option>شتر وشرائح وطنية</option>
+              <option>فوم وعوازل</option>
+              <option>أعمال استركشر</option>
+              <option>زجاج سكريت</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea class="textarea" id="details" placeholder="اكتب المقاسات، الموقع، نوع الخدمة، وأي تفاصيل تساعدنا نخدمك بشكل أدق..."></textarea>
+          </div>
+          <button class="btn btn-whatsapp" style="width:100%" onclick="sendWhatsAppForm()">إرسال الطلب عبر واتساب</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat glass reveal">
+          <span class="stat-number" data-target="350">0</span>
+          <div class="stat-label">مشروع تم إنجازه</div>
+        </div>
+        <div class="stat glass reveal">
+          <span class="stat-number" data-target="15">0</span>
+          <div class="stat-label">عامًا من الخبرة</div>
+        </div>
+        <div class="stat glass reveal">
+          <span class="stat-number" data-target="98">0</span>
+          <div class="stat-label">نسبة رضا العملاء %</div>
+        </div>
+        <div class="stat glass reveal">
+          <span class="stat-number" data-target="24">0</span>
+          <div class="stat-label">ساعة استجابة سريعة</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-item">واجهات زجاج وألمنيوم</div>
+      <div class="marquee-item">أبواب حسب الطلب</div>
+      <div class="marquee-item">شبابيك ونوافذ</div>
+      <div class="marquee-item">شتر وشرائح وطنية</div>
+      <div class="marquee-item">فوم عازل غبار</div>
+      <div class="marquee-item">عزل صوت وحرارة</div>
+      <div class="marquee-item">عزل ماء احترافي</div>
+      <div class="marquee-item">زجاج سكريت</div>
+      <div class="marquee-item">سلكون ألماني</div>
+      <div class="marquee-item">إكسسوارات عالية الجودة</div>
+      <div class="marquee-item">واجهات زجاج وألمنيوم</div>
+      <div class="marquee-item">أبواب حسب الطلب</div>
+      <div class="marquee-item">شبابيك ونوافذ</div>
+      <div class="marquee-item">شتر وشرائح وطنية</div>
+      <div class="marquee-item">فوم عازل غبار</div>
+      <div class="marquee-item">عزل صوت وحرارة</div>
+      <div class="marquee-item">عزل ماء احترافي</div>
+      <div class="marquee-item">زجاج سكريت</div>
+    </div>
+  </div>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="center reveal">
+        <h2 class="section-title">خدمات متكاملة تمنح مشروعك حضورًا أقوى</h2>
+        <p class="section-subtitle">نوفر حلولًا تجمع بين الجمال العملي، جودة التنفيذ، ودقة التفاصيل حتى تحصل على نتيجة تليق بمساحتك وتزيد من قيمة العقار أو المشروع.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card glass reveal">
+          <div class="service-icon">◫</div>
+          <h3>الأبواب والبوابات</h3>
+          <p>تصميم وتنفيذ أبواب خارجية وداخلية بمقاسات خاصة وتشطيبات عصرية تناسب الفلل والمباني التجارية والمشاريع السكنية.</p>
+        </div>
+        <div class="service-card glass reveal">
+          <div class="service-icon">▥</div>
+          <h3>الواجهات الزجاجية</h3>
+          <p>واجهات أنيقة بزجاج سكريت وأنظمة تثبيت احترافية تمنح المبنى مظهرًا فاخرًا ومتانة عالية واعتمادية طويلة.</p>
+        </div>
+        <div class="service-card glass reveal">
+          <div class="service-icon">▤</div>
+          <h3>الشبابيك والنوافذ</h3>
+          <p>حلول عزل وعملية وجمالية في نفس الوقت، مع خيارات متنوعة في المقاسات والتصميم والإكسسوارات.</p>
+        </div>
+        <div class="service-card glass reveal">
+          <div class="service-icon">▧</div>
+          <h3>الشتر والشرائح الوطنية</h3>
+          <p>أنظمة شتر وشرائح عالية الجودة تمنحك الخصوصية والحماية والمظهر المنظم مع تشغيل سلس واعتمادية ممتازة.</p>
+        </div>
+        <div class="service-card glass reveal">
+          <div class="service-icon">◈</div>
+          <h3>الفوم والعوازل</h3>
+          <p>فوم عازل للغبار والصوت والحرارة والماء لرفع الراحة داخل المبنى وتحسين العزل وتقليل التأثر بالعوامل الخارجية.</p>
+        </div>
+        <div class="service-card glass reveal">
+          <div class="service-icon">▣</div>
+          <h3>أعمال الألمنيوم الاستركشر</h3>
+          <p>تصميم وتنفيذ أنظمة ألمنيوم استركشر وقطاعات عالية الجودة للمشاريع التي تتطلب فخامة ودقة واستدامة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="center reveal">
+        <h2 class="section-title">أعمال تعكس الذوق والجودة من أول نظرة</h2>
+        <p class="section-subtitle">نماذج تنفيذ مختارة لتوضح مستوى التشطيب، أناقة التفاصيل، والهوية البصرية التي تضيفها الواجهات والأبواب والشبابيك الراقية.</p>
+      </div>
+
+      <div class="slider-wrap reveal">
+        <div class="slider-shell">
+          <div class="slides" id="slides">
+            <div class="slide">
+              <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=80" alt="واجهات حديثة" />
+              <div class="slide-overlay">
+                <div class="slide-caption">
+                  <h3>واجهات زجاجية أنيقة</h3>
+                  <p>حلول واجهات ترفع قيمة المشروع بصريًا وتمنحه حضورًا فاخرًا من أول نظرة.</p>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1400&q=80" alt="نوافذ وشبابيك" />
+              <div class="slide-overlay">
+                <div class="slide-caption">
+                  <h3>شبابيك ونوافذ بعزل محسّن</h3>
+                  <p>تنفيذ احترافي يمنحك الهدوء والراحة وجودة الإغلاق والعزل في مختلف الاستخدامات.</p>
+                </div>
+              </div>
+            </div>
+            <div class="slide">
+              <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=80" alt="أبواب وتشطيبات" />
+              <div class="slide-overlay">
+                <div class="slide-caption">
+                  <h3>أبواب وتشطيبات بطابع فاخر</h3>
+                  <p>دقة في التفاصيل وخامات قوية ولمسات تصميم تليق بالمشاريع السكنية والتجارية.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-dots" id="sliderDots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="center reveal">
+        <h2 class="section-title">باقات مرنة تناسب احتياجك وميزانيتك</h2>
+        <p class="section-subtitle">اختر الباقة المناسبة لك، أو اطلب عرضًا خاصًا إذا كان مشروعك يحتاج تفاصيل تنفيذ ومقاسات مخصصة.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card glass reveal">
+          <h3 class="plan">الباقة الأساسية</h3>
+          <div class="price">يبدأ من <small>950 ر.س</small></div>
+          <div class="price-desc">مثالية للطلبات الأساسية التي تحتاج مظهرًا أنيقًا وتنفيذًا مرتبًا بسعر مناسب.</div>
+          <div class="features">
+            <span>قياس مبدئي وتحديد الاحتياج</span>
+            <span>تنفيذ عملي بخامات ممتازة</span>
+            <span>خيارات أبواب أو شبابيك بسيطة</span>
+            <span>متابعة حتى التسليم</span>
+          </div>
+          <a class="btn btn-outline" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20بمعرفة%20تفاصيل%20الباقة%20الأساسية" target="_blank" rel="noopener">استفسر الآن</a>
+        </div>
+
+        <div class="price-card glass popular reveal">
+          <div class="badge">الأكثر طلبًا</div>
+          <h3 class="plan">الباقة المتقدمة</h3>
+          <div class="price">يبدأ من <small>2,500 ر.س</small></div>
+          <div class="price-desc">الخيار الأفضل لمن يبحث عن فخامة أوضح، تشطيب أرقى، وقيمة أعلى للمساحة.</div>
+          <div class="features">
+            <span>خامات أعلى وتشطيب أفخم</span>
+            <span>إمكانية إضافة عزل صوت وحرارة</span>
+            <span>تصميم حسب المقاس والموقع</span>
+            <span>تنفيذ واجهات أو نوافذ أو شتر</span>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20بمعرفة%20تفاصيل%20الباقة%20المتقدمة" target="_blank" rel="noopener">اطلب هذه الباقة</a>
+        </div>
+
+        <div class="price-card glass reveal">
+          <h3 class="plan">باقة المشاريع</h3>
+          <div class="price">حسب <small>المعاينة</small></div>
+          <div class="price-desc">مخصصة للمشاريع الكبيرة والتنفيذات الخاصة التي تحتاج دراسة أدق وحلولًا أكثر شمولية.</div>
+          <div class="features">
+            <span>دراسة احتياج المشروع</span>
+            <span>حلول خاصة بالمقاسات والمخططات</span>
+            <span>واجهات + أبواب + شبابيك + عوازل</span>
+            <span>عرض سعر مفصل وجدول تنفيذ</span>
+          </div>
+          <a class="btn btn-outline" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20بعرض%20سعر%20لباقة%20المشاريع" target="_blank" rel="noopener">اطلب عرض سعر</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="center reveal">
+        <h2 class="section-title">ثقة عملائنا هي أكبر شهادة لنا</h2>
+        <p class="section-subtitle">كل مشروع ننفذه هو انعكاس لالتزامنا بالجودة والدقة والنتيجة التي يتطلع لها العميل.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card glass reveal">
+          <div class="stars">★★★★★</div>
+          <p>تعامل راقٍ جدًا، التنفيذ كان نظيف والواجهة طلعت أفخم من المتوقع. الالتزام بالمواعيد ممتاز والجودة واضحة من أول لمسة.</p>
+          <div class="review-user">أبو خالد</div>
+          <div class="review-role">مالك فيلا سكنية</div>
+        </div>
+        <div class="review-card glass reveal">
+          <div class="stars">★★★★★</div>
+          <p>ركبوا الشبابيك والشتر باحترافية عالية، والعزل فرق معنا بشكل كبير. أنصح فيهم خصوصًا للي يدور جودة وشكل فاخر.</p>
+          <div class="review-user">أم راكان</div>
+          <div class="review-role">عميلة مشروع سكني</div>
+        </div>
+        <div class="review-card glass reveal">
+          <div class="stars">★★★★★</div>
+          <p>نفذوا لنا واجهة متجر وزجاج سكريت بمظهر ممتاز جدًا. شغل مرتب وتفاصيل محسوبة وتعاملهم سريع وواضح من البداية.</p>
+          <div class="review-user">مؤسسة تجارية</div>
+          <div class="review-role">واجهة محل</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="center reveal">
+        <h2 class="section-title">كل ما تحتاج معرفته قبل بدء التنفيذ</h2>
+        <p class="section-subtitle">أجبنا عن أكثر الأسئلة التي يطرحها العملاء حتى تكون الصورة واضحة من البداية.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div>
+          <div class="faq-item glass reveal active">
+            <button class="faq-question">هل الأسعار ثابتة أم تختلف حسب المقاسات؟ <span>＋</span></button>
+            <div class="faq-answer"><p>الأسعار الظاهرة في الصفحة أسعار ابتدائية، وتختلف حسب المقاسات، نوع الخامة، سماكة الزجاج، نوع العزل، وموقع المشروع والتفاصيل التنفيذية المطلوبة.</p></div>
+          </div>
+          <div class="faq-item glass reveal">
+            <button class="faq-question">هل توفرون معاينة أو استشارة قبل التنفيذ؟ <span>＋</span></button>
+            <div class="faq-answer"><p>نعم، يتم تقديم استشارة أولية وتحديد الاحتياج، وفي المشاريع المناسبة يمكن ترتيب معاينة لتجهيز عرض سعر أدق وخطة تنفيذ مناسبة.</p></div>
+          </div>
+          <div class="faq-item glass reveal">
+            <button class="faq-question">ما أنواع العزل المتوفرة؟ <span>＋</span></button>
+            <div class="faq-answer"><p>نوفر حلول عزل متنوعة تشمل عزل الغبار، عزل الصوت، عزل الحرارة، وعزل الماء، ويتم اختيار الأنسب حسب طبيعة الموقع ونوع التركيب والخامة.</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="faq-item glass reveal">
+            <button class="faq-question">هل تنفذون للمنازل والمحلات والمشاريع؟ <span>＋</span></button>
+            <div class="faq-answer"><p>نعم، التنفيذ يشمل المنازل والفلل والمحلات والمباني التجارية والمشاريع الخاصة، مع إمكانية تفصيل العمل حسب المخطط أو الطلب الخاص.</p></div>
+          </div>
+          <div class="faq-item glass reveal">
+            <button class="faq-question">كم تستغرق مدة التنفيذ؟ <span>＋</span></button>
+            <div class="faq-answer"><p>مدة التنفيذ تعتمد على حجم المشروع وطبيعة الخامات والتفاصيل المطلوبة، ويتم توضيح المدة المتوقعة بشكل واضح قبل بدء العمل.</p></div>
+          </div>
+          <div class="faq-item glass reveal">
+            <button class="faq-question">كيف أطلب بسرعة؟ <span>＋</span></button>
+            <div class="faq-answer"><p>يمكنك تعبئة نموذج الطلب المباشر داخل الصفحة أو الضغط على أي زر واتساب لإرسال رسالة جاهزة تتضمن نوع الخدمة المطلوبة وتفاصيل المشروع.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-box glass reveal">
+        <div>
+          <h3>ابدأ الآن وخذ عرضًا يناسب مشروعك</h3>
+          <p>سواء كنت تبحث عن واجهة تلفت الانتباه، أبواب عملية بمظهر فاخر، أو شبابيك ونوافذ بعزل أفضل، نحن جاهزون لتقديم حل يليق بمشروعك من حيث الجودة والشكل والسعر.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20بالحصول%20على%20عرض%20سعر%20لمشروعي" class="btn btn-whatsapp" target="_blank" rel="noopener">تواصل واتساب</a>
+          <a href="#contact" class="btn btn-primary">أرسل تفاصيل المشروع</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>مؤسسة الأبواب والواجهات الحديثة</strong><br />
+        <span style="color:#7d899d">جودة تنفيذ • خامات ممتازة • لمسة فاخرة</span>
+      </div>
+      <div class="made">صنع بحب من عبدالله <span>❤️</span></div>
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20بالاستفسار%20عن%20خدمات%20الأبواب%20والواجهات" target="_blank" rel="noopener" aria-label="واتساب">✆</a>
+
+  <script>
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, {threshold:0.14});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    const counters = document.querySelectorAll('.stat-number');
+    let counterStarted = false;
+    const counterObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting && !counterStarted){
+          counterStarted = true;
+          counters.forEach(counter=>{
+            const target = +counter.dataset.target;
+            const duration = 1800;
+            const stepTime = 16;
+            let current = 0;
+            const increment = target / (duration / stepTime);
+            const update = () => {
+              current += increment;
+              if(current < target){
+                counter.textContent = Math.ceil(current);
+                requestAnimationFrame(update);
+              } else {
+                counter.textContent = target;
+              }
+            };
+            update();
+          });
+        }
+      });
+    }, {threshold:.45});
+    if(document.querySelector('.stats-grid')) counterObserver.observe(document.querySelector('.stats-grid'));
+
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    const dotsWrap = document.getElementById('sliderDots');
+    let currentSlide = 0;
+
+    for(let i=0;i<totalSlides;i++){
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i===0 ? ' active' : '');
+      dot.addEventListener('click', ()=>goToSlide(i));
+      dotsWrap.appendChild(dot);
+    }
+    const dots = document.querySelectorAll('.dot');
+
+    function goToSlide(index){
+      currentSlide = index;
+      slides.style.transform = `translateX(${index * -100}%)`;
+      dots.forEach((dot, i)=>dot.classList.toggle('active', i===index));
+    }
+
+    setInterval(()=>{
+      currentSlide = (currentSlide + 1) % totalSlides;
+      goToSlide(currentSlide);
+    }, 4500);
+
+    document.querySelectorAll('.faq-question').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const item = btn.parentElement;
+        document.querySelectorAll('.faq-item').forEach(faq=>{
+          if(faq !== item) faq.classList.remove('active');
+        });
+        item.classList.toggle('active');
+      });
+    });
+
+    function sendWhatsAppForm(){
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value.trim();
+      const details = document.getElementById('details').value.trim();
+
+      const message = `السلام عليكم، أود طلب خدمة جديدة:%0A%0Aالاسم: ${name || '-'}%0Aرقم الجوال: ${phone || '-'}%0Aالخدمة المطلوبة: ${service || '-'}%0Aتفاصيل الطلب: ${details || '-'}%0A%0Aأرغب بمعرفة السعر والمدة المتوقعة.`;
+      window.open(`https://wa.me/966500000000?text=${message}`, '_blank');
+    }
+  </script>
+</body>
+</html>
