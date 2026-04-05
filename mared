@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تصميم وتنفيذ المعارض والمؤتمرات والبوثات</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070b12;
+      --bg2:#0d1420;
+      --card:#121b29;
+      --card2:#182335;
+      --gold:#d4af37;
+      --gold2:#f2d06b;
+      --text:#ffffff;
+      --muted:#c9d1db;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 18px 45px rgba(0,0,0,.28);
+      --radius:24px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Tajawal", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,.08), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(255,255,255,.04), transparent 18%),
+        linear-gradient(180deg, #05080d 0%, #0a1018 45%, #060a10 100%);
+      overflow-x:hidden;
+    }
+
+    h1,h2,h3,h4,h5,.logo,.btn,.section-badge,.price{
+      font-family:"Cairo", sans-serif;
+      font-weight:800;
+    }
+
+    a{ text-decoration:none; color:inherit; }
+    img{ display:block; width:100%; }
+
+    .container{
+      width:min(92%, 1220px);
+      margin:auto;
+    }
+
+    /* navbar */
+    .navbar{
+      position:fixed;
+      top:0;
+      right:0;
+      width:100%;
+      z-index:999;
+      background:rgba(6,10,16,.7);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:28px;
+      color:#fff;
+    }
+
+    .logo span{
+      color:var(--gold2);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      flex-wrap:wrap;
+    }
+
+    .nav-links a{
+      color:#eaf0f6;
+      font-size:16px;
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold2);
+    }
+
+    .nav-btn{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#111;
+      padding:13px 22px;
+      border-radius:16px;
+      box-shadow:0 12px 28px rgba(212,175,55,.24);
+      transition:.25s;
+      font-size:15px;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    /* hero */
+    .hero{
+      min-height:100vh;
+      padding:130px 0 80px;
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to left, rgba(5,8,13,.9), rgba(5,8,13,.55)),
+        url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      z-index:-3;
+      transform:scale(1.04);
+      animation:heroZoom 16s ease-in-out infinite alternate;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(212,175,55,.12), transparent 24%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,.05), transparent 18%);
+      z-index:-2;
+    }
+
+    @keyframes heroZoom{
+      from{transform:scale(1.02);}
+      to{transform:scale(1.08);}
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    .hero-badge{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:var(--gold2);
+      margin-bottom:18px;
+      font-size:14px;
+    }
+
+    .hero h1{
+      font-size:clamp(34px,5vw,64px);
+      line-height:1.25;
+      margin-bottom:18px;
+    }
+
+    .hero p{
+      font-size:clamp(17px,2vw,21px);
+      color:var(--muted);
+      line-height:1.95;
+      margin-bottom:28px;
+      max-width:760px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:26px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:15px 24px;
+      border-radius:18px;
+      transition:.28s;
+      font-size:16px;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#111;
+      box-shadow:0 14px 34px rgba(212,175,55,.28);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-3px);
+    }
+
+    .btn-outline{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff;
+    }
+
+    .btn-outline:hover{
+      background:rgba(255,255,255,.1);
+    }
+
+    .hero-tags{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .tag{
+      padding:10px 15px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.1);
+      color:#eef3f8;
+      font-size:14px;
+    }
+
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      top:-70px;
+      left:-70px;
+      width:200px;
+      height:200px;
+      background:radial-gradient(circle, rgba(242,208,107,.22), transparent 65%);
+      pointer-events:none;
+    }
+
+    .hero-card h3{
+      font-size:28px;
+      color:var(--gold2);
+      margin-bottom:14px;
+    }
+
+    .hero-card p{
+      font-size:16px;
+      margin-bottom:18px;
+    }
+
+    .hero-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .hero-list li{
+      list-style:none;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      padding:14px 16px;
+      border-radius:16px;
+      color:#f0f5fb;
+      font-size:15px;
+    }
+
+    /* marquee */
+    .marquee-wrap{
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      background:rgba(255,255,255,.03);
+      overflow:hidden;
+      white-space:nowrap;
+    }
+
+    .marquee{
+      display:inline-block;
+      min-width:100%;
+      padding:16px 0;
+      animation:marquee 24s linear infinite;
+    }
+
+    .marquee span{
+      display:inline-block;
+      margin-left:34px;
+      color:#f2f5f8;
+      font-size:17px;
+    }
+
+    .marquee strong{
+      color:var(--gold2);
+    }
+
+    @keyframes marquee{
+      from{ transform:translateX(0); }
+      to{ transform:translateX(-50%); }
+    }
+
+    /* common */
+    .section{
+      padding:90px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:44px;
+    }
+
+    .section-badge{
+      display:inline-block;
+      color:var(--gold2);
+      margin-bottom:10px;
+      font-size:15px;
+    }
+
+    .section-head h2{
+      font-size:clamp(28px,4vw,44px);
+      margin-bottom:12px;
+    }
+
+    .section-head p{
+      max-width:780px;
+      margin:auto;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.95;
+    }
+
+    /* stats */
+    .stats{
+      margin-top:-30px;
+      position:relative;
+      z-index:5;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .stat-box{
+      background:linear-gradient(180deg, rgba(18,27,41,.96), rgba(9,14,21,.96));
+      border:1px solid var(--line);
+      border-radius:24px;
+      text-align:center;
+      padding:25px 18px;
+      box-shadow:var(--shadow);
+    }
+
+    .stat-box h3{
+      font-size:34px;
+      color:var(--gold2);
+      margin-bottom:8px;
+    }
+
+    .stat-box p{
+      color:#d5dce5;
+      font-size:16px;
+    }
+
+    /* services */
+    .services-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .service-card{
+      background:linear-gradient(180deg,#101927,#0b1420);
+      border:1px solid var(--line);
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:.3s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .service-image{
+      height:235px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .service-image img{
+      height:100%;
+      object-fit:cover;
+      transition:transform .7s ease;
+    }
+
+    .service-card:hover .service-image img{
+      transform:scale(1.08);
+    }
+
+    .service-content{
+      padding:22px;
+    }
+
+    .service-content h3{
+      font-size:23px;
+      margin-bottom:10px;
+    }
+
+    .service-content p{
+      color:var(--muted);
+      line-height:1.9;
+      font-size:16px;
+    }
+
+    /* slider */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+    }
+
+    .slides{
+      display:flex;
+      width:400%;
+      animation:slideShow 18s infinite;
+    }
+
+    .slide{
+      width:100%;
+      flex:0 0 100%;
+      position:relative;
+      min-height:460px;
+    }
+
+    .slide img{
+      width:100%;
+      height:460px;
+      object-fit:cover;
+    }
+
+    .slide-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,.18));
+      display:flex;
+      align-items:flex-end;
+      padding:28px;
+    }
+
+    .slide-overlay h3{
+      font-size:30px;
+      line-height:1.5;
+    }
+
+    @keyframes slideShow{
+      0%,20% { transform:translateX(0); }
+      25%,45% { transform:translateX(100%); }
+      50%,70% { transform:translateX(200%); }
+      75%,95% { transform:translateX(300%); }
+      100% { transform:translateX(0); }
+    }
+
+    /* pricing */
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .price-card{
+      background:linear-gradient(180deg,#101927,#0b1320);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px 24px;
+      box-shadow:var(--shadow);
+      position:relative;
+      transition:.3s;
+    }
+
+    .price-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .price-card.featured{
+      border:1px solid rgba(242,208,107,.35);
+      transform:scale(1.03);
+      background:linear-gradient(180deg,#142033,#0c1420);
+    }
+
+    .ribbon{
+      position:absolute;
+      top:18px;
+      left:18px;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#111;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .plan-name{
+      font-size:25px;
+      margin-bottom:12px;
+    }
+
+    .price{
+      font-size:42px;
+      color:var(--gold2);
+      margin-bottom:8px;
+    }
+
+    .price small{
+      font-size:18px;
+      color:#d9e0e8;
+      font-family:"Tajawal", sans-serif;
+    }
+
+    .plan-desc{
+      color:var(--muted);
+      line-height:1.9;
+      margin-bottom:18px;
+      font-size:16px;
+    }
+
+    .plan-features{
+      display:grid;
+      gap:12px;
+      margin-bottom:24px;
+    }
+
+    .plan-features li{
+      list-style:none;
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+      color:#eef3f8;
+      font-size:15px;
+    }
+
+    /* reviews */
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .review-card{
+      background:linear-gradient(180deg,#111b29,#0b131e);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .stars{
+      color:#ffd34f;
+      font-size:24px;
+      letter-spacing:2px;
+      margin-bottom:14px;
+    }
+
+    .review-card p{
+      color:var(--muted);
+      line-height:1.95;
+      margin-bottom:16px;
+      font-size:16px;
+    }
+
+    .review-name{
+      font-size:18px;
+      font-weight:800;
+    }
+
+    .review-job{
+      font-size:14px;
+      color:#b9c2cc;
+      margin-top:4px;
+    }
+
+    /* cta */
+    .cta-box{
+      border-radius:32px;
+      overflow:hidden;
+      padding:58px 28px;
+      text-align:center;
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(to left, rgba(6,10,16,.9), rgba(6,10,16,.72)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      position:relative;
+    }
+
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      bottom:-70px;
+      right:-70px;
+      width:220px;
+      height:220px;
+      background:radial-gradient(circle, rgba(242,208,107,.2), transparent 65%);
+      pointer-events:none;
+    }
+
+    .cta-box h2{
+      font-size:clamp(28px,4vw,46px);
+      margin-bottom:14px;
+    }
+
+    .cta-box p{
+      max-width:780px;
+      margin:0 auto 24px;
+      color:#e3e9f0;
+      line-height:1.95;
+      font-size:18px;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      text-align:center;
+      padding:24px 0 34px;
+      color:#c6d0db;
+      font-size:17px;
+    }
+
+    .heart{ color:#ff3b3b; }
+
+    .whatsapp-float{
+      position:fixed;
+      left:18px;
+      bottom:18px;
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#25D366;
+      color:#fff;
+      font-size:30px;
+      box-shadow:0 18px 35px rgba(37,211,102,.35);
+      z-index:999;
+      transition:.28s;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-4px) scale(1.06);
+    }
+
+    .reveal{
+      animation:fadeUp .9s ease both;
+    }
+
+    .delay-1{ animation-delay:.15s; }
+    .delay-2{ animation-delay:.3s; }
+    .delay-3{ animation-delay:.45s; }
+
+    @keyframes fadeUp{
+      from{ opacity:0; transform:translateY(24px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    @media (max-width:1100px){
+      .hero-grid,
+      .services-grid,
+      .pricing-grid,
+      .reviews-grid,
+      .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .price-card.featured{
+        transform:none;
+      }
+    }
+
+    @media (max-width:820px){
+      .nav-links{ display:none; }
+
+      .hero{
+        min-height:auto;
+        padding:120px 0 70px;
+      }
+
+      .hero-grid,
+      .services-grid,
+      .pricing-grid,
+      .reviews-grid,
+      .stats-grid{
+        grid-template-columns:1fr;
+      }
+
+      .slide,
+      .slide img{
+        height:340px;
+        min-height:340px;
+      }
+    }
+
+    @media (max-width:520px){
+      .logo{ font-size:22px; }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .tag{
+        width:100%;
+        text-align:center;
+      }
+
+      .nav-btn{
+        padding:12px 16px;
+        font-size:14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">معارض <span>وبوثات</span></a>
+
+      <div class="nav-links">
+        <a href="#services">خدماتنا</a>
+        <a href="#gallery">أعمالنا</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="#reviews">آراء العملاء</a>
+      </div>
+
+      <a href="https://wa.me/966500000000?text=السلام%20عليكم%20ابغى%20استفسر%20عن%20تصميم%20وتنفيذ%20البوثات%20والمعارض" target="_blank" class="nav-btn">اطلب عرض سعر</a>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <div class="hero-badge">تصميم وتنفيذ المعارض والمؤتمرات والبوثات بجودة عالية</div>
+        <h1>
+          نصمم وننفذ البوثات وأجنحة المعارض
+          <br>
+          بأسلوب فاخر يبرز نشاطك بقوة
+        </h1>
+        <p>
+          نقدم لك حلولًا متكاملة تشمل التصميم والتنفيذ لكافة أنواع وأشكال المعارض
+          والمؤتمرات والبوثات وأجنحة المعارض، مع التميز بالدقة العالية في التنفيذ،
+          الجودة الراقية، والأسعار المنافسة التي تمنحك أفضل قيمة.
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://wa.me/966500000000?text=السلام%20عليكم%20ابغى%20عرض%20سعر%20لتنفيذ%20بوث%20او%20جناح%20معرض" target="_blank" class="btn btn-primary">تواصل معنا الآن</a>
+          <a href="#gallery" class="btn btn-outline">شاهد أعمالنا</a>
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag">جودة عالية</span>
+          <span class="tag">أسعار منافسة</span>
+          <span class="tag">التزام بالمواعيد</span>
+          <span class="tag">تصميم يلفت الانتباه</span>
+        </div>
+      </div>
+
+      <div class="hero-card reveal delay-2">
+        <h3>لماذا نحن؟</h3>
+        <p>
+          لأننا نحول فكرتك إلى مساحة عرض احترافية تعكس قوة علامتك التجارية
+          وتمنحك حضورًا بصريًا يليق بك داخل أي معرض أو مؤتمر.
+        </p>
+
+        <ul class="hero-list">
+          <li>✔ تصاميم احترافية وعصرية</li>
+          <li>✔ تنفيذ دقيق بتشطيب فاخر</li>
+          <li>✔ مرونة في الحلول والمساحات</li>
+          <li>✔ متابعة كاملة حتى التسليم</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span><strong>تصميم البوثات</strong></span>
+      <span><strong>تنفيذ أجنحة المعارض</strong></span>
+      <span><strong>تنظيم المؤتمرات</strong></span>
+      <span><strong>تصاميم مخصصة</strong></span>
+      <span><strong>واجهات جذابة</strong></span>
+      <span><strong>تنفيذ فاخر</strong></span>
+      <span><strong>تصميم البوثات</strong></span>
+      <span><strong>تنفيذ أجنحة المعارض</strong></span>
+      <span><strong>تنظيم المؤتمرات</strong></span>
+      <span><strong>تصاميم مخصصة</strong></span>
+      <span><strong>واجهات جذابة</strong></span>
+      <span><strong>تنفيذ فاخر</strong></span>
+    </div>
+  </div>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-box reveal">
+          <h3>150+</h3>
+          <p>مشروع منفذ</p>
+        </div>
+        <div class="stat-box reveal delay-1">
+          <h3>98%</h3>
+          <p>رضا العملاء</p>
+        </div>
+        <div class="stat-box reveal delay-2">
+          <h3>24/7</h3>
+          <p>متابعة مستمرة</p>
+        </div>
+        <div class="stat-box reveal delay-3">
+          <h3>100%</h3>
+          <p>اهتمام بالتفاصيل</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge">خدماتنا</span>
+        <h2>حلول متكاملة للمعارض والمؤتمرات</h2>
+        <p>
+          نصمم وننفذ المساحات بطريقة احترافية تعكس هوية نشاطك وتمنحك تأثيرًا أقوى أمام الزوار والعملاء.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80" alt="تصميم البوثات">
+          </div>
+          <div class="service-content">
+            <h3>تصميم البوثات</h3>
+            <p>تصاميم احترافية عصرية تجذب الأنظار وتبرز علامتك التجارية بأسلوب مميز داخل المعرض.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal delay-1">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=1200&q=80" alt="تنفيذ الأجنحة">
+          </div>
+          <div class="service-content">
+            <h3>تنفيذ أجنحة المعارض</h3>
+            <p>تنفيذ دقيق بتفاصيل راقية وتشطيب عالي الجودة يمنح مشروعك حضورًا فخمًا ومؤثرًا.</p>
+          </div>
+        </div>
+
+        <div class="service-card reveal delay-2">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="المؤتمرات والفعاليات">
+          </div>
+          <div class="service-content">
+            <h3>المؤتمرات والفعاليات</h3>
+            <p>تنظيم وتنفيذ احترافي للمؤتمرات والفعاليات والمعارض التجارية بأسلوب أنيق ومرتب.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge">معرض الأعمال</span>
+        <h2>نماذج أعمالنا بشكل أفخم</h2>
+        <p>
+          استعرض نماذج بصرية توضح مستوى التنفيذ، جودة التشطيب، وأناقة التصاميم التي نقدمها.
+        </p>
+      </div>
+
+      <div class="slider reveal">
+        <div class="slides">
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=80" alt="معارض">
+            <div class="slide-overlay">
+              <h3>تنفيذ احترافي للمعارض والمؤتمرات</h3>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1800&q=80" alt="فعاليات">
+            <div class="slide-overlay">
+              <h3>أجنحة معارض تعكس قوة علامتك التجارية</h3>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1800&q=80" alt="بوثات">
+            <div class="slide-overlay">
+              <h3>واجهات جذابة وتصميم يلفت الأنظار</h3>
+            </div>
+          </div>
+
+          <div class="slide">
+            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1800&q=80" alt="تنفيذ فاخر">
+            <div class="slide-overlay">
+              <h3>جودة تنفيذ وتشطيب فاخر يرفع قيمة حضورك</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge">الأسعار</span>
+        <h2>باقات مرنة تناسب احتياجك</h2>
+        <p>
+          اختر الباقة المناسبة لك، أو تواصل معنا لتجهيز عرض سعر خاص حسب المساحة والتصميم المطلوب.
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card reveal">
+          <h3 class="plan-name">الباقة الأساسية</h3>
+          <div class="price">999 <small>ريال</small></div>
+          <p class="plan-desc">حل مناسب للمشاريع الصغيرة والبوثات البسيطة بتصميم أنيق ومظهر مرتب.</p>
+          <ul class="plan-features">
+            <li>تصميم مبدئي احترافي</li>
+            <li>تنفيذ أساسي بجودة ممتازة</li>
+            <li>مظهر مرتب وجذاب</li>
+            <li>دعم ومتابعة أثناء التنفيذ</li>
+          </ul>
+          <a href="https://wa.me/966500000000?text=السلام%20عليكم%20ابغى%20استفسر%20عن%20الباقة%20الأساسية" target="_blank" class="btn btn-outline">استفسر الآن</a>
+        </div>
+
+        <div class="price-card featured reveal delay-1">
+          <div class="ribbon">الأكثر طلبًا</div>
+          <h3 class="plan-name">الباقة الاحترافية</h3>
+          <div class="price">1999 <small>ريال</small></div>
+          <p class="plan-desc">الخيار الأفضل لمن يريد مظهر أقوى، تنفيذ أفخم، وحضور بصري أكثر تأثيرًا.</p>
+          <ul class="plan-features">
+            <li>تصميم احترافي مخصص</li>
+            <li>تنفيذ بجودة وتشطيب أعلى</li>
+            <li>تفاصيل بصرية أقوى</li>
+            <li>مرونة أكبر في التعديلات</li>
+          </ul>
+          <a href="https://wa.me/966500000000?text=السلام%20عليكم%20ابغى%20استفسر%20عن%20الباقة%20الاحترافية" target="_blank" class="btn btn-primary">احجز الباقة</a>
+        </div>
+
+        <div class="price-card reveal delay-2">
+          <h3 class="plan-name">الباقة المخصصة</h3>
+          <div class="price">حسب <small>الطلب</small></div>
+          <p class="plan-desc">للمساحات الكبيرة أو الفعاليات الخاصة التي تحتاج تصميم وتنفيذ مخصص بالكامل.</p>
+          <ul class="plan-features">
+            <li>حلول مخصصة حسب الطلب</li>
+            <li>تنفيذ فاخر بمواصفات خاصة</li>
+            <li>اهتمام كامل بالتفاصيل</li>
+            <li>عرض سعر يناسب المشروع</li>
+          </ul>
+          <a href="https://wa.me/966500000000?text=السلام%20عليكم%20ابغى%20عرض%20سعر%20مخصص%20لمشروع%20معرض%20او%20بوث" target="_blank" class="btn btn-outline">اطلب تسعيرة</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-badge">آراء العملاء</span>
+        <h2>تقييمات تمنح الثقة</h2>
+        <p>
+          نفخر بانطباعات عملائنا بعد تنفيذ مشاريعهم، لأن رضاهم هو أكبر دليل على جودة الخدمة.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>شغل مرتب وراقي جدًا، والنتيجة النهائية كانت فوق المتوقع، خصوصًا جودة التنفيذ والاهتمام بالتفاصيل.</p>
+          <div class="review-name">محمد العتيبي</div>
+          <div class="review-job">صاحب علامة تجارية</div>
+        </div>
+
+        <div class="review-card reveal delay-1">
+          <div class="stars">★★★★★</div>
+          <p>تعامل ممتاز والتزام واضح بالوقت، وتم تنفيذ البوث بشكل احترافي أعطانا حضور قوي في المعرض.</p>
+          <div class="review-name">سارة القحطاني</div>
+          <div class="review-job">منظمة فعاليات</div>
+        </div>
+
+        <div class="review-card reveal delay-2">
+          <div class="stars">★★★★★</div>
+          <p>أفضل شيء أنهم جمعوا بين الجودة والسعر المناسب، والستايل النهائي كان فعلاً يفتح النفس.</p>
+          <div class="review-name">عبدالله الحربي</div>
+          <div class="review-job">مدير مشروع</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>جاهز تبدأ مشروعك القادم؟</h2>
+        <p>
+          خلنا ننفذ لك بوث أو جناح معرض بشكل احترافي يلفت الانتباه ويعكس قيمة نشاطك من أول نظرة.
+        </p>
+        <a href="https://wa.me/966500000000?text=السلام%20عليكم%20ابغى%20ابدأ%20مشروعي%20معكم%20في%20تصميم%20وتنفيذ%20بوث%20او%20جناح%20معرض" target="_blank" class="btn btn-primary">راسلنا على واتساب</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    صنع بحب من عبدالله <span class="heart">❤️</span>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/966500000000?text=السلام%20عليكم%20ابغى%20استفسر%20عن%20خدماتكم" target="_blank" aria-label="واتساب">
+    ☎
+  </a>
+
+</body>
+</html>
