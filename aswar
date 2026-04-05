@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>توريد وتركيب أسوار المشاريع | لوحات وحروف بارزة | تصميم وتنفيذ وإشراف</title>
+  <meta name="description" content="صفحة هبوط احترافية لنشاط توريد وتركيب أسوار المشاريع، اللوحات، الحروف البارزة، الطباعة الرقمية، التصميم والتنفيذ والإشراف بأسلوب شركات كبرى وتحويل عالي." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//images.unsplash.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <!-- Omar font placeholder: replace with your hosted font if available -->
+  <style>
+    @font-face {
+      font-family: 'Omar';
+      src: local('Omar');
+      font-display: swap;
+    }
+  </style>
+
+  <style>
+    :root {
+      --bg: #06111f;
+      --bg-soft: #0b1a2f;
+      --card: rgba(255,255,255,0.08);
+      --card-strong: rgba(255,255,255,0.12);
+      --line: rgba(255,255,255,0.12);
+      --text: #f8fbff;
+      --muted: #b7c4d7;
+      --primary: #d9ecff;
+      --accent: #69b7ff;
+      --accent-2: #9ae6ff;
+      --gold: #f7d28d;
+      --success: #8df0b5;
+      --danger: #ff9b9b;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --container: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(105,183,255,.18), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(247,210,141,.10), transparent 24%),
+        radial-gradient(circle at 70% 80%, rgba(154,230,255,.10), transparent 28%),
+        linear-gradient(180deg, #04101d 0%, #071523 38%, #07111d 100%);
+      color: var(--text);
+      font-family: 'Tajawal', system-ui, sans-serif;
+      overflow-x: hidden;
+      line-height: 1.75;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,.035) 45%, transparent 70%);
+      transform: translateX(-100%);
+      animation: shineSweep 8s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes shineSweep {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(120%); }
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      padding: 88px 0;
+      content-visibility: auto;
+      contain-intrinsic-size: 1px 1000px;
+    }
+
+    .section-title {
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.2;
+      margin: 0 0 16px;
+      letter-spacing: .2px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 700px;
+      font-size: 1.06rem;
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      font-weight: 700;
+      font-size: .95rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(4, 13, 24, 0.65);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.06));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+      font-size: 1.1rem;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: 1.15rem;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: .84rem;
+      color: var(--muted);
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+      will-change: transform;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: #07111d;
+      background: linear-gradient(135deg, #ffffff 0%, #cce7ff 50%, #f6d08d 100%);
+      box-shadow: 0 14px 32px rgba(140, 200, 255, 0.25);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.14);
+      color: #fff;
+    }
+
+    .hero {
+      padding: 46px 0 70px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-content {
+      padding: 28px 0;
+    }
+
+    .hero h1 {
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: clamp(2.35rem, 5vw, 4.8rem);
+      line-height: 1.07;
+      margin: 18px 0 18px;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 0 26px;
+    }
+
+    .hero-bullets {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hero-bullet {
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.06);
+      color: #eef6ff;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      min-height: 660px;
+      background:
+        linear-gradient(180deg, rgba(6, 17, 31, .18), rgba(6, 17, 31, .68)),
+        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -30% -20%;
+      height: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.16), transparent 55%);
+      filter: blur(30px);
+      z-index: 0;
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%,100% { opacity: .7; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.10), transparent 38%),
+        linear-gradient(180deg, transparent 10%, rgba(5,14,25,.55) 72%, rgba(5,14,25,.92) 100%);
+      z-index: 1;
+    }
+
+    .floating-panel {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 2;
+      border-radius: 24px;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.08));
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .floating-panel h3 {
+      margin: 0 0 8px;
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: 1.6rem;
+    }
+
+    .floating-panel p {
+      margin: 0 0 16px;
+      color: #d8e6f7;
+      font-size: .98rem;
+    }
+
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .trust-box {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      text-align: center;
+    }
+
+    .trust-box strong {
+      display: block;
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: 1.7rem;
+      color: #fff;
+    }
+
+    .trust-box span {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .ticker-wrap {
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      gap: 18px;
+      animation: ticker 28s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50%); }
+    }
+
+    .ticker-item {
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      flex: none;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .service-card {
+      padding: 24px;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s ease, border-color .3s ease, background .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,.18);
+      background: linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06));
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.10);
+      margin-bottom: 18px;
+      font-size: 1.35rem;
+      border: 1px solid rgba(255,255,255,.10);
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: 1.35rem;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    .slider-shell {
+      margin-top: 34px;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      box-shadow: var(--shadow);
+      position: relative;
+      min-height: 560px;
+    }
+
+    .slides {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1.03);
+      transition: opacity .9s ease, transform 1.2s ease;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6,17,31,.12), rgba(6,17,31,.78));
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      left: 28px;
+      z-index: 2;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(5,14,25,.35);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .slide-caption h3 {
+      margin: 0 0 6px;
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: 1.7rem;
+    }
+
+    .slide-caption p {
+      margin: 0;
+      color: #d7e4f5;
+    }
+
+    .dots {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      display: flex;
+      gap: 10px;
+      z-index: 3;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(255,255,255,.35);
+      cursor: pointer;
+      transition: .25s ease;
+    }
+
+    .dot.active { width: 30px; background: #fff; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .price-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      transform: scale(1.03);
+      border: 1px solid rgba(255,255,255,.22);
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.07));
+    }
+
+    .price-tag {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.1);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .price-card h3 {
+      margin: 0 0 6px;
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: 1.8rem;
+    }
+
+    .price-value {
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      font-size: 2.5rem;
+      margin: 14px 0 4px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 24px;
+      display: grid;
+      gap: 11px;
+    }
+
+    .feature-list li {
+      padding-right: 26px;
+      position: relative;
+      color: #e8f1fb;
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 42px;
+    }
+
+    .testimonial {
+      padding: 28px;
+      border-radius: 26px;
+      position: relative;
+    }
+
+    .stars {
+      letter-spacing: 2px;
+      color: var(--gold);
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .testimonial p {
+      color: #e4edf8;
+      margin: 0 0 18px;
+      font-size: 1rem;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .client-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .stat-box {
+      padding: 24px;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .stat-box strong {
+      font-family: 'Omar', 'Tajawal', sans-serif;
+      display: block;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      margin-bottom: 4px;
+    }
+
+    .stat-box span {
+      color: var(--muted);
+      font-size: .98rem;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    details {
+      border-radius: 22px;
+      padding: 20px 22px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.05);
+      transition: .25s ease;
+    }
+
+    details[open] {
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.16);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      position: relative;
+      padding-left: 26px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    summary::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.2rem;
+      color: var(--accent-2);
+      transition: transform .25s ease;
+    }
+
+    details[open] summary::before {
+      transform: rotate(45deg);
+    }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 42px;
+    }
+
+    .lead-card,
+    .form-card {
+      border-radius: 30px;
+      padding: 30px;
+    }
+
+    .lead-points {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .lead-points li {
+      display: flex;
+      align-items: start;
+      gap: 12px;
+      color: #ebf3fd;
+    }
+
+    .lead-points li span {
+      flex: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.10);
+      font-size: .86rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group.full { grid-column: 1 / -1; }
+
+    label {
+      color: #eff7ff;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      color: #fff;
+      border-radius: 16px;
+      padding: 15px 16px;
+      outline: none;
+      transition: .25s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder { color: #b3c1d4; }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(154,230,255,.5);
+      box-shadow: 0 0 0 4px rgba(154,230,255,.08);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-top: 14px;
+    }
+
+    .sticky-wa {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #29c76f, #1ea95b);
+      color: #fff;
+      font-weight: 900;
+      box-shadow: 0 18px 36px rgba(41, 199, 111, .32);
+      animation: floatWa 2.4s ease-in-out infinite;
+    }
+
+    @keyframes floatWa {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .footer {
+      padding: 36px 0 48px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      text-align: center;
+      color: #dce8f7;
+    }
+
+    .made-with-love {
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .lead-grid,
+      .faq-grid,
+      .pricing-grid,
+      .testimonials-grid,
+      .stats-grid,
+      .services {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-card { min-height: 520px; }
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 16px 0;
+      }
+
+      .nav-links { justify-content: center; }
+
+      .hero-grid,
+      .lead-grid,
+      .faq-grid,
+      .pricing-grid,
+      .testimonials-grid,
+      .stats-grid,
+      .services,
+      .trust-row,
+      .form-grid,
+      .hero-bullets {
+        grid-template-columns: 1fr;
+      }
+
+      .slider-shell,
+      .slides { min-height: 430px; }
+
+      .hero h1 { font-size: clamp(2.1rem, 9vw, 3.4rem); }
+      .section { padding: 70px 0; }
+      .price-card.featured { transform: none; }
+      .sticky-wa { left: 12px; right: 12px; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="العودة إلى الرئيسية">
+        <div class="brand-mark">✦</div>
+        <div class="brand-text">
+          <strong>واجهة المشاريع المتقدمة</strong>
+          <span>توريد • تركيب • تصميم • تنفيذ • إشراف</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">الخدمات</a>
+        <a href="#projects">الأعمال</a>
+        <a href="#pricing">الأسعار</a>
+        <a href="#reviews">التقييمات</a>
+        <a href="#faq">الأسئلة</a>
+      </nav>
+
+      <div class="cta-group">
+        <a class="btn btn-secondary" href="#request">اطلب عرض سعر</a>
+        <a class="btn btn-primary" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20في%20طلب%20خدمة%20توريد%20أو%20تركيب%20وأحتاج%20عرض%20سعر" target="_blank" rel="noopener">واتساب مباشر</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal visible">
+          <span class="badge">تنفيذ احترافي بمظهر شركات كبرى ✦</span>
+          <h1>توريد وتركيب أسوار المشاريع واللوحات والحروف البارزة والطباعة الرقمية بمعايير تنفيذ راقية</h1>
+          <p>
+            نقدم حلولًا متكاملة تبدأ من الفكرة والتصميم وحتى التنفيذ والإشراف، بأسلوب بصري فاخر يليق بالمشاريع التجارية والمواقع والواجهات والمعارض والمنشآت الحديثة.
+          </p>
+
+          <div class="hero-bullets">
+            <div class="hero-bullet">أسوار مشاريع بجودة عالية وتشطيب أنيق</div>
+            <div class="hero-bullet">لوحات وهوية بصرية تعكس قوة نشاطك</div>
+            <div class="hero-bullet">حروف بارزة ولمعات فخمة للمحال والواجهات</div>
+            <div class="hero-bullet">طباعة رقمية وتنفيذ سريع مع إشراف دقيق</div>
+          </div>
+
+          <div class="cta-group">
+            <a class="btn btn-primary" href="#request">ابدأ مشروعك الآن</a>
+            <a class="btn btn-secondary" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20في%20استشارة%20حول%20خدمة%20الأسوار%20واللوحات" target="_blank" rel="noopener">استشارة سريعة</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-box glass">
+              <strong data-counter="350">0</strong>
+              <span>طلب خدمة تم تنفيذه</span>
+            </div>
+            <div class="trust-box glass">
+              <strong data-counter="98">0</strong>
+              <span>% رضا العملاء</span>
+            </div>
+            <div class="trust-box glass">
+              <strong data-counter="12">0</strong>
+              <span>سنة خبرة تنفيذية</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="hero-overlay"></div>
+          <div class="floating-panel">
+            <h3>جاهزية عالية للمشاريع التجارية والواجهات</h3>
+            <p>من الأسوار الخارجية إلى اللوحات الذكية والحروف البارزة والطباعة الرقمية، ننفذ بتفاصيل دقيقة وشكل يرفع قيمة المشروع بصريًا.</p>
+            <a class="btn btn-primary" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20في%20تنفيذ%20مشروع%20وأحتاج%20تفاصيل%20الباقات" target="_blank" rel="noopener">تواصل الآن</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker-wrap" aria-label="شريط الخدمات المتحرك">
+      <div class="ticker-track">
+        <span class="ticker-item">توريد وتركيب أسوار المشاريع</span>
+        <span class="ticker-item">لوحات خارجية وداخلية</span>
+        <span class="ticker-item">حروف بارزة مضيئة وغير مضيئة</span>
+        <span class="ticker-item">طباعة رقمية عالية الدقة</span>
+        <span class="ticker-item">تصميم احترافي للهوية البصرية</span>
+        <span class="ticker-item">تنفيذ وإشراف كامل على المشروع</span>
+        <span class="ticker-item">توريد وتركيب أسوار المشاريع</span>
+        <span class="ticker-item">لوحات خارجية وداخلية</span>
+        <span class="ticker-item">حروف بارزة مضيئة وغير مضيئة</span>
+        <span class="ticker-item">طباعة رقمية عالية الدقة</span>
+        <span class="ticker-item">تصميم احترافي للهوية البصرية</span>
+        <span class="ticker-item">تنفيذ وإشراف كامل على المشروع</span>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <h2 class="section-title">خدمات مصممة لتظهر نشاطك بقوة</h2>
+          <p class="section-subtitle">واجهات أنيقة، تنفيذ منظم، وخيارات متعددة تناسب المشاريع الصغيرة والمتوسطة والكبيرة مع لمعة بصرية ترفع الانطباع والثقة.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-card glass reveal">
+            <div class="service-icon">▦</div>
+            <h3>أسوار المشاريع</h3>
+            <p>توريد وتركيب أسوار للمشاريع والمواقع والمنشآت بمتانة عالية وتفاصيل تشطيب تضيف للمكان حضورًا احترافيًا.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-icon">✦</div>
+            <h3>الحروف البارزة</h3>
+            <p>تنفيذ حروف بارزة مضيئة وغير مضيئة للمحلات والواجهات والمكاتب بأسلوب فاخر يعزز الهوية ويشد الانتباه.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-icon">◫</div>
+            <h3>اللوحات والطباعة الرقمية</h3>
+            <p>لوحات دعائية وتجارية وطباعة رقمية عالية الوضوح للمعارض والفعاليات والمواقع التجارية والمشاريع المؤقتة والدائمة.</p>
+          </article>
+
+          <article class="service-card glass reveal">
+            <div class="service-icon">⌘</div>
+            <h3>تصميم / تنفيذ / إشراف</h3>
+            <p>حل متكامل يبدأ من التصور والتصميم ثم التنفيذ والإشراف الميداني لضمان الجودة والالتزام بالتفاصيل والجدول الزمني.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <h2 class="section-title">نماذج بصرية تعكس مستوى التنفيذ</h2>
+          <p class="section-subtitle">سلايدر تلقائي أنيق يساعد العميل على تخيل جودة المخرجات ويزيد الثقة قبل التواصل.</p>
+        </div>
+
+        <div class="slider-shell reveal">
+          <div class="slides" id="slides">
+            <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80');">
+              <div class="slide-caption">
+                <h3>واجهات ولوحات بحضور راقٍ</h3>
+                <p>تصميم بصري فاخر يلفت الانتباه ويمنح علامتك التجارية مظهرًا أقوى وثقة أعلى.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');">
+              <div class="slide-caption">
+                <h3>تنفيذ مشاريع بدقة وإشراف</h3>
+                <p>متابعة احترافية في كل مرحلة لضمان الجودة والاتساق من أول خطوة حتى التسليم النهائي.</p>
+              </div>
+            </div>
+            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');">
+              <div class="slide-caption">
+                <h3>حلول أسوار ومجسمات وهوية بصرية</h3>
+                <p>خدمات متكاملة للمشاريع والمواقع التجارية تمنح المكان قيمة بصرية أكثر أناقة وتميزًا.</p>
+              </div>
+            </div>
+          </div>
+          <div class="dots" id="dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <h2 class="section-title">باقات واضحة لرفع سرعة القرار</h2>
+          <p class="section-subtitle">عرض باقات مبسط يساعد الزائر على المقارنة السريعة واختيار الأنسب، مع قابلية التخصيص حسب نوع المشروع والمساحة والتشطيب المطلوب.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card glass reveal">
+            <span class="price-tag">الباقة الأساسية</span>
+            <h3>حل البداية</h3>
+            <div class="price-value">تبدأ من 1,500 ر.س</div>
+            <div class="price-note">مناسبة للأعمال الصغيرة والطلبات السريعة</div>
+            <ul class="feature-list">
+              <li>معاينة وتقييم أولي للاحتياج</li>
+              <li>تصميم مبدئي بسيط</li>
+              <li>تنفيذ خدمة واحدة حسب الطلب</li>
+              <li>مدة تنفيذ مناسبة</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20في%20الباقة%20الأساسية" target="_blank" rel="noopener">اطلب الباقة</a>
+          </article>
+
+          <article class="price-card glass featured reveal">
+            <span class="price-tag">الأكثر طلبًا</span>
+            <h3>الباقة الاحترافية</h3>
+            <div class="price-value">تبدأ من 4,900 ر.س</div>
+            <div class="price-note">مثالية للمشاريع التجارية والواجهات الأكثر تنافسية</div>
+            <ul class="feature-list">
+              <li>تصميم احترافي أكثر من خيار</li>
+              <li>توريد + تنفيذ + إشراف</li>
+              <li>تشطيب فاخر ولمسات بصرية أقوى</li>
+              <li>أولوية في الجدولة والمتابعة</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20في%20الباقة%20الاحترافية" target="_blank" rel="noopener">ابدأ الآن</a>
+          </article>
+
+          <article class="price-card glass reveal">
+            <span class="price-tag">للمشاريع الكبيرة</span>
+            <h3>الباقة المؤسسية</h3>
+            <div class="price-value">سعر خاص حسب المشروع</div>
+            <div class="price-note">مناسبة للمواقع الكبيرة والمشاريع متعددة العناصر</div>
+            <ul class="feature-list">
+              <li>إدارة وتنفيذ متكامل</li>
+              <li>حلول أسوار ولوحات وحروف بارزة</li>
+              <li>إشراف دقيق وتقارير متابعة</li>
+              <li>تخصيص كامل حسب نطاق العمل</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20في%20عرض%20سعر%20للباقة%20المؤسسية" target="_blank" rel="noopener">اطلب تسعيرة</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <h2 class="section-title">آراء تعكس جودة التنفيذ</h2>
+          <p class="section-subtitle">إظهار التقييمات يزيد الثقة ويقرب الزائر من اتخاذ قرار التواصل بشكل أسرع.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial glass reveal">
+            <div class="stars">★★★★★</div>
+            <p>التنفيذ كان مرتب جدًا من أول تواصل حتى التسليم. الشغل نظيف والواجهة طلعت أرقى من توقعاتنا بكثير.</p>
+            <div class="client">
+              <div class="client-avatar">م</div>
+              <div>
+                <strong>مؤسسة تجارية</strong>
+                <div style="color:var(--muted)">واجهة ولوحة خارجية</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial glass reveal">
+            <div class="stars">★★★★★</div>
+            <p>احترافية واضحة في التصميم والإشراف. تم تنفيذ الحروف البارزة والطباعة الرقمية بجودة ممتازة وفي وقت مناسب.</p>
+            <div class="client">
+              <div class="client-avatar">س</div>
+              <div>
+                <strong>مشروع ضيافة</strong>
+                <div style="color:var(--muted)">حروف بارزة وطباعة</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial glass reveal">
+            <div class="stars">★★★★★</div>
+            <p>أفضل شيء أنهم فاهمين كيف يطلعون المشروع بشكل فاخر ويعطونه حضور قوي. أنصح فيهم لأي جهة تبغى شغل يلفت النظر.</p>
+            <div class="client">
+              <div class="client-avatar">ع</div>
+              <div>
+                <strong>شركة مقاولات</strong>
+                <div style="color:var(--muted)">أسوار مشروع وإشراف</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <h2 class="section-title">أرقام ترفع الثقة من أول زيارة</h2>
+          <p class="section-subtitle">عدادات متحركة تمنح الصفحة إحساسًا بالحجم والخبرة والإنجاز.</p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-box glass reveal">
+            <strong data-counter="480">0</strong>
+            <span>موقع تم خدمته</span>
+          </article>
+          <article class="stat-box glass reveal">
+            <strong data-counter="220">0</strong>
+            <span>لوحة وهوية منفذة</span>
+          </article>
+          <article class="stat-box glass reveal">
+            <strong data-counter="96">0</strong>
+            <span>% جودة تسليم عالية</span>
+          </article>
+          <article class="stat-box glass reveal">
+            <strong data-counter="24">0</strong>
+            <span>شهر دعم ومتابعة مرنة</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <h2 class="section-title">الأسئلة الشائعة</h2>
+          <p class="section-subtitle">إجابات سريعة تقلل التردد وتزيد معدل التحويل قبل التواصل.</p>
+        </div>
+
+        <div class="faq-grid">
+          <details class="reveal" open>
+            <summary>هل تقدمون تصميم وتنفيذ معًا؟</summary>
+            <p>نعم، يمكن تنفيذ المشروع بشكل متكامل من مرحلة الفكرة والتصميم وحتى التنفيذ والإشراف والتسليم النهائي.</p>
+          </details>
+          <details class="reveal">
+            <summary>هل الأسعار ثابتة لكل المشاريع؟</summary>
+            <p>الأسعار تبدأ من باقات واضحة، لكن التسعير النهائي يعتمد على المساحة والمواد والتشطيب ونطاق العمل المطلوب.</p>
+          </details>
+          <details class="reveal">
+            <summary>هل يمكن طلب معاينة أو استشارة قبل التنفيذ؟</summary>
+            <p>أكيد، يمكن طلب استشارة أولية أو معاينة مبدئية لتحديد أفضل الحلول المناسبة لنشاطك وميزانيتك.</p>
+          </details>
+          <details class="reveal">
+            <summary>ما أنواع الأعمال التي تنفذونها؟</summary>
+            <p>أسوار مشاريع، لوحات، حروف بارزة، طباعة رقمية، أعمال تصميم وتنفيذ وإشراف للمشاريع التجارية والمواقع المختلفة.</p>
+          </details>
+          <details class="reveal">
+            <summary>كم تستغرق مدة التنفيذ؟</summary>
+            <p>تختلف حسب نوع المشروع وحجمه، ويتم توضيح المدة المتوقعة بعد مراجعة الطلب وتحديد المواصفات المطلوبة.</p>
+          </details>
+          <details class="reveal">
+            <summary>هل يمكن تخصيص الخدمة لمشروع كبير أو حكومي؟</summary>
+            <p>نعم، تتوفر حلول مرنة ومخصصة للمشاريع الكبيرة والمؤسسية مع متابعة دقيقة وتنسيق حسب المتطلبات.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="request">
+      <div class="container">
+        <div style="text-align:center" class="reveal">
+          <h2 class="section-title">اطلب عرض السعر الآن</h2>
+          <p class="section-subtitle">نموذج مباشر يساعد العميل على إرسال التفاصيل بسرعة، مع خيار واتساب الجاهز لرفع التحويل وتقليل التردد.</p>
+        </div>
+
+        <div class="lead-grid">
+          <div class="lead-card glass reveal">
+            <span class="badge">تحويل أعلى • نموذج واضح • تواصل سريع</span>
+            <h3 style="font-family:'Omar','Tajawal',sans-serif; font-size:2rem; margin:18px 0 10px;">جاهزون لتحويل فكرتك إلى تنفيذ يليق باسمك</h3>
+            <p style="color:var(--muted); margin:0;">أرسل احتياجك الآن، وسيتم التواصل معك لتحديد الأنسب من حيث التصميم والتنفيذ والميزانية والمدة.</p>
+
+            <ul class="lead-points">
+              <li><span>1</span><div>استقبال سريع للطلب وتحديد الاحتياج الأساسي.</div></li>
+              <li><span>2</span><div>توصية بالخيار الأنسب حسب نوع المشروع والواجهة.</div></li>
+              <li><span>3</span><div>إمكانية تخصيص الخدمة والباقات حسب نطاق العمل.</div></li>
+              <li><span>4</span><div>سهولة التواصل عبر النموذج أو زر واتساب برسالة جاهزة.</div></li>
+            </ul>
+          </div>
+
+          <form class="form-card glass reveal" onsubmit="sendWhatsApp(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">الاسم</label>
+                <input id="name" type="text" placeholder="اكتب اسمك" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">رقم الجوال</label>
+                <input id="phone" type="tel" placeholder="05xxxxxxxx" required />
+              </div>
+              <div class="form-group">
+                <label for="service">نوع الخدمة</label>
+                <select id="service" required>
+                  <option value="">اختر الخدمة</option>
+                  <option>أسوار مشاريع</option>
+                  <option>لوحات</option>
+                  <option>حروف بارزة</option>
+                  <option>طباعة رقمية</option>
+                  <option>تصميم / تنفيذ / إشراف</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">الميزانية التقريبية</label>
+                <select id="budget">
+                  <option value="">اختر الميزانية</option>
+                  <option>أقل من 5,000 ر.س</option>
+                  <option>من 5,000 إلى 15,000 ر.س</option>
+                  <option>من 15,000 إلى 50,000 ر.س</option>
+                  <option>أكثر من 50,000 ر.س</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="details">تفاصيل الطلب</label>
+                <textarea id="details" placeholder="اكتب تفاصيل المشروع أو المقاسات أو المدينة أو أي متطلبات إضافية"></textarea>
+              </div>
+              <div class="form-group full">
+                <button class="btn btn-primary" type="submit">إرسال الطلب عبر واتساب</button>
+              </div>
+            </div>
+            <div class="form-note">مهم: غيّر رقم الواتساب في الكود إلى رقمك الفعلي قبل النشر.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="sticky-wa" href="https://wa.me/966500000000?text=السلام%20عليكم%20،%20أرغب%20في%20التواصل%20حول%20خدمة%20الأسوار%20واللوحات" target="_blank" rel="noopener" aria-label="تواصل واتساب مباشر">
+    <span>واتساب</span>
+    <span>جاهز للرد</span>
+  </a>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="made-with-love">صنع بحب من عبدالله ❤️</div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Counter animation
+    const counters = document.querySelectorAll('[data-counter]');
+    const counterObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.counter;
+        const duration = 1700;
+        const start = performance.now();
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          el.textContent = value.toLocaleString('ar-SA');
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target.toLocaleString('ar-SA');
+        };
+        requestAnimationFrame(step);
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+
+    // Slider
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dots');
+    let current = 0;
+    let timer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `عرض الشريحة ${i + 1}`);
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+        resetTimer();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function goToSlide(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide((current + 1) % slides.length);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(nextSlide, 4500);
+    }
+
+    resetTimer();
+
+    // WhatsApp form
+    function sendWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value.trim();
+      const budget = document.getElementById('budget').value.trim();
+      const details = document.getElementById('details').value.trim();
+
+      const message = `السلام عليكم، لدي طلب جديد:%0A%0Aالاسم: ${encodeURIComponent(name)}%0Aرقم الجوال: ${encodeURIComponent(phone)}%0Aالخدمة: ${encodeURIComponent(service)}%0Aالميزانية: ${encodeURIComponent(budget || 'غير محددة')}%0Aتفاصيل الطلب: ${encodeURIComponent(details || 'لا يوجد')}`;
+      window.open(`https://wa.me/966500000000?text=${message}`, '_blank');
+    }
+  </script>
+
+  <!--
+    ملاحظات التخصيص السريعة:
+    1) غيّر جميع أرقام الواتساب 966500000000 إلى رقمك.
+    2) إذا عندك خط Omar الحقيقي ارفعه على الاستضافة واستبدل @font-face بمسار الملف.
+    3) تقدر تبدل صور السلايدر والهيدر بصور نشاطك الفعلية لرفع التحويل أكثر.
+  -->
+</body>
+</html>
