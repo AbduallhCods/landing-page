@@ -3,28 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>عبدالله | PRO Portfolio</title>
-  <meta name="description" content="عبدالله لتصميم صفحات هبوط احترافية وهوية عرض أعمال فخمة تساعد على جذب العملاء ورفع التحويل." />
+  <title>عبدالله | تصميم صفحات هبوط احترافية</title>
+  <meta
+    name="description"
+    content="عبدالله لتصميم صفحات هبوط احترافية وصفحات عرض أعمال فخمة، متوافقة مع الجوال، ومهيأة للإقناع ورفع فرص التواصل والطلب."
+  />
+  <meta name="theme-color" content="#08101d" />
+  <meta property="og:title" content="عبدالله | تصميم صفحات هبوط احترافية">
+  <meta property="og:description" content="صفحات هبوط احترافية، متوافقة مع الجوال، ومهيأة للإقناع ورفع فرص التواصل والطلب.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- إذا وفرت ملف خط Omar لاحقًا، فك التعليق وعدّل المسار -->
+  <!--
+  <style>
+    @font-face {
+      font-family: 'Omar';
+      src: url('./fonts/Omar.woff2') format('woff2'),
+           url('./fonts/Omar.woff') format('woff');
+      font-weight: 400 900;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+  -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root{
       --bg:#060914;
       --bg2:#0b1223;
       --panel:rgba(255,255,255,.06);
       --text:#f7fbff;
-      --muted:#9eb0d1;
+      --muted:#a6b7d6;
       --primary:#3b82f6;
       --accent:#00d7a3;
       --accent2:#7c3aed;
       --gold:#ffd166;
-      --border:rgba(255,255,255,.12);
-      --shadow:0 25px 80px rgba(0,0,0,.45);
-      --max:1220px;
-      --r-xl:34px;
-      --r-lg:24px;
-      --r-md:18px;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --shadow-soft:0 12px 30px rgba(0,0,0,.18);
+      --max:1180px;
+      --r-xl:30px;
+      --r-lg:22px;
+      --r-md:16px;
+      --title-font:'Omar','Tajawal',system-ui,sans-serif;
+      --body-font:'Tajawal',system-ui,sans-serif;
     }
 
     *{box-sizing:border-box}
@@ -32,56 +63,50 @@
 
     body{
       margin:0;
-      font-family:'Cairo',system-ui,sans-serif;
+      font-family:var(--body-font);
       color:var(--text);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(59,130,246,.18), transparent 22%),
-        radial-gradient(circle at 85% 18%, rgba(124,58,237,.14), transparent 20%),
-        radial-gradient(circle at 70% 78%, rgba(0,215,163,.10), transparent 26%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 45%, #08101d 100%);
+      line-height:1.8;
       overflow-x:hidden;
-      line-height:1.75;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(59,130,246,.14), transparent 22%),
+        radial-gradient(circle at 88% 16%, rgba(124,58,237,.12), transparent 20%),
+        radial-gradient(circle at 65% 78%, rgba(0,215,163,.09), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 48%, #08101d 100%);
     }
 
     body::before,
     body::after{
       content:"";
       position:fixed;
-      width:420px;
-      height:420px;
+      width:300px;
+      height:300px;
       border-radius:50%;
       filter:blur(90px);
       z-index:-1;
-      opacity:.26;
       pointer-events:none;
-      animation: floatGlow 12s ease-in-out infinite alternate;
+      opacity:.16;
     }
 
     body::before{
-      top:-120px;
-      right:-110px;
-      background:rgba(59,130,246,.28);
+      top:-80px;
+      right:-80px;
+      background:rgba(59,130,246,.26);
     }
 
     body::after{
-      bottom:-120px;
-      left:-110px;
-      background:rgba(0,215,163,.18);
-      animation-duration:14s;
-    }
-
-    @keyframes floatGlow{
-      from{transform:translate(0,0) scale(1)}
-      to{transform:translate(18px,28px) scale(1.08)}
+      bottom:-80px;
+      left:-80px;
+      background:rgba(0,215,163,.16);
     }
 
     a{text-decoration:none;color:inherit}
-    .container{width:min(100% - 32px,var(--max));margin-inline:auto}
+    img{max-width:100%;display:block}
+    .container{width:min(100% - 28px,var(--max));margin-inline:auto}
 
     .reveal{
       opacity:0;
-      transform:translateY(30px);
-      transition:opacity .75s ease,transform .75s ease;
+      transform:translateY(24px);
+      transition:opacity .7s ease, transform .7s ease;
     }
 
     .reveal.visible{
@@ -90,36 +115,31 @@
     }
 
     .promo-bar{
-      position:sticky;
-      top:0;
-      z-index:100;
-      width:100%;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 14px;
       text-align:center;
-      padding:10px 12px;
       font-weight:900;
-      letter-spacing:.3px;
-      background:linear-gradient(135deg,#ff7a18,#ff4d5a,#ffd166);
+      font-size:14px;
+      background:linear-gradient(135deg,#ff8a1f,#ff5b66,#ffd166);
       color:#1a0b0b;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-      animation:promoGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes promoGlow{
-      0%,100%{filter:brightness(1)}
-      50%{filter:brightness(1.2)}
+      box-shadow:0 8px 22px rgba(0,0,0,.18);
+      font-family:var(--title-font);
     }
 
     .nav{
       position:sticky;
-      top:42px;
-      z-index:70;
-      background:rgba(6,9,20,.62);
-      backdrop-filter:blur(18px);
+      top:0;
+      z-index:90;
+      background:rgba(6,9,20,.78);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
     .nav-inner{
-      min-height:92px;
+      min-height:84px;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -130,96 +150,46 @@
       display:flex;
       align-items:center;
       gap:14px;
-      padding:8px 14px 8px 10px;
-      border-radius:24px;
-      background:rgba(255,255,255,.05);
+      padding:8px 12px 8px 10px;
+      border-radius:20px;
+      background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 12px 32px rgba(0,0,0,.2);
-      backdrop-filter:blur(14px);
+      box-shadow:var(--shadow-soft);
       transition:.25s ease;
+      max-width:max-content;
     }
 
     .logo:hover{transform:translateY(-2px)}
 
     .logo-image-wrap{
-      position:relative;
-      width:68px;
-      height:68px;
-      border-radius:20px;
+      width:62px;
+      height:62px;
+      border-radius:18px;
       padding:3px;
       background:linear-gradient(135deg,var(--primary),var(--accent),var(--accent2));
-      background-size:200% 200%;
-      animation:gradientMove 5s ease infinite;
-      box-shadow:0 0 28px rgba(0,215,163,.18);
-      overflow:hidden;
       flex-shrink:0;
-      isolation:isolate;
-    }
-
-    .logo-image-wrap::before{
-      content:"";
-      position:absolute;
-      inset:-30%;
-      background:conic-gradient(
-        from 0deg,
-        rgba(255,255,255,0) 0deg,
-        rgba(255,255,255,.28) 70deg,
-        rgba(255,255,255,0) 120deg
-      );
-      animation:spinLight 3.8s linear infinite;
-      z-index:0;
-      pointer-events:none;
-    }
-
-    .logo-image-wrap::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:20px;
-      box-shadow:0 0 26px rgba(0,215,163,.35);
-      opacity:.75;
-      animation:glowPulse 2.8s ease-in-out infinite;
-      z-index:1;
-      pointer-events:none;
-    }
-
-    @keyframes gradientMove{
-      0%{background-position:0 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0 50%}
-    }
-
-    @keyframes glowPulse{
-      0%,100%{opacity:.45}
-      50%{opacity:.95}
-    }
-
-    @keyframes spinLight{
-      from{transform:rotate(0deg)}
-      to{transform:rotate(360deg)}
+      box-shadow:0 0 20px rgba(0,215,163,.12);
     }
 
     .logo-image{
-      position:relative;
-      z-index:3;
       width:100%;
       height:100%;
-      display:block;
       object-fit:contain;
       background:#0b1120;
-      border-radius:16px;
+      border-radius:15px;
       padding:6px;
     }
 
     .logo-text{
       display:flex;
       flex-direction:column;
-      line-height:1.15;
+      line-height:1.12;
     }
 
     .logo-title{
-      font-size:22px;
+      font-size:21px;
       font-weight:900;
+      font-family:var(--title-font);
     }
 
     .logo-subtitle{
@@ -231,43 +201,53 @@
 
     .nav-links{
       display:flex;
-      gap:24px;
+      align-items:center;
+      gap:22px;
       color:var(--muted);
       font-size:15px;
       flex-wrap:wrap;
     }
 
+    .nav-links a{
+      transition:.2s ease;
+      font-family:var(--title-font);
+      font-weight:700;
+    }
+
     .nav-links a:hover{color:#fff}
 
-    .nav-cta,.btn{
+    .btn,.nav-cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      border-radius:16px;
+      min-height:54px;
+      border-radius:15px;
       font-weight:800;
       transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+      font-family:var(--title-font);
     }
+
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px)}
 
     .nav-cta{
-      min-height:52px;
-      padding:0 22px;
-      background:linear-gradient(135deg,var(--accent),#5dffd7);
+      padding:0 20px;
+      background:linear-gradient(135deg,var(--accent),#67ffd8);
       color:#04110d;
-      box-shadow:0 16px 38px rgba(0,215,163,.22);
+      box-shadow:0 14px 30px rgba(0,215,163,.18);
     }
 
-    .nav-cta:hover,.btn:hover{transform:translateY(-2px)}
-
     .hero{
-      padding:84px 0 36px;
+      padding:56px 0 20px;
       position:relative;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:34px;
+      grid-template-columns:1.08fr .92fr;
+      gap:28px;
       align-items:center;
     }
 
@@ -275,81 +255,71 @@
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding:10px 18px;
+      padding:10px 16px;
       border-radius:999px;
-      background:rgba(255,255,255,.08);
+      background:rgba(255,255,255,.07);
       border:1px solid var(--border);
       color:var(--muted);
       font-size:14px;
-      backdrop-filter:blur(14px);
+      backdrop-filter:blur(10px);
+      font-family:var(--title-font);
+      font-weight:700;
+    }
+
+    h1,h2,h3,.mini-title,.review-name,.price,.stat-number,.fc-value{
+      font-family:var(--title-font);
     }
 
     h1{
       margin:18px 0 14px;
-      font-size:clamp(40px,5vw,76px);
-      line-height:1.04;
+      font-size:clamp(36px,5vw,72px);
+      line-height:1.05;
       letter-spacing:-.03em;
+      font-weight:900;
     }
 
     .gradient{
-      background:linear-gradient(135deg,#fff 8%,#9bc6ff 38%,#7affdb 85%);
+      background:linear-gradient(135deg,#fff 8%,#9bc6ff 40%,#7affdb 88%);
       -webkit-background-clip:text;
       background-clip:text;
       color:transparent;
     }
 
     .hero p{
-      margin:0 0 28px;
+      margin:0 0 24px;
       color:var(--muted);
       font-size:18px;
-      max-width:760px;
+      max-width:700px;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap:14px;
-      margin-bottom:26px;
+      gap:12px;
+      margin-bottom:18px;
     }
 
     .btn{
-      min-height:58px;
-      padding:0 24px;
-      border:1px solid transparent;
+      padding:0 22px;
     }
 
     .btn-primary{
       background:linear-gradient(135deg,var(--primary),var(--accent2));
-      box-shadow:0 18px 38px rgba(59,130,246,.28);
       color:#fff;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .btn-primary::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(120deg,transparent 35%,rgba(255,255,255,.28),transparent 65%);
-      transform:translateX(-120%);
-      animation:btnShine 4s linear infinite;
-    }
-
-    @keyframes btnShine{
-      to{transform:translateX(120%)}
+      box-shadow:0 14px 32px rgba(59,130,246,.22);
     }
 
     .btn-secondary{
       background:rgba(255,255,255,.05);
       border-color:var(--border);
       color:#fff;
-      backdrop-filter:blur(12px);
+      backdrop-filter:blur(10px);
     }
 
     .hero-proof{
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+      gap:10px;
       color:var(--muted);
       font-size:14px;
     }
@@ -359,103 +329,51 @@
       border-radius:999px;
       background:rgba(255,255,255,.05);
       border:1px solid var(--border);
+      font-family:var(--title-font);
+      font-weight:700;
     }
 
     .hero-visual{
       position:relative;
-      min-height:620px;
     }
 
-    .glass,.mockup,.floating{
-      background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.05));
+    .glass,
+    .mockup,
+    .floating{
+      background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.05));
       border:1px solid var(--border);
       box-shadow:var(--shadow);
-      backdrop-filter:blur(18px);
+      backdrop-filter:blur(12px);
     }
 
     .mockup{
-      position:absolute;
-      inset:46px 0 0 24px;
+      position:relative;
       border-radius:var(--r-xl);
-      padding:20px;
+      padding:18px;
       overflow:hidden;
-      animation:floatCard 7s ease-in-out infinite;
     }
 
-    @keyframes floatCard{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-12px)}
-    }
-
-    .mockup::before,.mockup::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      filter:blur(40px);
-      opacity:.5;
-    }
-
-    .mockup::before{
-      width:200px;
-      height:200px;
-      background:rgba(59,130,246,.28);
-      top:-40px;
-      left:-50px;
-    }
-
-    .mockup::after{
-      width:180px;
-      height:180px;
-      background:rgba(0,215,163,.22);
-      bottom:-40px;
-      right:-40px;
+    .floating-wrap{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px;
+      margin-bottom:14px;
     }
 
     .floating{
-      position:absolute;
-      border-radius:22px;
+      border-radius:20px;
       padding:18px;
-    }
-
-    .floating.one{
-      top:0;
-      right:10px;
-      width:210px;
-      animation:floatTwo 5.5s ease-in-out infinite;
-    }
-
-    .floating.two{
-      bottom:36px;
-      left:0;
-      width:230px;
-      animation:floatThree 6.6s ease-in-out infinite;
-    }
-
-    .floating.three{
-      bottom:170px;
-      right:-8px;
-      width:180px;
-      animation:floatTwo 6.8s ease-in-out infinite;
-    }
-
-    @keyframes floatTwo{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(10px)}
-    }
-
-    @keyframes floatThree{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-10px)}
     }
 
     .fc-title{
       font-size:13px;
       color:var(--muted);
       margin-bottom:8px;
+      font-weight:700;
     }
 
     .fc-value{
-      font-size:34px;
+      font-size:32px;
       font-weight:900;
       line-height:1;
       margin-bottom:8px;
@@ -466,7 +384,7 @@
       z-index:1;
       background:#fff;
       color:#101828;
-      border-radius:24px;
+      border-radius:22px;
       overflow:hidden;
     }
 
@@ -486,17 +404,17 @@
       background:#c7d2fe;
     }
 
-    .browser-body{padding:22px}
+    .browser-body{padding:20px}
 
     .mini-hero{
       background:linear-gradient(135deg,#edf4ff,#f1fffb);
       border-radius:18px;
-      padding:22px;
+      padding:20px;
       margin-bottom:16px;
     }
 
     .mini-title{
-      font-size:28px;
+      font-size:26px;
       line-height:1.2;
       font-weight:900;
       color:#0f172a;
@@ -509,12 +427,20 @@
       margin-bottom:16px;
     }
 
-    .mini-row,.stats,.services,.works,.steps,.pricing,.faq,.footer-grid,.about,.reasons{
+    .mini-row,
+    .stats,
+    .services,
+    .steps,
+    .pricing,
+    .faq-grid,
+    .footer-grid,
+    .comparison-grid,
+    .reviews-grid{
       display:grid;
       gap:18px;
     }
 
-    .mini-row{grid-template-columns:1.2fr .8fr}
+    .mini-row{grid-template-columns:1fr 1fr}
 
     .mini-card{
       background:#fff;
@@ -536,9 +462,9 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
       transform:translateX(-100%);
-      animation:progressGlow 2.8s linear infinite;
+      animation:progressGlow 2.6s linear infinite;
     }
 
     @keyframes progressGlow{
@@ -546,7 +472,7 @@
     }
 
     section{
-      padding:44px 0;
+      padding:38px 0;
       position:relative;
     }
 
@@ -555,13 +481,14 @@
       align-items:end;
       justify-content:space-between;
       gap:20px;
-      margin-bottom:26px;
+      margin-bottom:24px;
     }
 
     .section-head h2{
       margin:0 0 8px;
-      font-size:clamp(28px,3vw,46px);
+      font-size:clamp(28px,3vw,44px);
       line-height:1.12;
+      font-weight:900;
     }
 
     .section-head p{
@@ -570,11 +497,11 @@
       color:var(--muted);
     }
 
-    .stats{grid-template-columns:repeat(4,1fr)}
+    .stats{grid-template-columns:repeat(3,1fr)}
 
     .glass{
-      border-radius:24px;
-      padding:22px;
+      border-radius:22px;
+      padding:20px;
     }
 
     .stat{
@@ -588,13 +515,13 @@
       width:120px;
       height:120px;
       border-radius:50%;
-      background:rgba(255,255,255,.06);
+      background:rgba(255,255,255,.05);
       top:-40px;
       left:-30px;
     }
 
     .stat-number{
-      font-size:42px;
+      font-size:40px;
       font-weight:900;
       line-height:1;
       margin-bottom:10px;
@@ -608,63 +535,152 @@
       border-radius:var(--r-lg);
       padding:22px;
       box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
-      transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+      backdrop-filter:blur(10px);
+      transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
       position:relative;
       overflow:hidden;
     }
 
     .card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(255,255,255,.2);
-      box-shadow:0 26px 80px rgba(0,0,0,.45);
-    }
-
-    .about{
-      grid-template-columns:1fr 1fr;
-      align-items:center;
-    }
-
-    .reasons,.steps,.faq{
-      grid-template-columns:repeat(2,1fr);
-    }
-
-    .services,.works,.pricing{
-      grid-template-columns:repeat(3,1fr);
+      transform:translateY(-5px);
+      border-color:rgba(255,255,255,.18);
+      box-shadow:0 22px 55px rgba(0,0,0,.26);
     }
 
     .icon{
-      width:58px;
-      height:58px;
+      width:56px;
+      height:56px;
       border-radius:18px;
       display:grid;
       place-items:center;
       margin-bottom:16px;
-      background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(0,215,163,.14));
+      background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(0,215,163,.12));
       border:1px solid var(--border);
       font-size:24px;
+      font-weight:900;
+      font-family:var(--title-font);
     }
 
-    .service-card h3,.work-card h3,.price-card h3,.faq-item h3,.step-card h3,.reason-card h3{
+    .service-card h3,
+    .price-card h3,
+    .step-card h3,
+    .faq-box h3,
+    .compare-card h3,
+    .review-card h3{
       margin:0 0 10px;
       font-size:22px;
+      font-weight:900;
     }
 
-    .service-card p,.work-card p,.price-card p,.faq-item p,.step-card p,.reason-card p{
+    .service-card p,
+    .price-card p,
+    .step-card p,
+    .faq-box p,
+    .compare-card p,
+    .review-card p{
       margin:0;
       color:var(--muted);
     }
 
+    .services{grid-template-columns:repeat(3,1fr)}
+    .steps{grid-template-columns:repeat(4,1fr)}
+    .pricing{grid-template-columns:repeat(3,1fr)}
+    .comparison-grid{grid-template-columns:repeat(2,1fr)}
+    .reviews-grid{grid-template-columns:repeat(3,1fr)}
+
+    .compare-card.bad{
+      border-color:rgba(255,120,120,.22);
+      background:linear-gradient(180deg,rgba(255,95,95,.08),rgba(255,255,255,.04));
+    }
+
+    .compare-card.good{
+      border-color:rgba(0,215,163,.28);
+      background:linear-gradient(180deg,rgba(0,215,163,.10),rgba(255,255,255,.04));
+    }
+
+    .compare-list{
+      display:grid;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .compare-list div{
+      color:var(--muted);
+    }
+
+    .compare-list div::before{
+      margin-left:10px;
+      font-weight:900;
+    }
+
+    .compare-card.bad .compare-list div::before{
+      content:"✕";
+      color:#ff8a8a;
+    }
+
+    .compare-card.good .compare-list div::before{
+      content:"✓";
+      color:var(--accent);
+    }
+
+    .works-slider{
+      position:relative;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .works-track-wrap{
+      overflow:hidden;
+      width:100%;
+    }
+
+    .works-track{
+      display:flex;
+      gap:16px;
+      transition:transform .45s ease;
+      will-change:transform;
+      touch-action:pan-y;
+    }
+
+    .work-slide{
+      min-width:calc(33.333% - 11px);
+      flex:0 0 calc(33.333% - 11px);
+      display:block;
+    }
+
     .work-card{
-      min-height:320px;
+      min-height:100%;
       display:flex;
       flex-direction:column;
-      justify-content:flex-end;
+      justify-content:flex-start;
       background:
-        linear-gradient(180deg,rgba(7,11,23,.08),rgba(7,11,23,.88)),
-        radial-gradient(circle at top left,rgba(110,168,255,.28),transparent 35%),
-        radial-gradient(circle at bottom right,rgba(0,215,163,.20),transparent 30%),
+        linear-gradient(180deg,rgba(7,11,23,.08),rgba(7,11,23,.90)),
+        radial-gradient(circle at top left,rgba(110,168,255,.24),transparent 35%),
+        radial-gradient(circle at bottom right,rgba(0,215,163,.18),transparent 30%),
         linear-gradient(135deg,#182544,#0b1228 60%,#132036);
+    }
+
+    .work-image-wrap{
+      width:100%;
+      aspect-ratio:16/10;
+      border-radius:18px;
+      overflow:hidden;
+      margin-bottom:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .work-image{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      transition:transform .45s ease;
+    }
+
+    .work-slide:hover .work-image{
+      transform:scale(1.05);
     }
 
     .work-badge{
@@ -679,6 +695,93 @@
       background:rgba(255,255,255,.05);
       margin-bottom:14px;
       width:fit-content;
+      font-family:var(--title-font);
+      font-weight:700;
+    }
+
+    .work-card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      font-weight:900;
+      font-family:var(--title-font);
+    }
+
+    .work-card p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .work-cta{
+      margin-top:16px;
+      color:#8fe7d0;
+      font-weight:800;
+      font-size:14px;
+      font-family:var(--title-font);
+    }
+
+    .works-nav{
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:50%;
+      cursor:pointer;
+      flex-shrink:0;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      font-size:28px;
+      line-height:1;
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(10px);
+      transition:.25s ease;
+    }
+
+    .works-nav:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.14);
+    }
+
+    .works-dots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .works-dots button{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      border:none;
+      background:rgba(255,255,255,.25);
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .works-dots button.active{
+      width:28px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+    }
+
+    .swipe-note{
+      color:#a6b7d6;
+      margin-top:-8px;
+      margin-bottom:18px;
+      font-size:14px;
+    }
+
+    .review-stars{
+      color:var(--gold);
+      font-size:18px;
+      margin-bottom:8px;
+      letter-spacing:1px;
+    }
+
+    .review-name{
+      margin-top:14px;
+      font-size:15px;
+      color:#fff;
+      font-weight:800;
     }
 
     .price-card{
@@ -698,10 +801,11 @@
       font-size:13px;
       padding:8px 12px;
       border-radius:999px;
+      font-family:var(--title-font);
     }
 
     .price{
-      font-size:46px;
+      font-size:44px;
       font-weight:900;
       line-height:1;
     }
@@ -713,12 +817,22 @@
       display:block;
       margin-bottom:8px;
       font-weight:700;
+      font-family:var(--body-font);
     }
 
     .price span{
       font-size:16px;
       color:var(--muted);
       font-weight:700;
+      font-family:var(--body-font);
+    }
+
+    .pricing-guarantee{
+      text-align:center;
+      margin:0 0 18px;
+      color:#d9fff3;
+      font-weight:800;
+      font-family:var(--title-font);
     }
 
     .price-features{
@@ -737,153 +851,95 @@
     .limited{
       color:var(--gold) !important;
       font-weight:800 !important;
+      font-family:var(--title-font);
     }
 
     .featured{
-      border-color:rgba(0,215,163,.45);
-      background:linear-gradient(180deg,rgba(0,215,163,.10),rgba(255,255,255,.06));
-      transform:translateY(-8px);
-    }
-
-    .reviews-wrap{
-      position:relative;
-      overflow:hidden;
-      mask-image:linear-gradient(to left,transparent 0%,#000 8%,#000 92%,transparent 100%);
-      -webkit-mask-image:linear-gradient(to left,transparent 0%,#000 8%,#000 92%,transparent 100%);
-    }
-
-    .reviews-track{
-      display:flex;
-      gap:18px;
-      width:max-content;
-      animation:reviewsScroll 34s linear infinite;
-      padding:8px 0;
-    }
-
-    .reviews-wrap:hover .reviews-track{
-      animation-play-state:paused;
-    }
-
-    @keyframes reviewsScroll{
-      from{transform:translateX(0)}
-      to{transform:translateX(50%)}
-    }
-
-    .review-card{
-      min-width:320px;
-      max-width:320px;
-      background:#fff;
-      color:#0f172a;
-      border-radius:22px;
-      padding:22px;
-      box-shadow:0 18px 50px rgba(0,0,0,.18);
-      border:1px solid rgba(15,23,42,.08);
-      transition:transform .25s ease,box-shadow .25s ease;
-    }
-
-    .review-card:hover{
+      border-color:rgba(0,215,163,.42);
+      background:linear-gradient(180deg,rgba(0,215,163,.08),rgba(255,255,255,.06));
       transform:translateY(-6px);
-      box-shadow:0 22px 60px rgba(0,0,0,.22);
     }
 
-    .review-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:14px;
+    .faq-grid{
+      grid-template-columns:repeat(2,1fr);
     }
 
-    .review-name{
-      font-size:18px;
-      font-weight:800;
-      color:#0f172a;
-    }
-
-    .review-role{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-size:12px;
-      font-weight:700;
-      color:#2563eb;
-      background:#eff6ff;
-      border:1px solid #dbeafe;
-      padding:6px 10px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-
-    .review-stars{
-      color:#f59e0b;
-      font-size:18px;
-      line-height:1;
-      margin-bottom:12px;
-      letter-spacing:1px;
-    }
-
-    .review-text{
-      margin:0;
-      color:#475569;
-      font-size:15px;
-      line-height:1.9;
-    }
-
-    .review-footer{
-      margin-top:16px;
-      padding-top:14px;
-      border-top:1px solid #e5e7eb;
-      color:#64748b;
-      font-size:13px;
-      font-weight:700;
-    }
-
-    .faq-item{
-      padding:20px;
+    details.faq-box{
       border-radius:18px;
       background:rgba(255,255,255,.05);
       border:1px solid var(--border);
+      padding:0;
+      overflow:hidden;
+    }
+
+    details.faq-box summary{
+      list-style:none;
+      cursor:pointer;
+      padding:18px 20px;
+      font-size:18px;
+      font-weight:800;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      font-family:var(--title-font);
+    }
+
+    details.faq-box summary::-webkit-details-marker{display:none}
+
+    details.faq-box summary::after{
+      content:"+";
+      font-size:22px;
+      line-height:1;
+      color:var(--accent);
+      flex-shrink:0;
+    }
+
+    details.faq-box[open] summary::after{
+      content:"−";
+    }
+
+    .faq-content{
+      padding:0 20px 20px;
+      color:var(--muted);
     }
 
     .cta-box{
       position:relative;
       overflow:hidden;
-      padding:40px;
-      border-radius:32px;
-      background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(124,58,237,.2),rgba(0,215,163,.16));
+      padding:36px;
+      border-radius:28px;
+      background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(124,58,237,.18),rgba(0,215,163,.14));
       border:1px solid var(--border);
       box-shadow:var(--shadow);
     }
 
-    .cta-box::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 30%,transparent 70%,rgba(255,255,255,.1));
-      border-radius:inherit;
-      pointer-events:none;
-    }
-
     .cta-box h2{
       margin:0 0 10px;
-      font-size:clamp(30px,4vw,52px);
+      font-size:clamp(30px,4vw,50px);
       line-height:1.08;
+      font-weight:900;
     }
 
     .cta-box p{
-      margin:0 0 22px;
+      margin:0 0 20px;
       color:var(--muted);
       max-width:780px;
     }
 
     .footer{
-      padding:24px 0 8px;
+      padding:20px 0 8px;
       color:var(--muted);
     }
 
     .footer-grid{
       grid-template-columns:1.1fr .9fr;
       align-items:center;
+    }
+
+    .footer-grid strong{
+      font-family:var(--title-font);
+      font-weight:900;
     }
 
     .footer-links{
@@ -893,99 +949,74 @@
       justify-content:flex-end;
     }
 
+    .footer-links a{
+      font-family:var(--title-font);
+      font-weight:700;
+    }
+
     .made-with-love{
       text-align:center;
-      padding:14px 0 34px;
+      padding:14px 0 30px;
       color:#b8c4de;
       font-size:14px;
+      font-family:var(--title-font);
     }
 
-    .made-with-love span{
-      color:#ff4d5a;
-    }
-
-    #notif{
-      position:fixed;
-      bottom:20px;
-      left:20px;
-      background:#fff;
-      color:#111;
-      padding:14px 16px;
-      border-radius:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-      font-size:14px;
-      display:none;
-      z-index:999;
-      max-width:260px;
-    }
+    .made-with-love span{color:#ff4d5a}
 
     #whatsappFloat{
       position:fixed;
-      bottom:20px;
-      right:20px;
+      bottom:18px;
+      right:18px;
       background:#00d7a3;
-      color:#000;
-      font-size:26px;
-      width:60px;
-      height:60px;
+      color:#04110d;
+      font-size:25px;
+      width:58px;
+      height:58px;
       display:flex;
       align-items:center;
       justify-content:center;
       border-radius:50%;
-      box-shadow:0 10px 30px rgba(0,0,0,.3);
-      animation:shake 2s infinite;
+      box-shadow:0 12px 28px rgba(0,0,0,.22);
       z-index:999;
+      transition:.2s ease;
+      animation:floatPulse 2.4s infinite;
     }
 
-    @keyframes shake{
-      0%,100%{transform:translateX(0)}
-      25%{transform:translateX(-3px)}
-      50%{transform:translateX(3px)}
-      75%{transform:translateX(-2px)}
+    #whatsappFloat:hover{
+      transform:translateY(-3px);
     }
 
-    #exitPopup{
+    @keyframes floatPulse{
+      0%,100%{box-shadow:0 12px 28px rgba(0,0,0,.22)}
+      50%{box-shadow:0 12px 28px rgba(0,0,0,.22),0 0 0 10px rgba(0,215,163,.08)}
+    }
+
+    .mobile-sticky-cta{
       display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.7);
-      z-index:9999;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .exit-box{
-      background:#fff;
-      color:#111;
-      padding:30px;
-      border-radius:20px;
-      max-width:400px;
-      text-align:center;
-      margin:16px;
-    }
-
-    .exit-box a{
-      display:inline-block;
-      margin-top:15px;
-      padding:12px 20px;
-      background:#00d7a3;
-      color:#000;
-      border-radius:10px;
-      font-weight:bold;
     }
 
     @media (max-width:1100px){
-      .hero-grid,.about,.footer-grid,.mini-row,.services,.works,.pricing,.faq,.steps,.reasons,.stats{
+      .hero-grid,
+      .services,
+      .pricing,
+      .steps,
+      .stats,
+      .faq-grid,
+      .footer-grid,
+      .comparison-grid,
+      .reviews-grid{
         grid-template-columns:1fr 1fr;
       }
 
-      .hero-grid>:first-child,
-      .about>:first-child,
-      .footer-grid>:first-child{
+      .steps article:last-child{
         grid-column:1/-1;
       }
 
-      .hero-visual{min-height:640px}
+      .work-slide{
+        min-width:calc(50% - 8px);
+        flex:0 0 calc(50% - 8px);
+      }
     }
 
     @media (max-width:860px){
@@ -993,20 +1024,118 @@
 
       .nav-inner{
         min-height:auto;
-        padding:14px 0;
+        padding:10px 0;
         flex-wrap:wrap;
       }
 
-      .logo{width:100%}
+      .logo{
+        width:100%;
+        max-width:none;
+        padding:8px 10px;
+        border-radius:16px;
+      }
+
+      .nav-cta{
+        width:100%;
+        min-height:48px;
+      }
     }
 
     @media (max-width:760px){
-      .hero,section{padding:28px 0}
-      .hero h1{font-size:44px}
-      .hero p{font-size:16px}
+      body{
+        padding-bottom:92px;
+      }
 
-      .hero-grid,.about,.footer-grid,.mini-row,.services,.works,.pricing,.faq,.steps,.reasons,.stats{
+      body::before,
+      body::after{
+        display:none;
+      }
+
+      .promo-bar{
+        font-size:13px;
+        padding:10px 12px;
+      }
+
+      .hero,
+      section{
+        padding:28px 0;
+      }
+
+      .hero-grid,
+      .services,
+      .pricing,
+      .steps,
+      .stats,
+      .faq-grid,
+      .footer-grid,
+      .comparison-grid,
+      .mini-row,
+      .reviews-grid{
         grid-template-columns:1fr;
+      }
+
+      .nav{
+        background:rgba(6,9,20,.92);
+        backdrop-filter:blur(8px);
+      }
+
+      .logo-image-wrap{
+        width:50px;
+        height:50px;
+      }
+
+      .logo-title{font-size:18px}
+      .logo-subtitle{font-size:10px}
+
+      .nav-cta{
+        padding:0 14px;
+        font-size:15px;
+      }
+
+      h1{
+        font-size:38px;
+        line-height:1.08;
+      }
+
+      .hero p{
+        font-size:16px;
+        max-width:100%;
+        margin-bottom:18px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        margin-bottom:12px;
+      }
+
+      .hero-actions .btn,
+      .hero-actions a,
+      .price-card .btn{
+        width:100%;
+      }
+
+      .hero-proof .proof:nth-child(3){
+        display:none;
+      }
+
+      .hero-visual{
+        margin-top:4px;
+      }
+
+      .floating-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .mockup{
+        padding:12px;
+      }
+
+      .mini-title{
+        font-size:22px;
+      }
+
+      .mini-row{
+        display:none;
       }
 
       .section-head{
@@ -1014,54 +1143,148 @@
         align-items:start;
       }
 
-      .featured{transform:none}
-      .cta-box{padding:26px}
-      .footer-links{justify-content:start}
-      .hero-visual{min-height:560px}
-      .mockup{inset:60px 0 0 0}
-      .floating.one{right:0;width:172px}
-      .floating.two{left:0;width:188px}
-      .floating.three{display:none}
-      .review-card{min-width:280px;max-width:280px}
-      .logo-image-wrap{width:58px;height:58px}
-      .logo-title{font-size:20px}
-      .logo-subtitle{font-size:11px}
-      .nav{top:42px}
+      .featured{
+        transform:none;
+      }
+
+      .cta-box{
+        padding:24px;
+      }
+
+      .footer-links{
+        justify-content:start;
+      }
+
+      #whatsappFloat{
+        display:none;
+      }
+
+      .works-slider{
+        gap:8px;
+      }
+
+      .work-slide{
+        min-width:100%;
+        flex:0 0 100%;
+      }
+
+      .works-nav{
+        display:none;
+      }
+
+      .work-image-wrap{
+        aspect-ratio:16/11;
+        margin-bottom:12px;
+      }
+
+      .work-card h3{
+        font-size:20px;
+      }
+
+      .work-card p{
+        font-size:14px;
+        line-height:1.8;
+      }
+
+      .glass,
+      .mockup,
+      .floating,
+      .card{
+        backdrop-filter:none;
+        box-shadow:0 8px 18px rgba(0,0,0,.16);
+      }
+
+      .bar::after{
+        animation:none;
+      }
+
+      .price-features div:nth-child(n+7){
+        display:none;
+      }
+
+      .mobile-sticky-cta{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        position:fixed;
+        left:12px;
+        right:12px;
+        bottom:12px;
+        z-index:1000;
+        background:rgba(6,9,20,.92);
+        border:1px solid rgba(255,255,255,.10);
+        border-radius:16px;
+        padding:10px;
+        backdrop-filter:blur(10px);
+        box-shadow:0 12px 24px rgba(0,0,0,.20);
+      }
+
+      .mobile-sticky-cta a{
+        min-height:48px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius:12px;
+        font-weight:800;
+        font-family:var(--title-font);
+        font-size:15px;
+      }
+
+      .mobile-sticky-cta a:first-child{
+        background:linear-gradient(135deg,var(--accent),#67ffd8);
+        color:#04110d;
+      }
+
+      .mobile-sticky-cta a:last-child{
+        background:rgba(255,255,255,.08);
+        color:#fff;
+        border:1px solid rgba(255,255,255,.08);
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
       *,*::before,*::after{
-        animation:none!important;
-        transition:none!important;
-        scroll-behavior:auto!important;
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="promo-bar">خصومات خاصة لفترة محدودة 🔥 ينتهي خلال <span id="countdown">--:--</span></div>
+  <div class="promo-bar">
+    عرض خاص على تصميم صفحات الهبوط وصفحات عرض الأعمال — والدفع بعد التنفيذ 🚀
+  </div>
 
   <header class="nav">
     <div class="container nav-inner">
-      <a href="#home" class="logo">
+      <a href="#home" class="logo" aria-label="الانتقال إلى أعلى الصفحة">
         <span class="logo-image-wrap">
           <img src="./logo.png" alt="شعار عبدالله" class="logo-image">
         </span>
         <span class="logo-text">
           <span class="logo-title">عبدالله</span>
-          <span class="logo-subtitle">نسخة PRO لعرض الخدمات باحترافية</span>
+          <span class="logo-subtitle">تصميم صفحات هبوط وهوية عرض أعمال باحترافية</span>
         </span>
       </a>
 
-      <nav class="nav-links">
-        <a href="#about">من نحن</a>
+      <nav class="nav-links" aria-label="القائمة الرئيسية">
+        <a href="#about">ليش الصفحة تفرق؟</a>
         <a href="#services">الخدمات</a>
         <a href="#works">الأعمال</a>
         <a href="#pricing">الباقات</a>
         <a href="#faq">الأسئلة</a>
       </nav>
 
-      <a href="https://wa.me/966551626637" class="nav-cta">تواصل واتساب</a>
+      <a
+        href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7"
+        class="nav-cta"
+        aria-label="تواصل عبر واتساب"
+        target="_blank"
+        rel="noopener"
+      >
+        واتساب
+      </a>
     </div>
   </header>
 
@@ -1069,33 +1292,49 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="reveal visible">
-          <span class="badge">✨ نسخة PRO موجهة للإقناع والانطباع القوي</span>
+          <span class="badge">✨ صفحة مصممة لرفع الثقة وزيادة فرص التواصل</span>
           <h1>
-            اعرض خدمتك بطريقة
-            <span class="gradient">تشد الانتباه وتقفل العميل</span>
-            من أول زيارة
+            خدمتك تستحق صفحة
+            <span class="gradient">تقنع من أول نظرة</span>
           </h1>
           <p>
-            هذه النسخة مصممة لتكون واجهتك الأقوى أمام العميل. تصميم فاخر، أقسام مرتبة، آراء عملاء، نماذج أعمال، وتسلسل بصري يخلي العرض أوضح وأكثر إقناعًا.
+            أصمم لك صفحة احترافية واضحة، فخمة، ومناسبة للجوال، تختصر الشرح على العميل وتزيد فرص الطلب والتواصل من أول زيارة.
           </p>
 
           <div class="hero-actions">
-            <a href="#works" class="btn btn-primary">شاهد الأعمال</a>
-            <a href="https://wa.me/966551626637" class="btn btn-secondary">اطلب عبر واتساب</a>
+            <a
+              href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%B1%D8%B3%D9%84%20%D9%84%D9%8A%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              اطلب صفحتك الآن
+            </a>
+            <a href="#works" class="btn btn-secondary">
+              شاهد نماذج الأعمال
+            </a>
           </div>
 
           <div class="hero-proof">
-            <span class="proof">✅ مظهر احترافي فخم</span>
-            <span class="proof">✅ مناسب للخدمات والمنتجات</span>
-            <span class="proof">✅ مبني على الوضوح والتحويل</span>
+            <span class="proof">✅ مناسبة للجوال 100%</span>
+            <span class="proof">✅ الدفع بعد التنفيذ</span>
+            <span class="proof">✅ جاهزة للإعلانات</span>
           </div>
         </div>
 
         <div class="hero-visual reveal visible">
-          <div class="floating one glass">
-            <div class="fc-title">جاذبية العرض</div>
-            <div class="fc-value counter" data-target="96">0</div>
-            <div class="fc-title">انطباع أقوى من أول ثانية</div>
+          <div class="floating-wrap">
+            <div class="floating glass">
+              <div class="fc-title">وضوح الرسالة</div>
+              <div class="fc-value">واضح</div>
+              <div class="fc-title">عرض مختصر وسريع يفهمه العميل من أول نظرة</div>
+            </div>
+
+            <div class="floating glass">
+              <div class="fc-title">جاهزية الجوال</div>
+              <div class="fc-value">100%</div>
+              <div class="fc-title">تجربة مرتبة وسلسة على الهاتف</div>
+            </div>
           </div>
 
           <div class="mockup">
@@ -1105,108 +1344,186 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
               </div>
+
               <div class="browser-body">
                 <div class="mini-hero">
-                  <div class="mini-title">واجهة تشرح القيمة بسرعة</div>
-                  <div class="mini-sub">تصميم واضح + ترتيب ذكي + CTA قوي = فرصة أعلى للتواصل والطلب</div>
-                  <a href="https://wa.me/966551626637" class="btn btn-primary" style="min-height:48px;padding:0 18px;font-size:14px;display:inline-flex;">ابدأ الآن</a>
+                  <div class="mini-title">واجهة توضح القيمة بسرعة</div>
+                  <div class="mini-sub">
+                    عنوان واضح + محتوى مرتب + زر تواصل مباشر = فرصة أعلى للتواصل والطلب
+                  </div>
+                  <a
+                    href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7%20%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9"
+                    class="btn btn-primary"
+                    style="min-height:48px;padding:0 18px;font-size:14px;display:inline-flex;"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    ابدأ الآن
+                  </a>
                 </div>
+
                 <div class="mini-row">
                   <div class="mini-card">
-                    <strong>وضوح الرسالة</strong>
-                    <div class="bar" style="width:90%"></div>
-                    <small>عنوان قوي + شرح مباشر</small>
+                    <strong style="font-family:var(--title-font)">رفع الثقة</strong>
+                    <div class="bar" style="width:91%"></div>
+                    <small>أسلوب عرض يعطي نشاطك قيمة أعلى</small>
                   </div>
+
                   <div class="mini-card">
-                    <strong>ثقة العميل</strong>
-                    <div class="bar" style="width:84%"></div>
-                    <small>آراء + أعمال + هيكلة مرتبة</small>
+                    <strong style="font-family:var(--title-font)">اختصار الشرح</strong>
+                    <div class="bar" style="width:86%"></div>
+                    <small>رابط واحد يشرح خدمتك كاملة</small>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="floating two glass">
-            <div class="fc-title">جاهزية الجوال</div>
-            <div class="fc-value counter" data-target="100">0</div>
-            <div class="fc-title">تجربة ممتازة على كل الأجهزة</div>
-          </div>
-
-          <div class="floating three glass">
-            <div class="fc-title">سرعة الإقناع</div>
-            <div class="fc-value counter" data-target="3">0</div>
-            <div class="fc-title">ثواني لصناعة أول انطباع</div>
-          </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section aria-label="أهم المميزات">
       <div class="container stats reveal">
         <div class="glass stat">
-          <div class="stat-number"><span class="counter" data-target="1">0</span></div>
-          <div class="stat-label">هدف واضح داخل الصفحة</div>
+          <div class="stat-number">هدف واحد</div>
+          <div class="stat-label">التركيز على التفاعل والتواصل بدل التشتيت</div>
         </div>
+
         <div class="glass stat">
-          <div class="stat-number"><span class="counter" data-target="8">0</span>+</div>
-          <div class="stat-label">أقسام مرتبة بعناية</div>
+          <div class="stat-number">جوال أولًا</div>
+          <div class="stat-label">تصميم متجاوب ومريح للقراءة والضغط</div>
         </div>
+
         <div class="glass stat">
-          <div class="stat-number"><span class="counter" data-target="24">0</span>/7</div>
-          <div class="stat-label">واجهة تعمل لك طوال الوقت</div>
+          <div class="stat-number">رابط جاهز</div>
+          <div class="stat-label">يرسل للعميل بسرعة ويشرح خدمتك بوضوح</div>
         </div>
-        <div class="glass stat">
-          <div class="stat-number"><span class="counter" data-target="100">0</span>%</div>
-          <div class="stat-label">جاهزة للجوال والكمبيوتر</div>
+      </div>
+    </section>
+
+    <section id="works">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>نماذج أعمال حقيقية</h2>
+            <p>هذه بعض النماذج الجاهزة من أعمالي، ويمكنك فتح كل نموذج مباشرة ومعاينته بنفسك.</p>
+          </div>
         </div>
+
+        <p class="swipe-note reveal">اسحب يمين ويسار وشاهد نماذج الأعمال مباشرة</p>
+
+        <div class="works-slider reveal">
+          <button class="works-nav prev" aria-label="السابق">‹</button>
+
+          <div class="works-track-wrap">
+            <div class="works-track" id="worksTrack">
+
+              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/photo.html" target="_blank" rel="noopener">
+                <article class="card work-card">
+                  <div class="work-image-wrap">
+                    <img src="./images/photo-project.jpg" alt="نموذج خدمة تصوير" class="work-image" loading="lazy" decoding="async">
+                  </div>
+                  <span class="work-badge">📸 خدمة تصوير</span>
+                  <h3>نموذج خدمة تصوير</h3>
+                  <p>صفحة هبوط مخصصة لخدمة تصوير بأسلوب بصري احترافي يعكس الجودة والعرض بوضوح.</p>
+                  <div class="work-cta">شاهد النموذج كامل ↗</div>
+                </article>
+              </a>
+
+              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/kahrba.html" target="_blank" rel="noopener">
+                <article class="card work-card">
+                  <div class="work-image-wrap">
+                    <img src="./images/electric-project.jpg" alt="نموذج خدمة إنارات وكهرباء" class="work-image" loading="lazy" decoding="async">
+                  </div>
+                  <span class="work-badge">⚡ كهرباء وإنارة</span>
+                  <h3>نموذج خدمة إنارات وكهرباء</h3>
+                  <p>تصميم يعرض خدمات الكهرباء والإنارة بشكل واضح ومرتب ومناسب لتواصل العملاء بسرعة.</p>
+                  <div class="work-cta">شاهد النموذج كامل ↗</div>
+                </article>
+              </a>
+
+              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/alnmume.html" target="_blank" rel="noopener">
+                <article class="card work-card">
+                  <div class="work-image-wrap">
+                    <img src="./images/aluminum-project.jpg" alt="نموذج خدمة المنيوم ونوافذ" class="work-image" loading="lazy" decoding="async">
+                  </div>
+                  <span class="work-badge">⚙️ ألمنيوم ونوافذ</span>
+                  <h3>نموذج خدمة المنيوم ونوافذ</h3>
+                  <p>واجهة مخصصة لخدمات الألمنيوم والواجهات والنوافذ مع عرض فخم ومتناسق.</p>
+                  <div class="work-cta">شاهد النموذج كامل ↗</div>
+                </article>
+              </a>
+
+              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/aswar2.html" target="_blank" rel="noopener">
+                <article class="card work-card">
+                  <div class="work-image-wrap">
+                    <img src="./images/fence-project.jpg" alt="نموذج أسوار للمشاريع الناشئة" class="work-image" loading="lazy" decoding="async">
+                  </div>
+                  <span class="work-badge">🖼️ أسوار مشاريع</span>
+                  <h3>نموذج أسوار للمشاريع الناشئة</h3>
+                  <p>تصميم موجه للأنشطة التنفيذية والميدانية مع عرض احترافي للخدمة والقيمة.</p>
+                  <div class="work-cta">شاهد النموذج كامل ↗</div>
+                </article>
+              </a>
+
+              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/mared.html" target="_blank" rel="noopener">
+                <article class="card work-card">
+                  <div class="work-image-wrap">
+                    <img src="./images/expo-project.jpg" alt="نموذج إنشاء معارض" class="work-image" loading="lazy" decoding="async">
+                  </div>
+                  <span class="work-badge">🏙️ معارض وبوثات</span>
+                  <h3>نموذج إنشاء معارض</h3>
+                  <p>صفحة تعرض خدمات المعارض والمؤتمرات والبوثات بأسلوب يرفع قيمة النشاط بصريًا.</p>
+                  <div class="work-cta">شاهد النموذج كامل ↗</div>
+                </article>
+              </a>
+
+            </div>
+          </div>
+
+          <button class="works-nav next" aria-label="التالي">›</button>
+        </div>
+
+        <div class="works-dots" id="worksDots"></div>
       </div>
     </section>
 
     <section id="about">
-      <div class="container about">
-        <div class="glass reveal">
-          <div class="section-head" style="margin-bottom:14px">
-            <div>
-              <h2>لماذا هذه الصفحة مناسبة لك؟</h2>
-              <p>لأن العميل اليوم يحتاج يشوف عرضًا احترافيًا يشرح الفائدة بسرعة ويعكس جودة العمل قبل أن يقرر التواصل.</p>
-            </div>
-          </div>
-
-          <div class="reasons">
-            <div class="card reason-card">
-              <div class="icon">🎨</div>
-              <h3>انطباع أول أقوى</h3>
-              <p>واجهة عصرية ترفع قيمة النشاط وتعطيك شكل احترافي من أول زيارة.</p>
-            </div>
-            <div class="card reason-card">
-              <div class="icon">🧠</div>
-              <h3>فهم أسرع للعرض</h3>
-              <p>ترتيب ذكي للعناوين والنصوص والمميزات بحيث يفهم العميل القيمة مباشرة.</p>
-            </div>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>ليش صفحة الهبوط تفرق فعلًا؟</h2>
+            <p>
+              لأن كثير من العملاء ما يقرؤون طويل، لكنهم يحكمون بسرعة. الصفحة المرتبة تعطيهم وضوح وثقة وانطباع قوي من أول زيارة.
+            </p>
           </div>
         </div>
 
-        <div class="glass reveal">
-          <div class="section-head" style="margin-bottom:14px">
-            <div>
-              <h2>ما الذي تحصل عليه؟</h2>
-              <p>صفحة عرض أعمال متكاملة تجمع بين الشكل الفخم، الوضوح، وآليات الإقناع التي ترفع الثقة.</p>
+        <div class="comparison-grid">
+          <article class="card compare-card bad reveal">
+            <div class="icon">😕</div>
+            <h3>بدون صفحة مرتبة</h3>
+            <p>غالبًا تشرح كثير، والعميل يضيع بين الرسائل أو يطلع بدون ما يفهم القيمة.</p>
+            <div class="compare-list">
+              <div>الشرح يتكرر في كل مرة</div>
+              <div>الانطباع الأول يكون أضعف</div>
+              <div>العرض غير واضح خصوصًا على الجوال</div>
+              <div>ضعف في تحويل الزائر إلى عميل محتمل</div>
             </div>
-          </div>
+          </article>
 
-          <div class="reasons">
-            <div class="card reason-card">
-              <div class="icon">📁</div>
-              <h3>تنظيم كامل</h3>
-              <p>كل شيء موجود بشكل واضح: الخدمات، الأعمال، الآراء، والباقات.</p>
+          <article class="card compare-card good reveal">
+            <div class="icon">🚀</div>
+            <h3>مع صفحة احترافية</h3>
+            <p>تعرض الخدمة بشكل أوضح وأقوى، وتخلي العميل يفهم ويثق ويتخذ خطوة أسرع.</p>
+            <div class="compare-list">
+              <div>رابط واحد يشرح الخدمة بوضوح</div>
+              <div>مظهر احترافي يرفع قيمة نشاطك</div>
+              <div>تجربة ممتازة على الجوال</div>
+              <div>فرص أعلى للتواصل والطلب</div>
             </div>
-            <div class="card reason-card">
-              <div class="icon">⭐</div>
-              <h3>ثقة أعلى</h3>
-              <p>كل عنصر في الصفحة يخدم الانطباع القوي ويقلل تردد العميل.</p>
-            </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1216,7 +1533,7 @@
         <div class="section-head reveal">
           <div>
             <h2>الخدمات</h2>
-            <p>خدمات مرتبة لتُعرض بشكل واضح وتبرز القيمة الحقيقية لما تقدمه.</p>
+            <p>كل خدمة مصممة لتساعدك تعرض نشاطك بشكل أوضح، أجمل، وأكثر إقناعًا للعملاء.</p>
           </div>
         </div>
 
@@ -1224,177 +1541,37 @@
           <article class="card service-card reveal">
             <div class="icon">🚀</div>
             <h3>تصميم صفحات هبوط</h3>
-            <p>صفحات مخصصة للعروض والخدمات والمنتجات الرقمية والحملات الإعلانية بشكل عصري ومرتب.</p>
+            <p>صفحات مخصصة للعروض والخدمات والمنتجات والحملات الإعلانية بأسلوب عصري واضح ومقنع.</p>
           </article>
+
           <article class="card service-card reveal">
             <div class="icon">✍️</div>
-            <h3>ترتيب وكتابة المحتوى</h3>
-            <p>صياغة أوضح للعناوين والرسائل والنقاط البيعية لرفع الفهم والانطباع الإيجابي.</p>
+            <h3>ترتيب وصياغة المحتوى</h3>
+            <p>تحسين العناوين والرسائل البيعية والنصوص لتظهر الفائدة بشكل أسرع وأقوى.</p>
           </article>
+
           <article class="card service-card reveal">
             <div class="icon">📱</div>
             <h3>تحسين تجربة الجوال</h3>
-            <p>تجهيز الصفحة لتظهر بشكل ممتاز على الهاتف لأن أغلب الزوار يأتون من الجوال.</p>
+            <p>تصميم مريح وسريع وواضح على الهاتف لأن أغلب العملاء يشوفون العرض من الجوال.</p>
           </article>
+
           <article class="card service-card reveal">
             <div class="icon">🧩</div>
-            <h3>هيكلة مقنعة</h3>
-            <p>ترتيب المحتوى والأزرار والمميزات والآراء بطريقة تساعد العميل على اتخاذ القرار بسرعة.</p>
+            <h3>هيكلة تحويلية</h3>
+            <p>ترتيب ذكي للأقسام والأزرار والمميزات حتى ينتقل العميل من المشاهدة إلى التفاعل بسهولة.</p>
           </article>
+
           <article class="card service-card reveal">
             <div class="icon">💼</div>
-            <h3>صفحة عرض أعمال</h3>
-            <p>واجهة احترافية تعرض الأعمال والخدمات في مكان واحد بشكل أنيق وواضح.</p>
+            <h3>صفحات عرض أعمال</h3>
+            <p>واجهة واحدة تجمع خدماتك وأعمالك وباقاتك وروابطك بشكل أنيق وسهل الإرسال للعميل.</p>
           </article>
+
           <article class="card service-card reveal">
             <div class="icon">⚙️</div>
             <h3>ربط واتساب وتجهيز النشر</h3>
-            <p>ربط الأزرار وتعديل النصوص وتجهيز الصفحة للنشر على رابط مجاني أو دومين خاص.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="works">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>نماذج أعمال</h2>
-            <p>نماذج أعمال توضح أسلوب التصميم وطريقة عرض الخدمات بشكل احترافي يساعد العميل على اتخاذ قرار أسرع.</p>
-          </div>
-        </div>
-
-        <div class="works">
-          <article class="card work-card reveal">
-            <span class="work-badge">Landing Page</span>
-            <h3>صفحة عرض خدمة احترافية</h3>
-            <p>تصميم مخصص لخدمة رقمية مع CTA واضح وترتيب بصري يخدم الإقناع.</p>
-          </article>
-          <article class="card work-card reveal">
-            <span class="work-badge">Portfolio</span>
-            <h3>صفحة عرض أعمال شخصية</h3>
-            <p>واجهة أنيقة تعرض الخدمات والأعمال والآراء في رابط واحد سهل الإرسال.</p>
-          </article>
-          <article class="card work-card reveal">
-            <span class="work-badge">Offer Page</span>
-            <h3>صفحة عرض منتج أو باقة</h3>
-            <p>صفحة توضح العرض والسعر والمميزات بطريقة تساعد على رفع الطلبات.</p>
-          </article>
-          <article class="card work-card reveal">
-            <span class="work-badge">Mobile First</span>
-            <h3>تصميم مخصص للجوال</h3>
-            <p>اهتمام كامل بوضوح النصوص والأزرار والمسافات لتجربة ممتازة على الهاتف.</p>
-          </article>
-          <article class="card work-card reveal">
-            <span class="work-badge">Premium UI</span>
-            <h3>واجهة فخمة حديثة</h3>
-            <p>تأثيرات ناعمة وأنيميشن بسيط وأسلوب بصري يرفع قيمة البراند.</p>
-          </article>
-          <article class="card work-card reveal">
-            <span class="work-badge">Custom Design</span>
-            <h3>تصميم حسب الهوية</h3>
-            <p>إمكانية تخصيص الألوان والرسائل والأزرار بما يناسب نشاطك بشكل كامل.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>طريقة العمل</h2>
-            <p>خطوات عمل واضحة ومنظمة تضمن لك تجربة احترافية من البداية حتى التسليم.</p>
-          </div>
-        </div>
-
-        <div class="steps">
-          <article class="card step-card reveal">
-            <div class="icon">1</div>
-            <h3>استلام التفاصيل</h3>
-            <p>نبدأ بفهم النشاط والهدف والجمهور المستهدف حتى تكون الصفحة مناسبة فعلاً لاحتياجك.</p>
-          </article>
-          <article class="card step-card reveal">
-            <div class="icon">2</div>
-            <h3>ترتيب المحتوى</h3>
-            <p>يتم تنظيم الأقسام والعناوين والمميزات والرسائل بشكل يخدم الفهم والإقناع.</p>
-          </article>
-          <article class="card step-card reveal">
-            <div class="icon">3</div>
-            <h3>التصميم والتنفيذ</h3>
-            <p>تصميم الصفحة بأسلوب عصري وفخم مع مراعاة تجربة الجوال وسهولة الاستخدام.</p>
-          </article>
-          <article class="card step-card reveal">
-            <div class="icon">4</div>
-            <h3>التسليم والنشر</h3>
-            <p>تسليم الصفحة جاهزة مع إمكانية المساعدة في رفعها على رابط مجاني أو دومين خاص.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="pricing">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>الباقات</h2>
-            <p>باقات مرنة تناسب مختلف الاحتياجات، مع توضيح كامل لكل خيار لمساعدتك في اختيار الأنسب.</p>
-          </div>
-        </div>
-
-        <div class="pricing">
-          <article class="card price-card reveal">
-            <h3>الباقة الاقتصادية</h3>
-            <p>مناسبة للمشاريع الناشئة أو من يحتاج صفحة تعريفية أو عرض خدمة بشكل أنيق.</p>
-            <div class="price">
-              <span class="old-price">قبل 600 ريال</span>
-              299 <span>ريال</span>
-            </div>
-            <div class="price-features">
-              <div class="limited">خصم لفترة محدودة</div>
-              <div>صفحة واحدة</div>
-              <div>تصميم احترافي أساسي</div>
-              <div>متجاوبة مع الجوال</div>
-              <div>تعديلين</div>
-            </div>
-            <a href="https://wa.me/966551626637" class="btn btn-secondary">اطلب هذه الباقة</a>
-          </article>
-
-          <article class="card price-card featured reveal">
-            <span class="price-badge">الأكثر طلباً</span>
-            <h3>الباقة الاحترافية</h3>
-            <p>الخيار الأفضل لصفحات الهبوط التي تحتاج هوية أقوى ومحتوى أوضح وترتيب يخدم الإقناع.</p>
-            <div class="price">
-              <span class="old-price">قبل 1500 ريال</span>
-              699 <span>ريال</span>
-            </div>
-            <div class="price-features">
-              <div class="limited">خصم لفترة محدودة</div>
-              <div>تصميم كامل عالي التحويل</div>
-              <div>ترتيب وكتابة محتوى</div>
-              <div>هيكلة أقسام مدروسة</div>
-              <div>ربط واتساب أو نموذج</div>
-              <div>4 تعديلات</div>
-            </div>
-            <a href="https://wa.me/966551626637" class="btn btn-primary">احجز الباقة الاحترافية</a>
-          </article>
-
-          <article class="card price-card reveal">
-            <h3>باقة VIP</h3>
-            <p>لمن يريد صفحة أو عرض أعمال بمستوى أقوى من ناحية الهوية والانطباع النهائي.</p>
-            <div class="price">
-              <span class="old-price">قبل 3000 ريال</span>
-              1499 <span>ريال</span>
-            </div>
-            <div class="price-features">
-              <div class="limited">خصم لفترة محدودة</div>
-              <div>تصميم فخم مخصص</div>
-              <div>هوية ورسائل أوضح</div>
-              <div>قسم أعمال وآراء عملاء</div>
-              <div>تخصيص كامل للمحتوى</div>
-              <div>أولوية في التنفيذ</div>
-            </div>
-            <a href="https://wa.me/966551626637" class="btn btn-secondary">اطلب VIP</a>
+            <p>تجهيز الأزرار وروابط التواصل ومساعدتك في رفع الصفحة على رابط مجاني أو دومين خاص.</p>
           </article>
         </div>
       </div>
@@ -1405,93 +1582,183 @@
         <div class="section-head reveal">
           <div>
             <h2>آراء العملاء</h2>
-            <p>تجارب وانطباعات تعكس جودة التنفيذ والاهتمام بالتفاصيل والظهور الاحترافي أمام العملاء.</p>
+            <p>تجارب مختصرة تعكس أثر الصفحة في الانطباع والوضوح وسهولة التواصل.</p>
           </div>
         </div>
 
-        <div class="reviews-wrap reveal">
-          <div class="reviews-track">
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">محمد العتيبي</div>
-                <span class="review-role">صفحة خدمة</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">التصميم احترافي جداً وساعدني أعرض خدمتي بشكل واضح ومقنع، وصار الانطباع عند العميل أقوى من قبل.</p>
-              <div class="review-footer">تجربة ممتازة ونتيجة مرضية</div>
-            </article>
+        <div class="reviews-grid">
+          <article class="card review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <p>الصفحة اختصرت علي شرح الخدمة بشكل كبير، وصار عندي رابط واحد أرسله لأي عميل ويشرح كل شيء.</p>
+            <div class="review-name">خدمة محلية</div>
+          </article>
 
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">سعود القحطاني</div>
-                <span class="review-role">Landing Page</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">فرق كبير في طريقة عرض الخدمة، الصفحة تعطي ثقة عالية للعميل وتشرح الفكرة بسرعة بدون تشتيت.</p>
-              <div class="review-footer">وضوح + فخامة + ترتيب ممتاز</div>
-            </article>
+          <article class="card review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <p>الشكل صار أرتب بكثير قدام العميل، والانطباع من أول زيارة اختلف بشكل واضح.</p>
+            <div class="review-name">نشاط تنفيذي</div>
+          </article>
 
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">عبدالرحمن الحربي</div>
-                <span class="review-role">عرض أعمال</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">الصفحة أعطتني انطباع قوي قدام العملاء ورفعت من قيمة خدمتي بشكل واضح، خصوصاً في أول تواصل.</p>
-              <div class="review-footer">مظهر احترافي يرفع القيمة</div>
-            </article>
+          <article class="card review-card reveal">
+            <div class="review-stars">★★★★★</div>
+            <p>أكثر شيء عجبني أن الصفحة ممتازة على الجوال وسهلة جدًا في الإرسال والتصفح.</p>
+            <div class="review-name">صاحب مشروع</div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">فهد الشمري</div>
-                <span class="review-role">خدمة رقمية</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">أسلوب مرتب وسهل، العميل يفهم العرض بسرعة وهذا أهم شيء بالنسبة لي.</p>
-              <div class="review-footer">تجربة سلسة وواضحة</div>
-            </article>
-
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">تركي الدوسري</div>
-                <span class="review-role">صفحة منتج</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">شغل نظيف وفخم، والستايل فعلاً يعطي إحساس قوي أن الخدمة مرتبة ومحترفة من أول زيارة.</p>
-              <div class="review-footer">تصميم يلفت ويقنع</div>
-            </article>
-
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">ناصر الزهراني</div>
-                <span class="review-role">عرض خدمة</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">من أفضل الأشياء التي طورت ظهوري أمام العملاء. الصفحة كانت واضحة ومرتبة وساعدتني كثيراً في الشرح.</p>
-              <div class="review-footer">أنصح بها جداً</div>
-            </article>
-
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">محمد العتيبي</div>
-                <span class="review-role">صفحة خدمة</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">التصميم احترافي جداً وساعدني أعرض خدمتي بشكل واضح ومقنع، وصار الانطباع عند العميل أقوى من قبل.</p>
-              <div class="review-footer">تجربة ممتازة ونتيجة مرضية</div>
-            </article>
-
-            <article class="review-card">
-              <div class="review-top">
-                <div class="review-name">سعود القحطاني</div>
-                <span class="review-role">Landing Page</span>
-              </div>
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">فرق كبير في طريقة عرض الخدمة، الصفحة تعطي ثقة عالية للعميل وتشرح الفكرة بسرعة بدون تشتيت.</p>
-              <div class="review-footer">وضوح + فخامة + ترتيب ممتاز</div>
-            </article>
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>طريقة العمل</h2>
+            <p>خطوات واضحة ومنظمة من البداية حتى التسليم، بدون تعقيد وبدون تشتيت.</p>
           </div>
         </div>
+
+        <div class="steps">
+          <article class="card step-card reveal">
+            <div class="icon">1</div>
+            <h3>فهم النشاط</h3>
+            <p>أستلم تفاصيل النشاط والخدمة والجمهور المستهدف والهدف من الصفحة.</p>
+          </article>
+
+          <article class="card step-card reveal">
+            <div class="icon">2</div>
+            <h3>ترتيب المحتوى</h3>
+            <p>أعيد تنظيم الرسالة والعرض والعناوين بشكل يخدم الوضوح والإقناع.</p>
+          </article>
+
+          <article class="card step-card reveal">
+            <div class="icon">3</div>
+            <h3>التصميم والتنفيذ</h3>
+            <p>تصميم الصفحة بأسلوب فخم ومتوافق مع الجوال وسهل التصفح والتواصل.</p>
+          </article>
+
+          <article class="card step-card reveal">
+            <div class="icon">4</div>
+            <h3>التسليم والنشر</h3>
+            <p>تسليم الصفحة جاهزة مع المساعدة في رفعها على رابط مباشر وإرسالها للعملاء.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>الباقات</h2>
+            <p>اختر الباقة المناسبة لك حسب احتياجك — وكلها مصممة لرفع الثقة وزيادة فرص تواصل العملاء معك.</p>
+          </div>
+        </div>
+
+        <div class="pricing-guarantee reveal">💬 تشوف الصفحة كاملة قبل الدفع — والدفع بعد التنفيذ</div>
+
+        <div class="pricing">
+          <article class="card price-card reveal">
+            <h3>الباقة الاقتصادية</h3>
+            <p>مناسبة لعرض خدمة واحدة بشكل واضح ومرتب بدون تعقيد.</p>
+
+            <div class="price">
+              <span class="old-price">قبل 600 ريال</span>
+              299 <span>ريال</span>
+            </div>
+
+            <div class="price-features">
+              <div class="limited">عرض خاص لفترة محدودة</div>
+              <div>الدفع بعد التنفيذ</div>
+              <div>صفحة هبوط واحدة</div>
+              <div>تصميم احترافي أساسي</div>
+              <div>متجاوبة مع الجوال</div>
+              <div>زر واتساب مباشر</div>
+              <div>عرض خدمة بشكل واضح ومرتب</div>
+              <div>تعديلان</div>
+              <div>إمكانية إضافة دومين واستضافة</div>
+            </div>
+
+            <a
+              href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A7%D9%84%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%D9%8A%D8%A9"
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener"
+            >
+              أبغى الباقة الاقتصادية
+            </a>
+          </article>
+
+          <article class="card price-card featured reveal">
+            <span class="price-badge">الأكثر طلبًا</span>
+            <h3>الباقة الاحترافية</h3>
+            <p>أفضل توازن بين السعر والانطباع والنتيجة.</p>
+
+            <div class="price">
+              <span class="old-price">قبل 1500 ريال</span>
+              699 <span>ريال</span>
+            </div>
+
+            <div class="price-features">
+              <div class="limited">عرض خاص لفترة محدودة</div>
+              <div>الدفع بعد التنفيذ</div>
+              <div>تصميم صفحة احترافية كاملة</div>
+              <div>ترتيب وصياغة المحتوى</div>
+              <div>متجاوبة بالكامل مع الجوال</div>
+              <div>زر واتساب برسالة جاهزة</div>
+              <div>قسم أعمال + آراء عملاء</div>
+              <div>قسم FAQ لإزالة التردد</div>
+              <div>هيكلة تساعد على الإقناع</div>
+              <div>4 تعديلات</div>
+              <div>إمكانية إضافة دومين واستضافة مع إعداد كامل</div>
+            </div>
+
+            <a
+              href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A7%D9%84%D8%A8%D8%A7%D9%82%D8%A9%20%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              أبغى الباقة الاحترافية
+            </a>
+          </article>
+
+          <article class="card price-card reveal">
+            <h3>باقة VIP</h3>
+            <p>لأصحاب الأنشطة اللي يبغون ظهور فخم وتأثير أقوى وانطباع احترافي عالي.</p>
+
+            <div class="price">
+              <span class="old-price">قبل 3000 ريال</span>
+              1499 <span>ريال</span>
+            </div>
+
+            <div class="price-features">
+              <div class="limited">عرض خاص لفترة محدودة</div>
+              <div>الدفع بعد التنفيذ</div>
+              <div>تصميم مخصص بالكامل حسب النشاط</div>
+              <div>هوية عرض فخمة واحترافية</div>
+              <div>كتابة وصياغة محتوى أقوى</div>
+              <div>قسم أعمال + آراء عملاء مخصص</div>
+              <div>FAQ + CTA مخصص</div>
+              <div>تخصيص كامل للألوان والرسائل</div>
+              <div>أولوية في التنفيذ</div>
+              <div>6 تعديلات</div>
+              <div>🔥 دومين واستضافة (سنة كاملة) + تجهيز كامل</div>
+            </div>
+
+            <a
+              href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A8%D8%A7%D9%82%D8%A9%20VIP"
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener"
+            >
+              أبغى باقة VIP
+            </a>
+          </article>
+        </div>
+
+        <p style="text-align:center;margin-top:20px;color:#a6b7d6;">
+          💬 تقدر تبدأ الآن، وننفذ لك الصفحة وتشوفها كاملة قبل الدفع
+        </p>
       </div>
     </section>
 
@@ -1500,27 +1767,66 @@
         <div class="section-head reveal">
           <div>
             <h2>الأسئلة الشائعة</h2>
-            <p>إجابات مختصرة وواضحة تساعدك على معرفة ما يناسبك قبل البدء.</p>
+            <p>إجابات مختصرة تساعد العميل يفهم الخدمة بسرعة ويعرف الخطوة القادمة.</p>
           </div>
         </div>
 
-        <div class="faq">
-          <article class="faq-item reveal">
-            <h3>هل الصفحة مناسبة للجوال؟</h3>
-            <p>نعم، التصميم متجاوب بالكامل ومهيأ للجوال والتابلت والكمبيوتر.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>هل يمكن تعديل النصوص والألوان؟</h3>
-            <p>نعم، يمكن تخصيص المحتوى والألوان والأزرار وروابط التواصل حسب النشاط والهوية.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>هل يمكن ربطها بواتساب؟</h3>
-            <p>نعم، يمكن ربط كل الأزرار بواتساب أو نموذج طلب أو أي وسيلة تواصل مناسبة.</p>
-          </article>
-          <article class="faq-item reveal">
-            <h3>هل تصلح للخدمات والمنتجات؟</h3>
-            <p>أكيد، الصفحة مرنة ومناسبة للخدمات الرقمية، المنتجات، العروض الخاصة، والحملات الإعلانية.</p>
-          </article>
+        <div class="faq-grid">
+          <details class="faq-box reveal">
+            <summary>هل الصفحة مناسبة للجوال؟</summary>
+            <div class="faq-content">
+              نعم، يتم تصميمها لتظهر بشكل ممتاز على الجوال والتابلت والكمبيوتر، مع اهتمام كبير بسهولة القراءة والأزرار والمسافات.
+            </div>
+          </details>
+
+          <details class="faq-box reveal">
+            <summary>هل يمكن تعديل النصوص والألوان؟</summary>
+            <div class="faq-content">
+              نعم، يتم تخصيص النصوص والألوان وروابط التواصل بما يناسب نشاطك وهويتك ونوع العملاء المستهدفين.
+            </div>
+          </details>
+
+          <details class="faq-box reveal">
+            <summary>هل يمكن ربطها بواتساب؟</summary>
+            <div class="faq-content">
+              نعم، يمكن ربط الأزرار مباشرة بواتساب برسائل جاهزة، أو إضافة نموذج طلب أو أي وسيلة تواصل مناسبة.
+            </div>
+          </details>
+
+          <details class="faq-box reveal">
+            <summary>هل أحتاج دومين أو استضافة مدفوعة؟</summary>
+            <div class="faq-content">
+              لا يشترط. يمكن البدء برابط مجاني، وإذا رغبت لاحقًا يمكن نقل الصفحة إلى دومين خاص وظهور أقوى.
+            </div>
+          </details>
+
+          <details class="faq-box reveal">
+            <summary>هل توفر دومين واستضافة؟</summary>
+            <div class="faq-content">
+              نعم، أقدر أوفر لك دومين باسم نشاطك واستضافة مناسبة، وأجهز الصفحة كاملة بحيث تكون جاهزة للإرسال والعمل مباشرة.
+            </div>
+          </details>
+
+          <details class="faq-box reveal">
+            <summary>هل الدفع قبل أو بعد التنفيذ؟</summary>
+            <div class="faq-content">
+              الدفع يكون بعد التنفيذ، حتى تطمئن وتشوف العمل بشكل واضح قبل السداد.
+            </div>
+          </details>
+
+          <details class="faq-box reveal">
+            <summary>هل تصلح للخدمات والمنتجات؟</summary>
+            <div class="faq-content">
+              نعم، مناسبة للخدمات المحلية، الخدمات الرقمية، العروض، المنتجات، وصفحات عرض الأعمال والهوية الشخصية.
+            </div>
+          </details>
+
+          <details class="faq-box reveal">
+            <summary>هل أرسل لك المحتوى أم تكتب أنت؟</summary>
+            <div class="faq-content">
+              الاثنين ممكن. إذا عندك محتوى أرتبه وأحسنه، وإذا ما عندك أساعدك في صياغة الرسالة بشكل أوضح وأقوى.
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -1529,11 +1835,24 @@
       <div class="container">
         <div class="cta-box reveal">
           <span class="badge">🚀 جاهز تبدأ؟</span>
-          <h2>خل ظهورك أمام العميل بمستوى أعلى</h2>
-          <p>إذا كانت خدمتك قوية، فالأفضل أن تظهر بالطريقة التي تليق بها. هذه النسخة مصممة لتكون واجهتك الأقوى أمام العميل.</p>
+          <h2>خل خدمتك تظهر بمستوى يليق فيها</h2>
+          <p>
+            إذا عندك خدمة قوية أو أعمال ممتازة، فالخطوة المهمة الآن أنك تعرضها بشكل احترافي وواضح وسهل الإرسال للعميل. أرسل لي تفاصيل نشاطك ونبدأ، والدفع بعد التنفيذ لراحة وطمأنينة أكثر.
+          </p>
+
           <div class="hero-actions" style="margin-bottom:0">
-            <a href="https://wa.me/966551626637" class="btn btn-primary">تواصل واتساب الآن</a>
-            <a href="#works" class="btn btn-secondary">شاهد نماذج الأعمال</a>
+            <a
+              href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A8%D8%AF%D9%8A%D8%AA%20%D9%88%D8%AF%D9%8A%20%D8%A3%D8%B5%D9%85%D9%85%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7%20%D9%84%D9%86%D8%B4%D8%A7%D8%B7%D9%8A"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              أرسل تفاصيل نشاطك الآن
+            </a>
+
+            <a href="#works" class="btn btn-secondary">
+              شاهد الأعمال أولًا
+            </a>
           </div>
         </div>
       </div>
@@ -1544,10 +1863,11 @@
     <div class="container footer-grid">
       <div>
         <strong style="display:block;color:var(--text);margin-bottom:8px">عبدالله</strong>
-        <span>تصميم صفحات هبوط احترافية مبنية على الوضوح، الإقناع، والانطباع القوي.</span>
+        <span>تصميم صفحات هبوط وصفحات عرض أعمال احترافية مبنية على الوضوح، الثقة، والانطباع القوي.</span>
       </div>
+
       <div class="footer-links">
-        <a href="#about">من نحن</a>
+        <a href="#about">ليش الصفحة تفرق؟</a>
         <a href="#services">الخدمات</a>
         <a href="#works">الأعمال</a>
         <a href="#pricing">الباقات</a>
@@ -1557,89 +1877,139 @@
 
   <div class="made-with-love">صنع بحب من عبدالله <span>❤️</span></div>
 
-  <a href="https://wa.me/966551626637" id="whatsappFloat">💬</a>
+  <a
+    href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7"
+    id="whatsappFloat"
+    aria-label="تواصل عبر واتساب"
+    target="_blank"
+    rel="noopener"
+  >
+    💬
+  </a>
 
-  <div id="notif"></div>
-
-  <div id="exitPopup">
-    <div class="exit-box">
-      <h3 style="margin-top:0">انتظر! 🔥</h3>
-      <p>قبل ما تطلع، احصل على خصم إضافي خاص لك الآن</p>
-      <a href="https://wa.me/966551626637">تواصل الآن</a>
-    </div>
+  <div class="mobile-sticky-cta">
+    <a
+      href="https://wa.me/966551626637?text=السلام%20عليكم%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%B5%D9%81%D8%AD%D8%A9%20%D9%87%D8%A8%D9%88%D8%B7"
+      target="_blank"
+      rel="noopener"
+    >
+      واتساب
+    </a>
+    <a href="#pricing">الأسعار</a>
   </div>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    const counters = document.querySelectorAll('.counter');
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = +el.dataset.target;
-        const duration = 1400;
-        const start = performance.now();
+    const worksTrack = document.getElementById('worksTrack');
+    const worksDots = document.getElementById('worksDots');
+    const prevBtn = document.querySelector('.works-nav.prev');
+    const nextBtn = document.querySelector('.works-nav.next');
+    const slides = Array.from(document.querySelectorAll('.work-slide'));
 
-        const animate = (time) => {
-          const progress = Math.min((time - start) / duration, 1);
-          el.textContent = Math.floor(progress * target);
-          if (progress < 1) requestAnimationFrame(animate);
-          else el.textContent = target;
-        };
+    let currentIndex = 0;
+    let startX = 0;
+    let isDragging = false;
 
-        requestAnimationFrame(animate);
-        counterObserver.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => counterObserver.observe(counter));
-
-    let duration = 600;
-    const countdownEl = document.getElementById('countdown');
-    setInterval(() => {
-      const m = Math.floor(duration / 60);
-      const s = duration % 60;
-      countdownEl.textContent = `${m}:${s.toString().padStart(2,'0')}`;
-      if (duration > 0) duration--;
-    }, 1000);
-
-    const messages = [
-      "محمد من الرياض طلب الباقة الاحترافية",
-      "عميل جديد حجز الآن 🔥",
-      "سعود اشترى باقة VIP",
-      "تم طلب صفحة هبوط قبل قليل",
-      "عميل تواصل عبر واتساب الآن"
-    ];
-
-    const notif = document.getElementById('notif');
-
-    function showNotif(){
-      const msg = messages[Math.floor(Math.random() * messages.length)];
-      notif.textContent = msg;
-      notif.style.display = 'block';
-      setTimeout(() => notif.style.display = 'none', 4000);
+    function getSlidesPerView() {
+      if (window.innerWidth <= 760) return 1;
+      if (window.innerWidth <= 1100) return 2;
+      return 3;
     }
 
-    setInterval(showNotif, 8000);
+    function getGapValue() {
+      return 16;
+    }
 
-    document.addEventListener('mouseout', function(e) {
-      if (e.clientY < 10) {
-        document.getElementById('exitPopup').style.display = 'flex';
+    function getMaxIndex() {
+      return Math.max(0, slides.length - getSlidesPerView());
+    }
+
+    function getSlideWidth() {
+      const firstSlide = slides[0];
+      if (!firstSlide) return 0;
+      return firstSlide.offsetWidth + getGapValue();
+    }
+
+    function updateSlider() {
+      const slideWidth = getSlideWidth();
+      currentIndex = Math.min(currentIndex, getMaxIndex());
+      const currentTranslate = -(currentIndex * slideWidth);
+      worksTrack.style.transform = `translateX(${currentTranslate}px)`;
+      updateDots();
+    }
+
+    function createDots() {
+      worksDots.innerHTML = '';
+      const totalDots = getMaxIndex() + 1;
+
+      for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `الانتقال إلى الشريحة ${i + 1}`);
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateSlider();
+        });
+        worksDots.appendChild(dot);
       }
+
+      updateDots();
+    }
+
+    function updateDots() {
+      const dots = [...worksDots.children];
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    nextBtn?.addEventListener('click', () => {
+      currentIndex = Math.min(currentIndex + 1, getMaxIndex());
+      updateSlider();
     });
 
-    document.getElementById('exitPopup').addEventListener('click', function(e){
-      if(e.target.id === 'exitPopup'){
-        this.style.display = 'none';
-      }
+    prevBtn?.addEventListener('click', () => {
+      currentIndex = Math.max(currentIndex - 1, 0);
+      updateSlider();
     });
+
+    worksTrack?.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    }, { passive: true });
+
+    worksTrack?.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+
+      if (diff > 50) {
+        currentIndex = Math.min(currentIndex + 1, getMaxIndex());
+      } else if (diff < -50) {
+        currentIndex = Math.max(currentIndex - 1, 0);
+      }
+
+      updateSlider();
+      isDragging = false;
+    });
+
+    window.addEventListener('resize', () => {
+      createDots();
+      updateSlider();
+    });
+
+    createDots();
+    updateSlider();
   </script>
 </body>
 </html>
