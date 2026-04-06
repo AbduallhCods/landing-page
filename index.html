@@ -1028,6 +1028,8 @@
 .works-track{
   display:flex;
   gap:16px;
+  transition:transform .5s ease;
+  
 }
 
 .work-slide{
@@ -1947,5 +1949,46 @@
     createDots();
     updateSlider();
   </script>
+  <script>
+  const track = document.querySelector('.works-track');
+  const slides = document.querySelectorAll('.work-slide');
+
+  let index = 0;
+  let autoSlide;
+
+  function getSlideWidth() {
+    return slides[0].offsetWidth + 16;
+  }
+
+  function moveSlide() {
+    const maxIndex = slides.length - 1;
+
+    index++;
+
+    if (index > maxIndex) {
+      index = 0;
+    }
+
+    track.style.transform = `translateX(-${index * getSlideWidth()}px)`;
+  }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(moveSlide, 3000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+  }
+
+  // تشغيل تلقائي
+  startAutoSlide();
+
+  // إيقاف عند لمس المستخدم
+  track.addEventListener('touchstart', stopAutoSlide);
+  track.addEventListener('touchend', startAutoSlide);
+
+  track.addEventListener('mouseenter', stopAutoSlide);
+  track.addEventListener('mouseleave', startAutoSlide);
+</script>
 </body>
 </html>
