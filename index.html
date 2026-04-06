@@ -614,145 +614,6 @@
       color:var(--accent);
     }
 
-    .works-slider{
-      position:relative;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .works-track-wrap{
-      overflow:hidden;
-      width:100%;
-    }
-
-    .works-track{
-      display:flex;
-      gap:16px;
-      transition:transform .45s ease;
-      will-change:transform;
-      touch-action:pan-y;
-    }
-
-    .work-slide{
-      min-width:calc(33.333% - 11px);
-      flex:0 0 calc(33.333% - 11px);
-      display:block;
-    }
-
-    .work-card{
-      min-height:100%;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-start;
-      background:
-        linear-gradient(180deg,rgba(7,11,23,.08),rgba(7,11,23,.90)),
-        radial-gradient(circle at top left,rgba(110,168,255,.24),transparent 35%),
-        radial-gradient(circle at bottom right,rgba(0,215,163,.18),transparent 30%),
-        linear-gradient(135deg,#182544,#0b1228 60%,#132036);
-    }
-
-    .work-image-wrap{
-      width:100%;
-      aspect-ratio:16/10;
-      border-radius:18px;
-      overflow:hidden;
-      margin-bottom:14px;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .work-image{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform .45s ease;
-    }
-
-    .work-slide:hover .work-image{
-      transform:scale(1.05);
-    }
-
-    .work-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:12px;
-      color:var(--muted);
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
-      margin-bottom:14px;
-      width:fit-content;
-      font-family:var(--title-font);
-      font-weight:700;
-    }
-
-    .work-card h3{
-      margin:0 0 10px;
-      font-size:22px;
-      font-weight:900;
-      font-family:var(--title-font);
-    }
-
-    .work-card p{
-      margin:0;
-      color:var(--muted);
-    }
-
-    .work-cta{
-      margin-top:16px;
-      color:#8fe7d0;
-      font-weight:800;
-      font-size:14px;
-      font-family:var(--title-font);
-    }
-
-    .works-nav{
-      width:46px;
-      height:46px;
-      border:none;
-      border-radius:50%;
-      cursor:pointer;
-      flex-shrink:0;
-      background:rgba(255,255,255,.08);
-      color:#fff;
-      font-size:28px;
-      line-height:1;
-      border:1px solid rgba(255,255,255,.10);
-      backdrop-filter:blur(10px);
-      transition:.25s ease;
-    }
-
-    .works-nav:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.14);
-    }
-
-    .works-dots{
-      display:flex;
-      justify-content:center;
-      gap:8px;
-      margin-top:18px;
-    }
-
-    .works-dots button{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      border:none;
-      background:rgba(255,255,255,.25);
-      cursor:pointer;
-      transition:.25s ease;
-    }
-
-    .works-dots button.active{
-      width:28px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--primary),var(--accent));
-    }
 
     .swipe-note{
       color:#a6b7d6;
@@ -1150,40 +1011,136 @@
         display:none;
       }
 
-      .works-slider{
-        gap:8px;
-      }
+      .works-scroll{
+  overflow-x:auto;
+  overflow-y:hidden;
+  width:100%;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  scroll-snap-type:x mandatory;
+  padding-bottom:6px;
+}
 
-      .work-slide{
-        min-width:100%;
-        flex:0 0 100%;
-      }
+.works-scroll::-webkit-scrollbar{
+  display:none;
+}
 
-      .works-nav{
-        display:none;
-      }
+.works-track{
+  display:flex;
+  gap:16px;
+}
 
-      .work-image-wrap{
-        aspect-ratio:16/11;
-        margin-bottom:12px;
-      }
+.work-slide{
+  min-width:calc(33.333% - 11px);
+  flex:0 0 calc(33.333% - 11px);
+  display:block;
+  scroll-snap-align:start;
+}
 
-      .work-card h3{
-        font-size:20px;
-      }
+.work-card{
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  background:
+    linear-gradient(180deg,rgba(7,11,23,.08),rgba(7,11,23,.90)),
+    radial-gradient(circle at top left,rgba(110,168,255,.24),transparent 35%),
+    radial-gradient(circle at bottom right,rgba(0,215,163,.18),transparent 30%),
+    linear-gradient(135deg,#182544,#0b1228 60%,#132036);
+}
 
-      .work-card p{
-        font-size:14px;
-        line-height:1.8;
-      }
+.work-image-wrap{
+  width:100%;
+  aspect-ratio:16/10;
+  border-radius:18px;
+  overflow:hidden;
+  margin-bottom:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+}
 
-      .glass,
-      .mockup,
-      .floating,
-      .card{
-        backdrop-filter:none;
-        box-shadow:0 8px 18px rgba(0,0,0,.16);
-      }
+.work-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .45s ease;
+}
+
+.work-slide:hover .work-image{
+  transform:scale(1.05);
+}
+
+.work-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:12px;
+  color:var(--muted);
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.05);
+  margin-bottom:14px;
+  width:fit-content;
+  font-family:var(--title-font);
+  font-weight:700;
+}
+
+.work-card h3{
+  margin:0 0 10px;
+  font-size:22px;
+  font-weight:900;
+  font-family:var(--title-font);
+}
+
+.work-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.work-cta{
+  margin-top:16px;
+  color:#8fe7d0;
+  font-weight:800;
+  font-size:14px;
+  font-family:var(--title-font);
+}
+
+.swipe-note{
+  color:#a6b7d6;
+  margin-top:-8px;
+  margin-bottom:18px;
+  font-size:14px;
+}
+
+@media (max-width:1100px){
+  .work-slide{
+    min-width:calc(50% - 8px);
+    flex:0 0 calc(50% - 8px);
+  }
+}
+
+@media (max-width:760px){
+  .work-slide{
+    min-width:100%;
+    flex:0 0 100%;
+  }
+
+  .work-image-wrap{
+    aspect-ratio:16/11;
+    margin-bottom:12px;
+  }
+
+  .work-card h3{
+    font-size:20px;
+  }
+
+  .work-card p{
+    font-size:14px;
+    line-height:1.8;
+  }
+}
 
       .bar::after{
         animation:none;
@@ -1394,91 +1351,83 @@
     </section>
 
     <section id="works">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h2>نماذج أعمال حقيقية</h2>
-            <p>هذه بعض النماذج الجاهزة من أعمالي، ويمكنك فتح كل نموذج مباشرة ومعاينته بنفسك.</p>
-          </div>
-        </div>
-
-        <p class="swipe-note reveal">اسحب يمين ويسار وشاهد نماذج الأعمال مباشرة</p>
-
-        <div class="works-slider reveal">
-          <button class="works-nav prev" aria-label="السابق">‹</button>
-
-          <div class="works-track-wrap">
-            <div class="works-track" id="worksTrack">
-
-              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/photo.html" target="_blank" rel="noopener">
-                <article class="card work-card">
-                  <div class="work-image-wrap">
-                    <img src="./images/photo-project.jpg" alt="نموذج خدمة تصوير" class="work-image" loading="lazy" decoding="async">
-                  </div>
-                  <span class="work-badge">📸 خدمة تصوير</span>
-                  <h3>نموذج خدمة تصوير</h3>
-                  <p>صفحة هبوط مخصصة لخدمة تصوير بأسلوب بصري احترافي يعكس الجودة والعرض بوضوح.</p>
-                  <div class="work-cta">شاهد النموذج كامل ↗</div>
-                </article>
-              </a>
-
-              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/kahrba.html" target="_blank" rel="noopener">
-                <article class="card work-card">
-                  <div class="work-image-wrap">
-                    <img src="./images/electric-project.jpg" alt="نموذج خدمة إنارات وكهرباء" class="work-image" loading="lazy" decoding="async">
-                  </div>
-                  <span class="work-badge">⚡ كهرباء وإنارة</span>
-                  <h3>نموذج خدمة إنارات وكهرباء</h3>
-                  <p>تصميم يعرض خدمات الكهرباء والإنارة بشكل واضح ومرتب ومناسب لتواصل العملاء بسرعة.</p>
-                  <div class="work-cta">شاهد النموذج كامل ↗</div>
-                </article>
-              </a>
-
-              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/alnmume.html" target="_blank" rel="noopener">
-                <article class="card work-card">
-                  <div class="work-image-wrap">
-                    <img src="./images/aluminum-project.jpg" alt="نموذج خدمة المنيوم ونوافذ" class="work-image" loading="lazy" decoding="async">
-                  </div>
-                  <span class="work-badge">⚙️ ألمنيوم ونوافذ</span>
-                  <h3>نموذج خدمة المنيوم ونوافذ</h3>
-                  <p>واجهة مخصصة لخدمات الألمنيوم والواجهات والنوافذ مع عرض فخم ومتناسق.</p>
-                  <div class="work-cta">شاهد النموذج كامل ↗</div>
-                </article>
-              </a>
-
-              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/aswar2.html" target="_blank" rel="noopener">
-                <article class="card work-card">
-                  <div class="work-image-wrap">
-                    <img src="./images/fence-project.jpg" alt="نموذج أسوار للمشاريع الناشئة" class="work-image" loading="lazy" decoding="async">
-                  </div>
-                  <span class="work-badge">🖼️ أسوار مشاريع</span>
-                  <h3>نموذج أسوار للمشاريع الناشئة</h3>
-                  <p>تصميم موجه للأنشطة التنفيذية والميدانية مع عرض احترافي للخدمة والقيمة.</p>
-                  <div class="work-cta">شاهد النموذج كامل ↗</div>
-                </article>
-              </a>
-
-              <a class="work-slide" href="https://abduallhcods.github.io/landing-page/mared.html" target="_blank" rel="noopener">
-                <article class="card work-card">
-                  <div class="work-image-wrap">
-                    <img src="./images/expo-project.jpg" alt="نموذج إنشاء معارض" class="work-image" loading="lazy" decoding="async">
-                  </div>
-                  <span class="work-badge">🏙️ معارض وبوثات</span>
-                  <h3>نموذج إنشاء معارض</h3>
-                  <p>صفحة تعرض خدمات المعارض والمؤتمرات والبوثات بأسلوب يرفع قيمة النشاط بصريًا.</p>
-                  <div class="work-cta">شاهد النموذج كامل ↗</div>
-                </article>
-              </a>
-
-            </div>
-          </div>
-
-          <button class="works-nav next" aria-label="التالي">›</button>
-        </div>
-
-        <div class="works-dots" id="worksDots"></div>
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <h2>نماذج أعمال حقيقية</h2>
+        <p>هذه بعض النماذج الجاهزة من أعمالي، ويمكنك فتح كل نموذج مباشرة ومعاينته بنفسك.</p>
       </div>
-    </section>
+    </div>
+
+    <p class="swipe-note reveal">اسحب يمين ويسار وشاهد نماذج الأعمال مباشرة</p>
+
+    <div class="works-scroll reveal">
+      <div class="works-track">
+
+        <a class="work-slide" href="https://abduallhcods.github.io/landing-page/photo.html" target="_blank" rel="noopener">
+          <article class="card work-card">
+            <div class="work-image-wrap">
+              <img src="./images/photo-project.jpg" alt="نموذج خدمة تصوير" class="work-image" loading="lazy" decoding="async">
+            </div>
+            <span class="work-badge">📸 خدمة تصوير</span>
+            <h3>نموذج خدمة تصوير</h3>
+            <p>صفحة هبوط مخصصة لخدمة تصوير بأسلوب بصري احترافي يعكس الجودة والعرض بوضوح.</p>
+            <div class="work-cta">شاهد النموذج كامل ↗</div>
+          </article>
+        </a>
+
+        <a class="work-slide" href="https://abduallhcods.github.io/landing-page/kahrba.html" target="_blank" rel="noopener">
+          <article class="card work-card">
+            <div class="work-image-wrap">
+              <img src="./images/electric-project.jpg" alt="نموذج خدمة إنارات وكهرباء" class="work-image" loading="lazy" decoding="async">
+            </div>
+            <span class="work-badge">⚡ كهرباء وإنارة</span>
+            <h3>نموذج خدمة إنارات وكهرباء</h3>
+            <p>تصميم يعرض خدمات الكهرباء والإنارة بشكل واضح ومرتب ومناسب لتواصل العملاء بسرعة.</p>
+            <div class="work-cta">شاهد النموذج كامل ↗</div>
+          </article>
+        </a>
+
+        <a class="work-slide" href="https://abduallhcods.github.io/landing-page/alnmume.html" target="_blank" rel="noopener">
+          <article class="card work-card">
+            <div class="work-image-wrap">
+              <img src="./images/aluminum-project.jpg" alt="نموذج خدمة المنيوم ونوافذ" class="work-image" loading="lazy" decoding="async">
+            </div>
+            <span class="work-badge">⚙️ ألمنيوم ونوافذ</span>
+            <h3>نموذج خدمة المنيوم ونوافذ</h3>
+            <p>واجهة مخصصة لخدمات الألمنيوم والواجهات والنوافذ مع عرض فخم ومتناسق.</p>
+            <div class="work-cta">شاهد النموذج كامل ↗</div>
+          </article>
+        </a>
+
+        <a class="work-slide" href="https://abduallhcods.github.io/landing-page/aswar2.html" target="_blank" rel="noopener">
+          <article class="card work-card">
+            <div class="work-image-wrap">
+              <img src="./images/fence-project.jpg" alt="نموذج أسوار للمشاريع الناشئة" class="work-image" loading="lazy" decoding="async">
+            </div>
+            <span class="work-badge">🖼️ أسوار مشاريع</span>
+            <h3>نموذج أسوار للمشاريع الناشئة</h3>
+            <p>تصميم موجه للأنشطة التنفيذية والميدانية مع عرض احترافي للخدمة والقيمة.</p>
+            <div class="work-cta">شاهد النموذج كامل ↗</div>
+          </article>
+        </a>
+
+        <a class="work-slide" href="https://abduallhcods.github.io/landing-page/mared.html" target="_blank" rel="noopener">
+          <article class="card work-card">
+            <div class="work-image-wrap">
+              <img src="./images/expo-project.jpg" alt="نموذج إنشاء معارض" class="work-image" loading="lazy" decoding="async">
+            </div>
+            <span class="work-badge">🏙️ معارض وبوثات</span>
+            <h3>نموذج إنشاء معارض</h3>
+            <p>صفحة تعرض خدمات المعارض والمؤتمرات والبوثات بأسلوب يرفع قيمة النشاط بصريًا.</p>
+            <div class="work-cta">شاهد النموذج كامل ↗</div>
+          </article>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="about">
       <div class="container">
@@ -1901,11 +1850,7 @@
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    const worksTrack = document.getElementById('worksTrack');
-    const worksDots = document.getElementById('worksDots');
-    const prevBtn = document.querySelector('.works-nav.prev');
-    const nextBtn = document.querySelector('.works-nav.next');
-    const slides = Array.from(document.querySelectorAll('.work-slide'));
+    
 
     let currentIndex = 0;
     let startX = 0;
