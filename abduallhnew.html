@@ -1,159 +1,383 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تصميم صفحات هبوط احترافية تضاعف مبيعاتك</title>
+    <title>تصميم صفحات هبوط احترافية تضاعف مبيعاتك | سبيد لاندينج</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <!-- Google Font (Tajawal) -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Tajawal', sans-serif; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        /* Custom Pulse Animation for CTAs */
+        @keyframes custom-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            50% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+        }
+        .animate-cta-pulse {
+            animation: custom-pulse 2s infinite;
+        }
+        
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-indigo-500 selection:text-white">
 
-    <!-- Header / Navbar -->
-    <header class="bg-white shadow-sm fixed w-full top-0 z-40">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-            <span class="text-2xl font-extrabold text-blue-600"><i class="fa-solid fa-rocket ml-2"></i>سبيد لاندينج</span>
-            <a href="https://wa.me/966500000000?text=أحتاج%20استشارة%20مجانية%20عن%20تصميم%20صفحة%20هبوط" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-bold transition duration-300 text-sm flex items-center">
-                <i class="fa-brands fa-whatsapp ml-2 text-lg"></i> تواصل معنا
+    <!-- 1. Sticky Header -->
+    <header class="fixed top-0 right-0 left-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-blue-600 flex items-center justify-center text-white text-xl font-black shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-rocket"></i>
+                </div>
+                <span class="text-2xl font-black text-white tracking-wide">سبيد<span class="text-indigo-400">لاندينج</span></span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-slate-300 font-medium text-sm">
+                <a href="#features" class="hover:text-indigo-400 transition-colors">المميزات</a>
+                <a href="#pricing" class="hover:text-indigo-400 transition-colors">الباقات</a>
+                <a href="#testimonials" class="hover:text-indigo-400 transition-colors">آراء العملاء</a>
+                <a href="#faq" class="hover:text-indigo-400 transition-colors">الأسئلة الشائعة</a>
+            </nav>
+
+            <!-- Quick CTA -->
+            <a href="https://wa.me/966500000000?text=أريد%20استشارة%20مجانية%20لتصميم%20صفحة%20هبوط" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-5 py-2.5 rounded-full text-sm flex items-center gap-2 transition-all shadow-md shadow-emerald-500/20">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>استشارة مجانية</span>
             </a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-900 to-indigo-800 text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <span class="bg-blue-500/30 text-blue-200 text-sm font-semibold px-4 py-1.5 rounded-full border border-blue-400/30 inline-block mb-4">
-                🚀 ضاعف معدل التحويل لنشاطك التجاري
-            </span>
-            <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
-                نصمم لك صفحة هبوط <span class="text-yellow-400">تحوّل الزوار إلى عملاء</span> دائمين
+    <!-- 2. Hero Section -->
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 bg-slate-950 text-white overflow-hidden">
+        <!-- Background Gradients -->
+        <div class="absolute top-1/4 right-1/2 translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-[300px] h-[300px] bg-blue-600/15 rounded-full blur-[90px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-sm font-semibold mb-8 backdrop-blur-sm">
+                <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>الحل الأمثل لتضاعف مبيعات حملاتك الإعلانية</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-tight mb-8">
+                نصمم لك صفحة هبوط احترافية <br class="hidden sm:inline"/>
+                <span class="bg-gradient-to-r from-indigo-400 via-blue-400 to-emerald-400 bg-clip-text text-transparent">تحول الزوار إلى عملاء دائمين</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                احصل على صفحة هبوط فائقة السرعة، متجاوبة بالكامل، ومصممة خصيصاً وفق علم نفس المبيعات لزيادة أرباحك وإعلاناتك.
+
+            <!-- Subheadline -->
+            <p class="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+                احصل على صفحة هبوط فائقة السرعة، متجاوبة بالكامل، ومصممة وفق أعلى معايير علم نفس المبيعات (CRO) لتجعل كل ريال تصرفه في الإعلانات يحقق أعلى عائد ممكن.
             </p>
-            <a href="https://wa.me/966500000000?text=أريد%20طلب%20خدمة%20تصميم%20صفحة%20هبوط" target="_blank" class="inline-flex items-center bg-green-500 hover:bg-green-600 text-white font-black text-xl px-8 py-4 rounded-xl shadow-lg shadow-green-500/30 transform hover:-translate-y-1 transition duration-300">
-                <i class="fa-brands fa-whatsapp ml-3 text-2xl"></i> اطلب صفحتك الآن عبر واتساب
-            </a>
+
+            <!-- Primary CTA Button -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                <a href="https://wa.me/966500000000?text=مرحباً،%20أريد%20طلب%20خدمة%20تصميم%20صفحة%20هبوط" target="_blank" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-3 transition-all animate-cta-pulse">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>اطلب صفحتك الآن عبر الواتساب</span>
+                </a>
+            </div>
+
+            <!-- Trust Badges / Social Proof Bar -->
+            <div class="pt-10 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-slate-400">
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl md:text-3xl font-black text-white mb-1">+150</span>
+                    <span class="text-xs md:text-sm">صفحة هبوط مكتملة</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl md:text-3xl font-black text-white mb-1">3.5x</span>
+                    <span class="text-xs md:text-sm">متوسط زيادة التحويل</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl md:text-3xl font-black text-white mb-1">&lt; 1 ثانية</span>
+                    <span class="text-xs md:text-sm">سرعة تحميل فائقة</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-2xl md:text-3xl font-black text-white mb-1">99%</span>
+                    <span class="text-xs md:text-sm">رضا العملاء</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-3">لماذا تختار خدمتنا؟</h2>
-                <p class="text-gray-600">نحن لا نقدم مجرد تصميم، بل نصنع تجربة مبيعات متكاملة</p>
+    <!-- 3. Features & Benefits Section -->
+    <section id="features" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-indigo-600 font-extrabold text-sm uppercase tracking-wider mb-2">مميزات الخدمة</h2>
+                <p class="text-3xl sm:text-4xl font-black text-slate-900">لماذا تختار تصميمنا لصفحة هبوطك؟</p>
+                <p class="text-slate-600 mt-4 text-lg">نحن لا نصمم مجرد واجهات جميلة، بل نبني لك آلة مبيعات متكاملة.</p>
             </div>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-bolt"></i>
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bolt-lightning"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">سرعة تحميل فائقة</h3>
-                    <p class="text-gray-600">أكواد نظيفة ومحسّنة تضمن فتح الصفحة في أقل من ثانية لتفادي ضياع الزوار.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">سرعة تحميل صاروخية</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        أكواد نظيفة ومحسّنة بالكامل تضمن فتح الصفحة في أقل من ثانية، مما يمنع ضياع الزوار ويقلل تكلفة الإعلانات.
+                    </p>
                 </div>
-                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-bullseye"></i>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">تركيز على التحويل (CRO)</h3>
-                    <p class="text-gray-600">توزيع استراتيجي للنصوص وازرار الدعوة للإجراء (CTA) لتوجيه الزائر نحو الشراء.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">هندسة تحويل المبيعات (CRO)</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        توزيع استراتيجي للنصوص والدعوات للإجراء (CTAs) وفق علم نفس المستهلك لتوجيه الزائر نحو الشراء المباشر.
+                    </p>
                 </div>
-                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-xl transition duration-300">
-                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fa-solid fa-mobile-screen"></i>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">متجاوبة 100%</h3>
-                    <p class="text-gray-600">عرض مثالي وأنيق على جميع الشاشات والأجهزة (أجهزة الجوال، التابلت، والكمبيوتر).</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">توافق تام مع الجوال</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        تصميم سلس ومثالي للعرض على الشاشات الصغيرة والكبيرة لضمان تجربة مستخدم مريحة مهما كان جهاز الزائر.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-3">ماذا يقول عملاؤنا؟</h2>
-                <p class="text-gray-600">نتائج حقيقية حققها شركاؤنا بعد استخدام صفحاتنا</p>
+    <!-- 4. Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-indigo-600 font-extrabold text-sm uppercase tracking-wider mb-2">خطط الأسعار</h2>
+                <p class="text-3xl sm:text-4xl font-black text-slate-900">استثمر في صفحة تحقق لك الأرباح</p>
+                <p class="text-slate-600 mt-4 text-lg">اختر الباقة المناسبة لحجم نشاطك التجاري وبدء الانطلاق.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-4">"بعد تعديل صفحة الهبوط القديمة وتصميم صفحة جديدة مع الفريق، ارتفعت المبيعات بنسبة 40% في أول أسبوعين من الحملة الإعلانية."</p>
-                    <div class="font-bold text-gray-900">أحمد الشمري</div>
-                    <div class="text-sm text-gray-500">صاحب متجر إلكتروني</div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-4">"السرعة والاحترافية في التعامل كانت ممتازة. الصفحة تعمل بسرعة عالية جداً على الجوال والدعم الفني متجاوب دائماً."</p>
-                    <div class="font-bold text-gray-900">سارة التميمي</div>
-                    <div class="text-sm text-gray-500">مديرة تسويق - شركة استشارات</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-3">خطط الأسعار</h2>
-                <p class="text-gray-600">اختر الباقة المناسبة لاحتياجات عملك</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                 <!-- Basic Plan -->
-                <div class="border border-gray-200 rounded-2xl p-8 hover:border-blue-500 transition duration-300">
-                    <h3 class="text-2xl font-bold mb-2">الباقة الأساسية</h3>
-                    <p class="text-gray-500 mb-6">مثالية للمشاريع الناشئة والعروض المباشرة</p>
-                    <div class="text-4xl font-black mb-6">199 <span class="text-lg font-normal text-gray-500">دولار</span></div>
-                    <ul class="space-y-4 mb-8 text-gray-600">
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> تصميم صفحة هبوط واحدة</li>
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> متوافقة مع الجوال</li>
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> ربط نموذج التواصل بـ WhatsApp</li>
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> التسليم خلال 3 أيام</li>
-                    </ul>
-                    <a href="https://wa.me/966500000000?text=أريد%20طلب%20الباقة%20الأساسية" target="_blank" class="block text-center bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 rounded-xl transition duration-300">اختر الباقة</a>
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between hover:border-slate-300 transition-all">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">الباقة الأساسية</h3>
+                        <p class="text-slate-500 text-sm mb-6">مناسبة للمشاريع الناشئة والتجارب السريعة</p>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-4xl font-black text-slate-900">350</span>
+                            <span class="text-slate-500 font-bold">ر.س</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-slate-600 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>صفحة هبوط واحدة (قسم واحد)</span></li>
+                            <li class="flex items-center gap-3"><li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>تصميم متجاوب 100% مع الجوال</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>ربط أزرار التواصل بالواتساب</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>تسليم خلال 48 ساعة</span></li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/966500000000?text=أريد%20طلب%20الباقة%20الأساسية" target="_blank" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl text-center transition-all">اختيار الباقة</a>
                 </div>
-                <!-- Pro Plan -->
-                <div class="border-2 border-blue-600 rounded-2xl p-8 relative shadow-lg bg-blue-50/30">
-                    <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full absolute -top-3 right-6">الأكثر طلباً</span>
-                    <h3 class="text-2xl font-bold mb-2">الباقة الاحترافية</h3>
-                    <p class="text-gray-500 mb-6">حملات تسويقية متكاملة ومبيعات عالية</p>
-                    <div class="text-4xl font-black mb-6">399 <span class="text-lg font-normal text-gray-500">دولار</span></div>
-                    <ul class="space-y-4 mb-8 text-gray-600">
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> كل ما في الباقة الأساسية</li>
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> كتابة النصوص الإعلانية (Copywriting)</li>
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> ربط بكسل الإعلانات (Meta / Google Pixel)</li>
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> تسريع وقت التحميل لأقصى درجة</li>
-                        <li><i class="fa-solid fa-check text-green-500 ml-2"></i> التسليم خلال 24-48 ساعة</li>
-                    </ul>
-                    <a href="https://wa.me/966500000000?text=أريد%20طلب%20الباقة%20الاحترافية" target="_blank" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition duration-300">طلب الباقة الاحترافية</a>
+
+                <!-- Pro Plan (Highlighted) -->
+                <div class="bg-slate-900 text-white rounded-3xl p-8 border-2 border-indigo-500 flex flex-col justify-between shadow-2xl relative transform lg:-translate-y-3">
+                    <div class="absolute -top-4 right-1/2 translate-x-1/2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white text-xs font-black px-4 py-1.5 rounded-full shadow-md">
+                        الأكثر طلباً ⭐
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2 mt-2">الباقة الاحترافية</h3>
+                        <p class="text-slate-400 text-sm mb-6">الخيار المثالي للحملات الإعلانية الناجحة</p>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-5xl font-black text-white">750</span>
+                            <span class="text-slate-400 font-bold">ر.س</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-slate-300 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span>صفحة هبوط متكاملة متعددة الأقسام</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span>صياغة العناوين البيعية الجذابة</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span>ربط Meta Pixel & Google Analytics</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span>تحسين السرعة الفائقة للأكواد</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i><span>تسليم خلال 3 إلى 4 أيام</span></li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/966500000000?text=أريد%20طلب%20الباقة%20الاحترافية" target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black py-4 rounded-xl text-center transition-all shadow-lg shadow-emerald-500/30">طلب الباقة الاحترافية</a>
+                </div>
+
+                <!-- Ultimate Plan -->
+                <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 flex flex-col justify-between hover:border-slate-300 transition-all">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">الباقة المتكاملة</h3>
+                        <p class="text-slate-500 text-sm mb-6">للشركات والعلامات التجارية التي تتوسع</p>
+                        <div class="flex items-baseline gap-2 mb-8">
+                            <span class="text-4xl font-black text-slate-900">1,400</span>
+                            <span class="text-slate-500 font-bold">ر.س</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-slate-600 mb-8">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>صفحة هبوط + صفحة شكر (Thank You Page)</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>كتابة النصوص البيعية الكاملة (Copywriting)</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>ربط نماذج الجمع مع أدوية الـ CRM</span></li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-500"></i><span>دعم وتعديلات مفتوحة لمدة أسبوع</span></li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/966500000000?text=أريد%20طلب%20الباقة%20المتكاملة" target="_blank" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl text-center transition-all">اختيار الباقة</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
-        <p class="text-sm">جميع الحقوق محفوظة © 2026 - سبيد لاندينج</p>
+    <!-- 5. Social Proof & Testimonials -->
+    <section id="testimonials" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-indigo-400 font-extrabold text-sm uppercase tracking-wider mb-2">آراء العملاء</h2>
+                <p class="text-3xl sm:text-4xl font-black text-white">ماذا يقول شركاء نجاحنا؟</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-slate-800/80 p-8 rounded-3xl border border-slate-700/60 backdrop-blur-sm">
+                    <div class="flex text-amber-400 gap-1 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        "بعد تجربة التصميم الجديد، لاحظت انخفاضاً كبيراً في تكلفة المبيعات في إعلانات سناب شات. السرعة والتصميم الاحترافي أحدثا فارقاً كبيراً!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-indigo-600/30 text-indigo-400 rounded-full flex items-center justify-center font-bold border border-indigo-500/30">أ.م</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">أحمد المحمد</h4>
+                            <p class="text-xs text-slate-400">مالك متجر إلكتروني</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-slate-800/80 p-8 rounded-3xl border border-slate-700/60 backdrop-blur-sm">
+                    <div class="flex text-amber-400 gap-1 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        "التعامل سريع والالتزام بالمواعيد ممتاز. تم تسليم الصفحة في الموعد المحدد مع ربط بكسل تيك توك بشكل دقيق جداً."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-emerald-600/30 text-emerald-400 rounded-full flex items-center justify-center font-bold border border-emerald-500/30">س.ع</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">سارة العتيبي</h4>
+                            <p class="text-xs text-slate-400">مديرة تسويق رقمي</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-slate-800/80 p-8 rounded-3xl border border-slate-700/60 backdrop-blur-sm">
+                    <div class="flex text-amber-400 gap-1 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        "أفضل خيار لمن يرغب في إطلاق حملة مبيعات سريعة وبدون تعقيدات. الصفحة تعمل بكفاءة عالية على مختلف الهواتف."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-600/30 text-blue-400 rounded-full flex items-center justify-center font-bold border border-blue-500/30">ف.ش</div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">فيصل الشمري</h4>
+                            <p class="text-xs text-slate-400">رائد أعمال</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ Accordion Section -->
+    <section id="faq" class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-indigo-600 font-extrabold text-sm uppercase tracking-wider mb-2">الأسئلة الشائعة</h2>
+                <p class="text-3xl sm:text-4xl font-black text-slate-900">إجابات على ما يدور في ذهنك</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all">
+                    <button class="w-full p-6 text-right font-bold text-slate-900 text-lg flex items-center justify-between gap-4 faq-toggle focus:outline-none">
+                        <span>كم يستغرق وقت تسليم صفحة الهبوط؟</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed text-sm hidden faq-content">
+                        يتم التسليم خلال 48 ساعة للباقة الأساسية، ومن 3 إلى 4 أيام للباقات الاحترافية ومتكاملة الخدمات.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all">
+                    <button class="w-full p-6 text-right font-bold text-slate-900 text-lg flex items-center justify-between gap-4 faq-toggle focus:outline-none">
+                        <span>هل أحتاج لامتلاك استضافة وسيرفر خاص؟</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed text-sm hidden faq-content">
+                        يمكننا مساعدتك في رفع الصفحة مجاناً على منصات استضافة فائقة السرعة مثل GitHub Pages أو Netlify، أو رفعها على سيرفرك الخاص حسب رغبتك.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all">
+                    <button class="w-full p-6 text-right font-bold text-slate-900 text-lg flex items-center justify-between gap-4 faq-toggle focus:outline-none">
+                        <span>هل يمكن ربط بكسل منصات الإعلانات بالصفحة؟</span>
+                        <i class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-6 text-slate-600 leading-relaxed text-sm hidden faq-content">
+                        نعم بالتأكيد، يتم ربط بكسل Snapchat, TikTok, Meta, و Google Analytics لتتبع نتائج حملاتك بدقة ودون أي تكلفة إضافية في الباقة الاحترافية.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-right flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="text-xl font-black text-white">سبيد<span class="text-indigo-400">لاندينج</span></span>
+                <p class="text-xs text-slate-500 mt-2">جميع الحقوق محفوظة © 2026 - عبدالله للتصميم.</p>
+            </div>
+            <div class="flex items-center gap-6 text-lg">
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/966500000000?text=مرحباً،%20لدي%20استفسار%20عن%20خدمة%20تصميم%20صفحات%20الهبوط" target="_blank" class="fixed bottom-6 left-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl z-50 transform hover:scale-110 transition duration-300" aria-label="WhatsApp">
+    <!-- 8. Floating CTA -->
+    <a href="https://wa.me/966500000000?text=مرحباً،%20لدي%20استفسار%20عن%20خدمة%20تصميم%20صفحة%20الهبوط" target="_blank" class="fixed bottom-6 left-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl shadow-emerald-500/50 transition-all animate-cta-pulse" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
+    <!-- Minimal JavaScript for FAQ Accordion -->
+    <script>
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
 </body>
 </html>
